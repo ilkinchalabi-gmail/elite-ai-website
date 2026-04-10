@@ -29,7 +29,10 @@
    ═══════════════════════════════════════════════ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; background-color: var(--bg); overflow-x: hidden; }
-section, footer { scroll-margin-top: 100px; }
+
+/* Force exact centering with precise scroll margins */
+section, footer { scroll-margin-top: 120px; }
+
 body { font-family: var(--font-main); background-color: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 .container-narrow { max-width: 900px; }
