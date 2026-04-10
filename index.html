@@ -157,7 +157,7 @@ Waiting for input...</div>
         </section>
 
         <!-- SECTION 3: FEATURES (Premium Header Upgrade) -->
-        <section id="features" class="features-section">
+        <section id="section-about" class="features-section">
             <div class="container">
                 <div class="section-header">
                     <h2>Engineered for <i>Limitless</i><br>Operational Excellence</h2>
@@ -355,7 +355,7 @@ agent.sync(); </code></pre>
         </section>
 
         <!-- SECTION 8: FINAL CTA / ABOUT -->
-        <section id="section-about" class="cta-section">
+        <section class="cta-section">
             <div class="container container-narrow">
                 <div class="cta-box">
                     <div class="hero-glow"></div>
@@ -442,7 +442,8 @@ agent.sync(); </code></pre>
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
-        window.scrollTo(0, 0);
+        // DELETED window.scrollTo(0, 0); which was interfering with anchor links
+        
         // Initialize Lucide icons
         lucide.createIcons();
     </script>
