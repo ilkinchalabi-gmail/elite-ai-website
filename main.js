@@ -1,102 +1,108 @@
-/**
- * ELITE AI — ADVANCED CONSOLE ENGINE
- * Hardcore Mix Coding Simulation (Python/JS/Neural)
- */
+/* ═══════════════════════════════════════════════
+   ELITE AI — CORE JAVASCRIPT & ANIMATIONS
+   ═══════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. STAR FIELD INITIALIZATION
-    const starField = document.getElementById('star-field');
-    const starCount = 150;
-    if (starField) {
-        for (let i = 0; i < starCount; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            const size = Math.random() * 2 + 1;
-            const duration = Math.random() * 3 + 2;
-            star.style.left = `${x}%`;
-            star.style.top = `${y}%`;
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.setProperty('--duration', `${duration}s`);
-            starField.appendChild(star);
-        }
-    }
+    initTypingEffect();
+    initStars();
+});
 
-    // 2. HARDCORE CONSOLE TYPING (Complex IT Logic)
-    const consoleElem = document.getElementById('typing-console');
-    const hardcoreCommands = [
-        "import torch.nn as nn",
-        "import elite_core as ec",
-        "from transformers import AutoModelForCausalLM",
+/**
+ * Animated Typing Console Effect
+ */
+function initTypingEffect() {
+    const consoleElement = document.getElementById('typing-console');
+    if (!consoleElement) return;
+
+    const codeLines = [
+        "import elite_core from '@elite-ai/kernel';",
+        "const agent = new elite_core.AutonomousAgent({",
+        "  founder: 'Ilkin Chalabi',",
+        "  sector: 'Hospitality & Real Estate',",
+        "  mode: 'PREMIUM_AUTONOMOUS',",
+        "  neural_latency: '12ms'",
+        "});",
         "",
-        "DEBUG: Attached to [0x7FFDDB8A9C]",
-        "class AutonomousAgent(nn.Module):",
-        "    def __init__(self, business_id='CHALABI_77'):",
-        "        super().__init__()",
-        "        self.neural_bridge = ec.Bridge(protocol='TLS_1.3')",
-        "        self.latent_space = nn.Linear(4096, 128)",
+        "> Initializing industry bridges...",
+        "> Handshake with Booking.com... [SUCCESS]",
+        "> Indexing PropertyFinder CRM... [DONE]",
+        "> Deploying Neural Bridge: WA <=> Instagram",
         "",
-        "> Connecting to MetaCloud... latency: 12ms",
-        "> Patching NeuralWeights to 0xBC11A..0xFF23",
-        "async function deployNode(target) {",
-        "    const response = await fetch(`${target}/api/v2/handshake`);",
-        "    const buffer = await response.arrayBuffer();",
-        "    return new NativeAgent(buffer, { mode: 'aggressive' });",
-        "}",
-        "",
-        "> Initializing Industry Shards: [Hospitality, RealEstate, Retail]",
-        "> [THREAD 0] Syncing with Booking.com/Airbnb API hooks...",
-        "> [THREAD 1] Injecting LeadScraper into PropertyFinder DOM...",
-        "> Building Cross-Channel Bridge: WhatsApp <=> CRM v4.2",
-        "REGEX: /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9_-]+)/gi",
-        "",
-        "> OPTIMIZING CORE FLOPs... 98% Efficiency reached.",
-        "> SYTEM_STATE: AUTONOMOUS_ACTIVE",
-        "> Root: /home/ilkin/elite-ai/agents/deploy.sh --silent",
-        "Waiting for input..."
+        "DEBUG: Attached to instance 0x7FFDDB8A9C",
+        "SYSTEM_STATE: ACTIVE (99.8% Efficiency)",
+        "LOG: Agent successfully engaged with 128 hospitality leads.",
+        "> Orchestrating revenue systems..."
     ];
 
-    let cmdIdx = 0;
-    let charIdx = 0;
-    
-    function typeCommand() {
-        if (consoleElem && cmdIdx < hardcoreCommands.length) {
-            const currentCmd = hardcoreCommands[cmdIdx];
-            if (charIdx < currentCmd.length) {
-                consoleElem.innerHTML += currentCmd.charAt(charIdx);
-                charIdx++;
-                setTimeout(typeCommand, 10); // Faster for code feel
+    let lineIndex = 0;
+    let charIndex = 0;
+    let currentText = '';
+
+    function type() {
+        if (lineIndex < codeLines.length) {
+            const currentLine = codeLines[lineIndex];
+            
+            if (charIndex < currentLine.length) {
+                currentText += currentLine.charAt(charIndex);
+                consoleElement.textContent = currentText + '_';
+                charIndex++;
+                setTimeout(type, 30);
             } else {
-                consoleElem.innerHTML += "\n";
-                cmdIdx++;
-                charIdx = 0;
-                setTimeout(typeCommand, 300);
+                currentText += '\n';
+                lineIndex++;
+                charIndex = 0;
+                setTimeout(type, 500);
             }
-            consoleElem.scrollTop = consoleElem.scrollHeight;
+        } else {
+            // Restart after delay to keep it moving
+            setTimeout(() => {
+                lineIndex = 0;
+                charIndex = 0;
+                currentText = '';
+                type();
+            }, 3000);
         }
     }
 
-    setTimeout(typeCommand, 1500);
+    type();
+}
 
-    // 3. LOGO SCROLL CLONING
-    const logosGrid = document.querySelector('.logos-grid');
-    if (logosGrid) {
-        const clone = logosGrid.cloneNode(true);
-        logosGrid.parentElement.appendChild(clone);
+/**
+ * Star Field Animation
+ */
+function initStars() {
+    const starField = document.getElementById('star-field');
+    if (!starField) return;
+
+    for (let i = 0; i < 150; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        const size = Math.random() * 2 + 1;
+        const delay = Math.random() * 5;
+
+        star.style.cssText = `
+            position: absolute;
+            left: ${x}%;
+            top: ${y}%;
+            width: ${size}px;
+            height: ${size}px;
+            background: white;
+            border-radius: 50%;
+            opacity: ${Math.random()};
+            animation: twinkle 3s infinite ${delay}s;
+        `;
+        starField.appendChild(star);
     }
+}
 
-    // 4. MOUSE FLOW GLOW
-    const cards = document.querySelectorAll('.bento-card, .pricing-card, .cta-box');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            card.style.setProperty('--glow-x', `${x}px`);
-            card.style.setProperty('--glow-y', `${y}px`);
-        });
-    });
-});
+// Global CSS Injection for Star Twinkling
+const style = document.createElement('style');
+style.innerHTML = `
+    @keyframes twinkle {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.2); }
+    }
+`;
+document.head.appendChild(style);
