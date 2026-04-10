@@ -29,7 +29,7 @@
    ═══════════════════════════════════════════════ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; background-color: var(--bg); overflow-x: hidden; }
-section, footer { scroll-margin-top: 80px; }
+section, footer { scroll-margin-top: 100px; }
 body { font-family: var(--font-main); background-color: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 .container-narrow { max-width: 900px; }
@@ -170,7 +170,6 @@ ul { list-style: none; }
 .p-tag.popular { color: var(--accent); }
 .pricing-card h3 { font-family: var(--font-display); font-size: 24px; margin-bottom: 24px; font-weight: 800; }
 .p-price { font-family: var(--font-display); font-size: 64px; font-weight: 900; letter-spacing: -2px; margin-bottom: 8px; }
-.p-price span { font-size: 16px; font-weight: 400; color: var(--text-muted); letter-spacing: 0; }
 .p-price span { font-size: 16px; font-weight: 400; color: var(--text-muted); letter-spacing: 0; }
 .p-desc { color: var(--text-muted); margin-bottom: 32px; }
 .p-features { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; border-top: 1px solid var(--border); padding-top: 32px; }
