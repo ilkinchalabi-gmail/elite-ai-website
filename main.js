@@ -1,108 +1,63 @@
 /* ═══════════════════════════════════════════════
-   ELITE AI — CORE JAVASCRIPT & ANIMATIONS
+   ELITE AI — CORE ENGINE (v2.0)
    ═══════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initTypingEffect();
+    initTyping();
     initStars();
 });
 
-/**
- * Animated Typing Console Effect
- */
-function initTypingEffect() {
-    const consoleElement = document.getElementById('typing-console');
-    if (!consoleElement) return;
+function initTyping() {
+    const el = document.getElementById('typing-console');
+    if (!el) return;
 
-    const codeLines = [
-        "import elite_core from '@elite-ai/kernel';",
-        "const agent = new elite_core.AutonomousAgent({",
-        "  founder: 'Ilkin Chalabi',",
-        "  sector: 'Hospitality & Real Estate',",
-        "  mode: 'PREMIUM_AUTONOMOUS',",
-        "  neural_latency: '12ms'",
-        "});",
+    const lines = [
+        "import { AutonomousAgent } from '@elite/core';",
+        "const founder = 'Ilkin Chalabi';",
         "",
         "> Initializing industry bridges...",
-        "> Handshake with Booking.com... [SUCCESS]",
-        "> Indexing PropertyFinder CRM... [DONE]",
-        "> Deploying Neural Bridge: WA <=> Instagram",
+        "> Handshake with Booking.com... [OK]",
+        "> Syncing Real Estate CRM... [DONE]",
+        "> Neural Link: WA <=> Instagram ACTIVE",
         "",
-        "DEBUG: Attached to instance 0x7FFDDB8A9C",
-        "SYSTEM_STATE: ACTIVE (99.8% Efficiency)",
-        "LOG: Agent successfully engaged with 128 hospitality leads.",
-        "> Orchestrating revenue systems..."
+        "DEBUG: 0x7FFDDB8A9C connected",
+        "SYSTEM: Processing 128 global leads",
+        "STATUS: 99.8% Efficiency reached",
+        "",
+        "> Deploying revenue systems..."
     ];
 
-    let lineIndex = 0;
-    let charIndex = 0;
-    let currentText = '';
+    let line = 0, char = 0, text = '';
 
     function type() {
-        if (lineIndex < codeLines.length) {
-            const currentLine = codeLines[lineIndex];
-            
-            if (charIndex < currentLine.length) {
-                currentText += currentLine.charAt(charIndex);
-                consoleElement.textContent = currentText + '_';
-                charIndex++;
+        if (line < lines.length) {
+            if (char < lines[line].length) {
+                text += lines[line][char++];
+                el.textContent = text + '_';
                 setTimeout(type, 30);
             } else {
-                currentText += '\n';
-                lineIndex++;
-                charIndex = 0;
+                text += '\n';
+                line++;
+                char = 0;
                 setTimeout(type, 500);
             }
         } else {
-            // Restart after delay to keep it moving
-            setTimeout(() => {
-                lineIndex = 0;
-                charIndex = 0;
-                currentText = '';
-                type();
-            }, 3000);
+            setTimeout(() => { line = 0; char = 0; text = ''; type(); }, 3000);
         }
     }
-
     type();
 }
 
-/**
- * Star Field Animation
- */
 function initStars() {
-    const starField = document.getElementById('star-field');
-    if (!starField) return;
-
-    for (let i = 0; i < 150; i++) {
+    const field = document.getElementById('star-field');
+    if (!field) return;
+    for (let i = 0; i < 100; i++) {
         const star = document.createElement('div');
-        star.className = 'star';
-        const x = Math.random() * 100;
-        const y = Math.random() * 100;
-        const size = Math.random() * 2 + 1;
-        const delay = Math.random() * 5;
-
-        star.style.cssText = `
-            position: absolute;
-            left: ${x}%;
-            top: ${y}%;
-            width: ${size}px;
-            height: ${size}px;
-            background: white;
-            border-radius: 50%;
-            opacity: ${Math.random()};
-            animation: twinkle 3s infinite ${delay}s;
-        `;
-        starField.appendChild(star);
+        star.style.cssText = `position:absolute;left:${Math.random()*100}%;top:${Math.random()*100}%;width:2px;height:2px;background:#fff;border-radius:50%;opacity:${Math.random()};animation:twinkle 3s infinite ${Math.random()*5}s`;
+        field.appendChild(star);
     }
 }
 
-// Global CSS Injection for Star Twinkling
-const style = document.createElement('style');
-style.innerHTML = `
-    @keyframes twinkle {
-        0%, 100% { opacity: 0.3; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.2); }
-    }
-`;
-document.head.appendChild(style);
+const s = document.createElement('style');
+s.innerHTML = `@keyframes twinkle { 0%,100%{opacity:0.3} 50%{opacity:1} }`;
+document.head.appendChild(s);
