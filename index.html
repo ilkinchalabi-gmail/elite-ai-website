@@ -7,14 +7,14 @@
     <title>Elite AI | Intelligent Autonomous Automation</title>
     <meta name="description"
         content="Elite AI builds autonomous automation agents that scale with your business. Premium AI solutions by Ilkin Chalabi.">
-    <!-- Cache Buster Timestamp: 2026-04-10-21:21 -->
+    <!-- Cache Buster Timestamp: 2026-04-10-21:26 -->
     <!-- Google Fonts: Inter & Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./style.css?v=3">
+    <link rel="stylesheet" href="./style.css?v=4">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -43,8 +43,8 @@
                     <span>ELITE AI</span>
                 </a>
                 <div class="nav-menu">
-                    <!-- New Anchor Targets to Force Refresh -->
-                    <a href="#target-about">About</a>
+                    <!-- Target Final - Pointing directly to the Founder section -->
+                    <a href="#target-final-about">About</a>
                     <a href="#target-products">Products</a>
                     <a href="#target-contact">Contact</a>
                 </div>
@@ -242,7 +242,7 @@ agent.sync(); </code></pre>
         </section>
 
 
-        <!-- SECTION 6: PRICING (Target for Products precisely at the grid start) -->
+        <!-- SECTION 6: PRICING -->
         <section class="pricing-page-section">
             <div class="container">
                 <div class="section-header text-center">
@@ -356,10 +356,10 @@ agent.sync(); </code></pre>
             </div>
         </section>
 
-        <!-- SECTION 8: FINAL CTA / FOUNDER (Target for About) -->
-        <section id="target-about" class="cta-section">
+        <!-- SECTION 8: FINAL CTA / FOUNDER -->
+        <section class="cta-section">
             <div class="container container-narrow">
-                <div class="cta-box">
+                <div id="target-final-about" class="cta-box">
                     <div class="hero-glow"></div>
                     <h2>Ready to <i>Outpace</i><br>the Competition?</h2>
                     <p>Founded by <b>Ilkin Chalabi</b>, Elite AI is the cohort of innovators deploying autonomous revenue systems. 
@@ -373,14 +373,14 @@ agent.sync(); </code></pre>
         </section>
     </main>
 
-    <!-- SECTION 9: FOOTER / CONTACT (Target for Contact) -->
+    <!-- SECTION 9: FOOTER / CONTACT -->
     <footer id="target-contact" class="footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-links-grid">
                     <div class="footer-col">
                         <h4>About</h4>
-                        <a href="#target-about">About</a>
+                        <a href="#target-final-about">About</a>
                     </div>
                     <div class="footer-col">
                         <h4>Products</h4>
@@ -436,6 +436,8 @@ agent.sync(); </code></pre>
                     <span class="status-dot"></span> System Online
                 </div>
             </div>
+            <!-- Added spacer so the last section can scroll to the top -->
+            <div style="height: 40vh;"></div>
         </div>
     </footer>
 
