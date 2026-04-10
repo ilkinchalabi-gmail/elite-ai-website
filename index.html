@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./style.css?v=45">
+    <link rel="stylesheet" href="./style.css?v=46">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -27,28 +27,35 @@
     <nav class="navbar">
         <div class="container nav-container">
             <div class="nav-left">
-                <a href="#" class="logo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="6" height="6" rx="1.5" fill="currentColor" />
-                        <rect x="9" y="2" width="6" height="6" rx="1.5" fill="currentColor" />
-                        <rect x="16" y="2" width="6" height="6" rx="1.5" fill="currentColor" />
-                        <rect x="2" y="9" width="6" height="6" rx="1.5" fill="currentColor" />
-                        <rect x="9" y="9" width="6" height="6" rx="1.5" fill="white" />
-                        <rect x="16" y="9" width="6" height="6" rx="1.5" fill="currentColor" />
-                        <rect x="2" y="16" width="6" height="6" rx="1.5" fill="currentColor" />
-                        <rect x="9" y="16" width="6" height="6" rx="1.5" fill="currentColor" />
-                        <rect x="16" y="16" width="6" height="6" rx="1.5" fill="currentColor" />
+                <a href="#" class="logo led-text">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="url(#led-grad)" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="led-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#7c3aed" />
+                                <stop offset="50%" style="stop-color:#ec4899" />
+                                <stop offset="100%" style="stop-color:#3b82f6" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="2" y="2" width="6" height="6" rx="1.5" />
+                        <rect x="9" y="2" width="6" height="6" rx="1.5" />
+                        <rect x="16" y="2" width="6" height="6" rx="1.5" />
+                        <rect x="2" y="9" width="6" height="6" rx="1.5" />
+                        <rect x="9" y="9" width="6" height="6" rx="1.5" />
+                        <rect x="16" y="9" width="6" height="6" rx="1.5" />
+                        <rect x="2" y="16" width="6" height="6" rx="1.5" />
+                        <rect x="9" y="16" width="6" height="6" rx="1.5" />
+                        <rect x="16" y="16" width="6" height="6" rx="1.5" />
                     </svg>
                     <span>ELITE AI</span>
                 </a>
                 <div class="nav-menu">
-                    <a href="#about">About</a>
-                    <a href="#pricing-target">Products</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#about" class="led-text">About</a>
+                    <a href="#pricing-target" class="led-text">Products</a>
+                    <a href="#contact" class="led-text">Contact</a>
                 </div>
             </div>
             <div class="nav-right">
-                <a href="https://wa.me/971582339884?text=Hi%20I%20am%20interested%20in%20your%20AI%20services.%20Can%20you%20share%20details%20and%20pricing%3F" target="_blank" class="btn btn-nav">Get Started</a>
+                <a href="https://wa.me/971582339884" target="_blank" class="btn btn-nav led-btn">Get Started</a>
             </div>
         </div>
     </nav>
@@ -93,31 +100,29 @@
 from elite_core import AutonomousAgent
 from transformers import AutoModelForCausalLM
 
-DEBUG: Attached to [0x7FFDDB8A9C]
+DEBUG: Attached to [0x7FFDDB8A9C] within the UAE Data Center cluster.
 class AutonomousAgent(nn.Module):
     def __init__(self, business_id='CHALABI_77'):
         super().__init__()
         self.neural_bridge = ec.Bridge(protocol='TLS_1.3')
         self.latent_space = nn.Linear(4096, 128)
 
-> Connecting to MetaCloud... latency: 12ms
-> Patching NeuralWeights to 0xBC11A..0xFF23
+> Connecting to MetaCloud... latency: 12ms. Handshake protocol active.
+> Patching NeuralWeights to 0xBC11A..0xFF23. [SUCCESSFULLY COMPLETED]
 async function deployNode(target) {
-    const response = await fetch(`${target}/api/v2/handshake`);
-    const buffer = await response.arrayBuffer();
-    return new NativeAgent(buffer, { mode: 'aggressive' });
+    const res = await fetch(`${target}/handshake`);
+    return new NativeAgent(res, { mode: 'fast', sync: true });
 }
 
-> Initializing Industry Shards: [Hospitality, RealEstate, Retail]
-> [THREAD 0] Syncing with Booking.com/Airbnb API hooks...
-> [THREAD 1] Injecting LeadScraper into PropertyFinder DOM...
-> Building Cross-Channel Bridge: WhatsApp <=> CRM v4.2
-REGEX: /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi
-
-> OPTIMIZING CORE FLOPs... 98% Efficiency reached.
-> SYSTEM_STATE: AUTONOMOUS_ACTIVE
-> Root: /home/ilkin/elite-ai/agents/deploy.sh --silent
-Waiting for input...</div>
+> Initializing Industry Shards: [Hospitality, RealEstate, Retail]...
+> [THREAD 0] Syncing with Booking.com/Airbnb API hooks... [STABLE]
+> [THREAD 1] Injecting LeadScraper into PropertyFinder DOM... [OK]
+> Building Cross-Channel Bridge: WhatsApp <=> Instagram <=> CRM v4.2
+REGEX: /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+)/gi [GLOBAL]
+---------------------------------------------------------------------------
+> OPTIMIZING CORE FLOPs... 98.4% Efficiency reached. ACTIVE_STALL_FREE
+> Root: /home/ilkin/elite-ai/agents/deploy.sh --silent --force-neural
+Elite AI System Ready. Monitoring 1,024 Autonomous Streams per second...</div>
                             <div class="console-footer">
                                 <span class="badge">n8n Engine</span>
                                 <span class="badge">Make Cloud</span>
@@ -125,32 +130,6 @@ Waiting for input...</div>
                                 <span class="badge">OpenAI GPT-4o</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 2: LOGOS (Cleaned Marquee) -->
-        <section class="logos-section">
-            <div class="container">
-                <p class="logos-label">Seamlessly Integrated With</p>
-                <div class="logos-scroll-wrapper">
-                    <div class="logos-grid">
-                        <span class="logo-item">Meta</span>
-                        <span class="logo-item">OpenAI</span>
-                        <span class="logo-item">Stripe</span>
-                        <span class="logo-item">PayPal</span>
-                        <span class="logo-item">Payoneer</span>
-                        <span class="logo-item">Instagram</span>
-                        <span class="logo-item">TikTok</span>
-                        <span class="logo-item">Facebook</span>
-                        <span class="logo-item">LinkedIn</span>
-                        <span class="logo-item">YouTube</span>
-                        <span class="logo-item">WhatsApp</span>
-                        <span class="logo-item">Telegram</span>
-                        <span class="logo-item">Booking.com</span>
-                        <span class="logo-item">Airbnb</span>
-                        <span class="logo-item">Property Finder</span>
                     </div>
                 </div>
             </div>
@@ -257,16 +236,17 @@ agent.sync(); </code></pre>
                             <h3>AI Hotel Reservation System</h3>
                             <div class="p-price">$1 <small>—</small> $2</div>
                         </div>
-                        <p class="p-desc">Per-room pricing based on channel orchestration.</p>
+                        <p class="p-desc">Tiered per-room pricing based on channel orchestration.</p>
                         <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary">Order</a>
                         <ul class="p-features">
                             <li>$1 / Room (WhatsApp)</li>
                             <li>$2 / Room (WA + Instagram)</li>
+                            <li>Autonomous Neural Agent</li>
                         </ul>
                     </div>
 
                     <!-- Service 2: CRM -->
-                    <div class="pricing-card featured">
+                    <div class="pricing-card">
                         <div class="card-glow"></div>
                         <div class="p-header">
                             <span class="p-tag">REAL ESTATE FIXED</span>
@@ -371,14 +351,14 @@ agent.sync(); </code></pre>
             <div class="footer-top">
                 <div class="footer-links-grid">
                     <div class="footer-col">
-                        <a href="#about">About</a>
-                        <a href="#pricing-target">Products</a>
-                        <a href="#contact">Contact</a>
+                        <a href="#about" class="led-text">About</a>
+                        <a href="#pricing-target" class="led-text">Products</a>
+                        <a href="#contact" class="led-text">Contact</a>
                     </div>
                     <div class="footer-col social-full-width">
                         <h4>Connect with ilkin chalabi</h4>
                         <div class="social-horizontal-bar">
-                            <a href="https://wa.me/971582339884?text=Hi%20I%20am%20interested%20in%20your%20AI%20services.%20Can%20you%20share%20details%20and%20pricing%3F"
+                            <a href="https://wa.me/971582339884"
                                 target="_blank" class="social-item"><img
                                     src="https://cdn.simpleicons.org/whatsapp/25D366" width="18" height="18" alt="">
                                 WhatsApp</a>
@@ -403,7 +383,7 @@ agent.sync(); </code></pre>
                                 </svg>
                                 LinkedIn
                             </a>
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=founder@elite-ai.vip&su=AI%20Service%20Inquiry&body=Hi%20I%20am%20interested%20in%20your%20AI%20services.%20Please%20share%20details."
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=founder@elite-ai.vip"
                                 target="_blank" class="social-item"><img
                                     src="https://cdn.simpleicons.org/maildotru/FFFFFF" width="18" height="18" alt="">
                                 E-mail</a>
