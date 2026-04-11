@@ -139,6 +139,7 @@ body {
   .pricing-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
+  html { scroll-behavior: auto !important; } /* Fix for mobile scrolling loops */
   .nav-menu { display: none; }
   .bento-grid, .pricing-grid { grid-template-columns: 1fr !important; }
   .card-wide, .card-large { grid-column: auto !important; }
@@ -149,4 +150,5 @@ body {
       min-height: 600px;
       font-size: 11px;
   }
+  .terminal-col { min-height: 500px !important; } /* Stabilize column height */
 }
