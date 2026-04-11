@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./premium.css?v=390">
+    <link rel="stylesheet" href="./premium.css?v=400">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -88,6 +88,26 @@
 
         @media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr 1fr !important; } }
         @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr !important; } }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            opacity: 0.8;
+        }
+        .footer-links a:hover { color: #a855f7; text-shadow: 0 0 10px #a855f7; opacity: 1; }
     </style>
 </head>
 
@@ -124,7 +144,7 @@
                     <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V39_FINAL_STABILIZATION</span>
+                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V40_FOOTER_NAVIGATION</span>
                         </div>
                         <div id="cyber-terminal">
                             <div id="col-L" class="terminal-col"></div>
@@ -226,9 +246,9 @@
                         <div class="p-price-display">20% of product</div>
                         <ul class="pricing-features">
                             <li><i data-lucide="check-circle-2"></i> 1000 product: 200$</li>
-                            <li><i data-lucide="check-circle-2"></i> 5000 product: 1000$</li>
-                            <li><i data-lucide="check-circle-2"></i> 10.000 product: 2000$</li>
-                            <li><i data-lucide="check-circle-2"></i> 20.000 product: 4000$</li>
+                            <li><i data-lucide=\"check-circle-2\"></i> 5000 product: 1000$</li>
+                            <li><i data-lucide=\"check-circle-2\"></i> 10.000 product: 2000$</li>
+                            <li><i data-lucide=\"check-circle-2\"></i> 20.000 product: 4000$</li>
                         </ul>
                     </div>
                     <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary btn-order" style="width: 100%;">Order Now</a>
@@ -262,6 +282,11 @@
     <footer id="contact" class="footer">
         <div class="container">
             <p class="led-text" style="font-weight: 800; font-size: 14px; letter-spacing: 4px; margin-bottom: 20px;">Founded by Ilkin Chalabi</p>
+            <div class="footer-links">
+                <a href="#top">About</a>
+                <a href="#pricing-target">Products</a>
+                <a href="#contact">Contact</a>
+            </div>
             <div class="social-horizontal-bar">
                 <a href="https://wa.me/971582339884" target="_blank" class="social-item whatsapp"><img src="https://cdn.simpleicons.org/whatsapp/25D366" width="20" height="20" alt=""> WhatsApp</a>
                 <a href="https://t.me/Ilkin_Chalabi" target="_blank" class="social-item telegram"><img src="https://cdn.simpleicons.org/telegram/26A8E1" width="20" height="20" alt=""> Telegram</a>
@@ -280,7 +305,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V39_FINAL_STABILIZATION",
+            "// KERNEL_OVERRIDE_V40_FOOTER_NAVIGATION",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
