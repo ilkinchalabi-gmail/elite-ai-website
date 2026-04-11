@@ -11,36 +11,37 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap"
         rel="stylesheet">
-    <!-- FORCE REFRESH v50 -->
-    <link rel="stylesheet" href="./premium.css?v=50">
+    <!-- CACHE BUMP v60 -->
+    <link rel="stylesheet" href="./premium.css?v=60">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body>
+<body id="top"> <!-- ADDED TOP ID FOR ULTIMATE ANCHOR -->
 
     <div id="star-field"></div>
 
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo led-text">ELITE AI</a>
+            <a href="#top" class="logo led-text">ELITE AI</a>
             <div class="nav-menu">
-                <a href="#about-anchor" class="led-text">About</a>
+                <!-- REDIRECTED TO ABSOLUTE TOP -->
+                <a href="#top" class="led-text">About</a>
                 <a href="#pricing-target" class="led-text">Products</a>
                 <a href="#contact" class="led-text">Contact</a>
             </div>
-            <!-- Unified Button -->
+            <!-- Unified Primary Button -->
             <a href="https://wa.me/971582339884" target="_blank" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Get Started</a>
         </div>
     </nav>
 
     <main>
-        <!-- HERO SECTION - Anchor moved to the very top parent -->
-        <section class="hero" id="about-anchor">
+        <!-- HERO SECTION -->
+        <section class="hero">
             <div class="container">
                 <h1 class="hero-title led-text" style="padding-top: 50px;">Transform Your Business with <br>Autonomous AI Agents</h1>
                 <p class="hero-subtitle">Automate your operations with intelligent agents that think and execute 24/7. Engineered for limitless excellence.</p>
                 
-                <!-- FOUNDER TEXT (Exactly where requested in screenshot) -->
+                <!-- FOUNDER TEXT -->
                 <div style="padding: 20px 0; text-align: center;">
                     <p class="led-text" style="font-weight: 800; font-size: 14px; letter-spacing: 4px; text-transform: uppercase;">Founded by Ilkin Chalabi</p>
                 </div>
@@ -173,7 +174,7 @@ n8n Engine | Make Cloud | Claude 3.5 Sonnet | OpenAI GPT-4o</div>
             </div>
 
             <div style="margin: 40px auto; display: flex; justify-content: center; gap: 30px;">
-                <a href="#about-anchor" class="led-text" style="text-decoration: none; font-weight: 700;">About</a>
+                <a href="#top" class="led-text" style="text-decoration: none; font-weight: 700;">About</a>
                 <a href="#pricing-target" class="led-text" style="text-decoration: none; font-weight: 700;">Products</a>
                 <a href="#contact" class="led-text" style="text-decoration: none; font-weight: 700;">Contact</a>
             </div>
