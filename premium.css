@@ -154,8 +154,8 @@ body {
   .hero-title { font-size: 34px; padding-top: 20px !important; }
   #cyber-terminal { 
       grid-template-columns: 1fr !important; 
-      min-height: 550px;
-      font-size: 11px;
+      min-height: 580px !important;
+      font-size: 13px !important;
   }
   section[id] { scroll-margin-top: 100px; }
 }
