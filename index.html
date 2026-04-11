@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <!-- CACHE BUMP v320 -->
-    <link rel="stylesheet" href="./premium.css?v=320">
+    <!-- CACHE BUMP v330 -->
+    <link rel="stylesheet" href="./premium.css?v=330">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -32,7 +32,7 @@
         .terminal-col { overflow: hidden; white-space: pre-wrap; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
-        /* Pricing - Ultra Nano Compact V32 */
+        /* Pricing - Ultra Nano Compact V33 with Bolder Tags */
         .pricing-grid {
             display: grid !important; grid-template-columns: repeat(3, 1fr) !important;
             gap: 12px !important; margin-top: 30px;
@@ -42,7 +42,13 @@
             display: flex; flex-direction: column; justify-content: space-between;
         }
         .card-title-group { text-align: center; margin-bottom: 8px; }
-        .p-tag { display: block; font-size: 9px !important; letter-spacing: 2px !important; color: #a855f7; margin-bottom: 3px; text-transform: uppercase; font-weight: 800; }
+        
+        /* Bolder and Larger Category Tags */
+        .p-tag { 
+            display: block; font-size: 13px !important; letter-spacing: 2.5px !important; 
+            color: #a855f7; margin-bottom: 4px; text-transform: uppercase; font-weight: 900; 
+            font-family: 'Outfit', sans-serif;
+        }
         
         .p-name { 
             display: block; font-size: 16px !important; font-weight: 900; 
@@ -107,7 +113,7 @@
                     <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V32_EXTENDED_PRICE</span>
+                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V33_BOLD_TAGS</span>
                         </div>
                         <div id="cyber-terminal">
                             <div id="col-L" class="terminal-col"></div>
@@ -131,7 +137,7 @@
             </div>
         </section>
 
-        <!-- PRICING - EXTENDED PRICE V32 -->
+        <!-- PRICING - BOLD TAGS V33 -->
         <section id="pricing-target" class="container" style="padding: 40px 0;">
             <div style="text-align: center; margin-bottom: 30px;">
                 <h2 class="led-text" style="font-size: 40px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
@@ -259,7 +265,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V32_EXTENDED_PRICE",
+            "// KERNEL_OVERRIDE_V33_BOLD_TAGS",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
