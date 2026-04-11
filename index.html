@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./premium.css?v=30">
+    <!-- FORCE REFRESH v50 -->
+    <link rel="stylesheet" href="./premium.css?v=50">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -27,20 +28,20 @@
                 <a href="#pricing-target" class="led-text">Products</a>
                 <a href="#contact" class="led-text">Contact</a>
             </div>
-            <!-- FIXED: Changed to btn-primary to match other buttons -->
+            <!-- Unified Button -->
             <a href="https://wa.me/971582339884" target="_blank" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Get Started</a>
         </div>
     </nav>
 
     <main>
-        <!-- HERO SECTION -->
-        <section class="hero">
+        <!-- HERO SECTION - Anchor moved to the very top parent -->
+        <section class="hero" id="about-anchor">
             <div class="container">
-                <h1 class="hero-title led-text">Transform Your Business with <br>Autonomous AI Agents</h1>
+                <h1 class="hero-title led-text" style="padding-top: 50px;">Transform Your Business with <br>Autonomous AI Agents</h1>
                 <p class="hero-subtitle">Automate your operations with intelligent agents that think and execute 24/7. Engineered for limitless excellence.</p>
                 
-                <!-- FOUNDER TEXT -->
-                <div id="about-anchor" style="padding: 30px 0; scroll-margin-top: 150px; text-align: center;">
+                <!-- FOUNDER TEXT (Exactly where requested in screenshot) -->
+                <div style="padding: 20px 0; text-align: center;">
                     <p class="led-text" style="font-weight: 800; font-size: 14px; letter-spacing: 4px; text-transform: uppercase;">Founded by Ilkin Chalabi</p>
                 </div>
 
@@ -80,7 +81,7 @@ n8n Engine | Make Cloud | Claude 3.5 Sonnet | OpenAI GPT-4o</div>
                 <p style="color: #888; margin-top: 15px;">Intelligence meets execution. Scale with autonomous precision.</p>
             </div>
 
-            <div class="bento-grid">
+            <div class="bento-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
                 <div class="bento-card card-large">
                     <h3>Autonomous Agent Orchestration</h3>
                     <p>We build thinking agents that orchestrate your Hospitality, Real Estate, and Drone services from a single command center.</p>
@@ -89,7 +90,7 @@ n8n Engine | Make Cloud | Claude 3.5 Sonnet | OpenAI GPT-4o</div>
                     <h3>Global Reach</h3>
                     <p>Engage guests from anywhere in the world in their native language personally.</p>
                 </div>
-                <div class="bento-card card-wide">
+                <div class="bento-card card-wide" style="grid-column: span 2;">
                     <h3>Full Ownership</h3>
                     <p>You own 100% of your automation logic. Export your systems as production-ready code anytime.</p>
                 </div>
@@ -109,58 +110,40 @@ n8n Engine | Make Cloud | Claude 3.5 Sonnet | OpenAI GPT-4o</div>
 
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <div>
-                        <span class="p-tag led-text">HOSPITALITY</span>
-                        <h3 class="led-text" style="font-size: 18px;">AI Hotel Reservation System</h3>
-                        <div class="p-price">$1 — $2</div>
-                        <p style="color: #888; font-size: 15px;">Tiered per-room pricing based on channel orchestration.</p>
-                    </div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 40px; width: 100%;">Order</a>
+                    <span class="p-tag led-text">HOSPITALITY</span>
+                    <h3 class="led-text">AI Hotel Reservation System</h3>
+                    <div class="p-price">$1 — $2</div>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
                 </div>
                 <div class="pricing-card">
-                    <div>
-                        <span class="p-tag led-text">REAL ESTATE</span>
-                        <h3 class="led-text" style="font-size: 18px;">AI CRM for Real Estate</h3>
-                        <div class="p-price">$499</div>
-                        <p style="color: #888; font-size: 15px;">Market-Leading Lead Management setup.</p>
-                    </div>
-                    <a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary" style="margin-top: 40px; width: 100%;">Order</a>
+                    <span class="p-tag led-text">REAL ESTATE</span>
+                    <h3 class="led-text">AI CRM for Real Estate</h3>
+                    <div class="p-price">$499</div>
+                    <a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
                 </div>
                 <div class="pricing-card">
-                    <div>
-                        <span class="p-tag led-text">FUNNEL</span>
-                        <h3 class="led-text" style="font-size: 18px;">AI Sales Funnel Automation</h3>
-                        <div class="p-price">$999</div>
-                        <p style="color: #888; font-size: 15px;">Full Stack Revenue Engine Management.</p>
-                    </div>
-                    <a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary" style="margin-top: 40px; width: 100%;">Order</a>
+                    <span class="p-tag led-text">FUNNEL</span>
+                    <h3 class="led-text">AI Sales Funnel Automation</h3>
+                    <div class="p-price">$999</div>
+                    <a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
                 </div>
                 <div class="pricing-card">
-                    <div>
-                        <span class="p-tag led-text">LEAD GENERATION</span>
-                        <h3 class="led-text" style="font-size: 18px;">AI Lead Outreach Automation</h3>
-                        <div class="p-price">$1 — $5</div>
-                        <p style="color: #888; font-size: 15px;">Surgical outreach per target volume.</p>
-                    </div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 40px; width: 100%;">Order</a>
+                    <span class="p-tag led-text">LEAD GENERATION</span>
+                    <h3 class="led-text">AI Lead Outreach Automation</h3>
+                    <div class="p-price">$1 — $5</div>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
                 </div>
                 <div class="pricing-card">
-                    <div>
-                        <span class="p-tag led-text">STOCK</span>
-                        <h3 class="led-text" style="font-size: 18px;">AI Powered Stock Automation</h3>
-                        <div class="p-price">20%</div>
-                        <p style="color: #888; font-size: 15px;">Supply chain mastery fee.</p>
-                    </div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 40px; width: 100%;">Order</a>
+                    <span class="p-tag led-text">STOCK</span>
+                    <h3 class="led-text">AI Powered Stock Automation</h3>
+                    <div class="p-price">20%</div>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
                 </div>
                 <div class="pricing-card">
-                    <div>
-                        <span class="p-tag led-text">DRONE</span>
-                        <h3 class="led-text" style="font-size: 18px;">AI Premium Drone Showcase</h3>
-                        <div class="p-price">$49</div>
-                        <p style="color: #888; font-size: 15px;">Luxury Real Estate AI Drone Video.</p>
-                    </div>
-                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary" style="margin-top: 40px; width: 100%;">Order</a>
+                    <span class="p-tag led-text">DRONE</span>
+                    <h3 class="led-text">AI Premium Drone Showcase</h3>
+                    <div class="p-price">$49</div>
+                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
                 </div>
             </div>
         </section>
