@@ -9,19 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <!-- CACHE BUMP v111 -->
-    <link rel="stylesheet" href="./premium.css?v=111">
+    <!-- CACHE BUMP v123 -->
+    <link rel="stylesheet" href="./premium.css?v=123">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
         .terminal-header {
-            background: #0d0d0d;
-            padding: 15px 25px;
-            border-radius: 12px 12px 0 0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border-bottom: 3px solid #1a1a1a;
+            background: #0d0d0d; padding: 15px 25px; border-radius: 12px 12px 0 0;
+            display: flex; align-items: center; gap: 15px; border-bottom: 3px solid #1a1a1a;
         }
         .t-dot { width: 14px; height: 14px; border-radius: 50%; }
         .t-red { background: #ff5f56; box-shadow: 0 0 15px #ff5f56; }
@@ -29,28 +24,12 @@
         .t-green { background: #27c93f; box-shadow: 0 0 20px #27c93f; animation: pulse 1s infinite; }
 
         #cyber-terminal {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Strong 2-Column */
-            gap: 40px; /* Space between columns but filled with text */
-            padding: 30px;
-            font-family: 'Fira Code', monospace;
-            font-size: 14px; /* Larger font size as requested */
-            line-height: 1.5;
-            color: #d8b4fe;
-            background: #000;
-            min-height: 550px;
-            border-radius: 0 0 12px 12px;
-            border: 2px solid rgba(168, 85, 247, 0.3);
-            overflow: hidden;
-            letter-spacing: 0.5px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 30px;
+            font-family: 'Fira Code', monospace; font-size: 14px; line-height: 1.5; color: #d8b4fe;
+            background: #000; min-height: 550px; border-radius: 0 0 12px 12px;
+            border: 2px solid rgba(168, 85, 247, 0.3); overflow: hidden; letter-spacing: 0.5px;
         }
-
-        .terminal-col {
-            overflow: hidden;
-            white-space: pre-wrap;
-            border-right: 1px solid rgba(168, 85, 247, 0.1);
-        }
-
+        .terminal-col { overflow: hidden; white-space: pre-wrap; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
     </style>
 </head>
@@ -72,28 +51,22 @@
     </nav>
 
     <main>
-        <!-- HERO SECTION -->
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title led-text" style="padding-top: 50px;">Transform Your Business with <br>Autonomous AI Agents</h1>
-                <p class="hero-subtitle">Automate your operations with intelligent agents that think and execute 24/7. Engineered for limitless excellence.</p>
-                
+                <p class="hero-subtitle">Automate your operations with intelligent agents that think and execute 24/7.</p>
                 <div style="padding: 20px 0; text-align: center;">
                     <p class="led-text" style="font-weight: 800; font-size: 14px; letter-spacing: 4px; text-transform: uppercase;">Founded by Ilkin Chalabi</p>
                 </div>
-
                 <div class="hero-buttons">
                     <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary shine-effect">Launch Your AI Agent</a>
                     <a href="tel:+971582339884" class="btn btn-secondary">Book a Strategy Call</a>
                 </div>
-
-                <!-- MASSIVE DUAL CYBER TERMINAL -->
+                <!-- TERMINAL HUB -->
                 <div class="hero-console-wrapper" style="margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto;">
                     <div class="hero-console">
                         <div class="terminal-header">
-                            <div class="t-dot t-red"></div>
-                            <div class="t-dot t-yellow"></div>
-                            <div class="t-dot t-green"></div>
+                            <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
                             <span style="color: #666; font-size: 12px; font-family: 'Fira Code'; margin-left: 15px;">root@elite-ai:~/CHALABI_INFRA_OVERRIDE_ACTIVE</span>
                         </div>
                         <div id="cyber-terminal">
@@ -105,19 +78,33 @@
             </div>
         </section>
 
-        <!-- (Other sections remain same) -->
+        <!-- BENTO FEATURES - FIXED SYMMETRY -->
         <section class="container" style="padding: 100px 0;">
             <div style="text-align: center; margin-bottom: 60px;">
                 <h2 class="led-text" style="font-size: 48px; font-family: 'Outfit'; font-weight: 900;">Engineered for Limitless<br>Operational Excellence</h2>
             </div>
-            <div class="bento-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-                <div class="bento-card card-large"><h3>Autonomous Agent Orchestration</h3><p>We build thinking agents that orchestrate your Hospitality, Real Estate, and Drone services.</p></div>
-                <div class="bento-card"><h3>Global Reach</h3><p>Engage guests from anywhere in the world personally.</p></div>
-                <div class="bento-card card-wide" style="grid-column: span 2;"><h3>Full Ownership</h3><p>You own 100% of your automation logic.</p></div>
-                <div class="bento-card"><h3>Omnichannel</h3><p>Connect WhatsApp and CRM systems in real-time.</p></div>
+            <!-- Clean 2-column grid without spanning classes for perfect symmetry -->
+            <div class="bento-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+                <div class="bento-card">
+                    <h3>Autonomous Agent Orchestration</h3>
+                    <p>We build thinking agents that orchestrate your Hospitality, Real Estate, and Drone services from a single command center.</p>
+                </div>
+                <div class="bento-card">
+                    <h3>Global Reach</h3>
+                    <p>Engage guests from anywhere in the world in their native language personally.</p>
+                </div>
+                <div class="bento-card">
+                    <h3>Full Ownership</h3>
+                    <p>You own 100% of your automation logic. Export your systems as production-ready code anytime.</p>
+                </div>
+                <div class="bento-card">
+                    <h3>Omnichannel</h3>
+                    <p>Connect WhatsApp, Telegram, Booking.com, and CRM systems in real-time.</p>
+                </div>
             </div>
         </section>
 
+        <!-- PRICING -->
         <section id="pricing-target" class="container" style="padding: 100px 0;">
             <div style="text-align: center; margin-bottom: 70px;">
                 <h2 class="led-text" style="font-size: 52px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
@@ -147,10 +134,7 @@
                 <a href="https://wa.me/971582339884" target="_blank" class="social-item whatsapp"><img src="https://cdn.simpleicons.org/whatsapp/25D366" width="20" height="20" alt=""> WhatsApp</a>
                 <a href="https://t.me/Ilkin_Chalabi" target="_blank" class="social-item telegram"><img src="https://cdn.simpleicons.org/telegram/26A8E1" width="20" height="20" alt=""> Telegram</a>
                 <a href="https://instagram.com/ilkin_chalabi" target="_blank" class="social-item instagram"><img src="https://cdn.simpleicons.org/instagram/E4405F" width="20" height="20" alt=""> Instagram</a>
-                <a href="https://facebook.com/profile.php?id=61568958956116" target="_blank" class="social-item facebook"><img src="https://cdn.simpleicons.org/facebook/1877F2" width="20" height="20" alt=""> Facebook</a>
-                <a href="https://tiktok.com/@ilkin_chalabi" target="_blank" class="social-item tiktok"><img src="https://cdn.simpleicons.org/tiktok/FFFFFF" width="20" height="20" alt=""> TikTok</a>
                 <a href="https://linkedin.com/in/ilkin-chalabi-8798b5250" target="_blank" class="social-item linkedin"><img src="https://cdn.simpleicons.org/linkedin/0077B5" width="20" height="20" alt=""> LinkedIn</a>
-                <a href="https://linktr.ee/ilkinchalabi" target="_blank" class="social-item linktree"><img src="https://cdn.simpleicons.org/linktree/43E55E" width="20" height="20" alt=""> Linktree</a>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=founder@elite-ai.vip" target="_blank" class="social-item mail"><img src="https://cdn.simpleicons.org/maildotru/EA4335" width="20" height="20" alt=""> E-mail</a>
             </div>
             <div style="margin: 40px auto; display: flex; justify-content: center; gap: 30px;">
@@ -162,13 +146,11 @@
         </div>
     </footer>
 
-    <!-- MASSIVE INFINITE TYPING SCRIPT -->
     <script>
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
-
         const leftCode = [
-            "// KERNEL_OVERRIDE_V22_CHALABI",
+            "// KERNEL_OVERRIDE_V23_STABLE",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
@@ -190,7 +172,6 @@
             "> LATENCY_OVERRIDE: 0.0000001ms_STABLE",
             "> [CHALABI_CORE_INFRA_LOCKED_AND_READY]"
         ];
-
         const rightCode = [
             "// GLOBAL_ROUTING_SECURE_INFRA",
             "192.168.1.1 -> DB_ENT_CENTRAL_UAE_77",
@@ -215,39 +196,23 @@
             "> TOTAL_STREAM_OPS: 200_MILLION_OPS",
             "> FOUNDER_ACCESS: CHALABI_VERIFIED"
         ];
-
         function typeHub(lines, element) {
-            let lIdx = 0;
-            let cIdx = 0;
-
+            let lIdx = 0; let cIdx = 0;
             function step() {
                 if (lIdx < lines.length) {
                     if (cIdx < lines[lIdx].length) {
                         element.innerHTML += lines[lIdx][cIdx];
-                        cIdx++;
-                        setTimeout(step, 7);
+                        cIdx++; setTimeout(step, 7);
                     } else {
-                        element.innerHTML += "<br>";
-                        lIdx++;
-                        cIdx = 0;
-                        setTimeout(step, 100);
+                        element.innerHTML += "<br>"; lIdx++; cIdx = 0; setTimeout(step, 100);
                     }
                 } else {
-                    setTimeout(() => {
-                        element.innerHTML = "";
-                        lIdx = 0;
-                        cIdx = 0;
-                        typeHub(lines, element);
-                    }, 4000);
+                    setTimeout(() => { element.innerHTML = ""; lIdx = 0; cIdx = 0; typeHub(lines, element); }, 4000);
                 }
             }
             step();
         }
-
-        typeHub(leftCode, colL);
-        setTimeout(() => typeHub(rightCode, colR), 500);
+        typeHub(leftCode, colL); setTimeout(() => typeHub(rightCode, colR), 500);
     </script>
-
-    <script> lucide.createIcons(); </script>
 </body>
 </html>
