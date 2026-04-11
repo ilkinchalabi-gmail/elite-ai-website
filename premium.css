@@ -138,6 +138,7 @@ body {
   html { scroll-behavior: auto !important; }
   .navbar { height: 70px; }
   .logo { font-size: 18px; }
+  html, body { overscroll-behavior-y: none !important; }
   .nav-menu { 
       display: flex !important; 
       gap: 10px; 
