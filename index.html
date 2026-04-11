@@ -24,12 +24,12 @@
         .t-green { background: #27c93f; box-shadow: 0 0 12px #27c93f; animation: pulse 1s infinite; }
 
         #cyber-terminal {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px;
-            font-family: 'Fira Code', monospace; font-size: 13px; line-height: 1.4; color: #d8b4fe;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 25px;
+            font-family: 'Fira Code', monospace; font-size: 15px; line-height: 1.5; color: #d8b4fe;
             background: #000 !important; min-height: 580px !important; border-radius: 0 0 12px 12px;
             border: 2px solid rgba(168, 85, 247, 0.2); overflow: hidden !important;
         }
-        .terminal-col { overflow: hidden !important; white-space: pre-wrap !important; height: 100% !important; font-size: 13px !important; }      @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+        .terminal-col { overflow: hidden !important; white-space: pre-wrap !important; height: 100% !important; font-size: 15px !important; }      @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
         /* Pricing - V35 Premium Sync */
         .pricing-grid {
@@ -313,20 +313,24 @@
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
             "",
             "> INITIALIZING_RSA_4096_ENCRYPTION_SYNC...",
-            "MOD: 0xEEA1_0021_FF42_BB99_AA77_CC88",
+            "MOD: 0xEEA1_0021_FF42_BB99_AA77_CC88_77",
             "EXP: 0x10001 (PUBLIC_KEY_AUTHORIZED)",
             "",
             "class NeuralChain(nn.Hub_Substrate):",
             "  def __init__(self, cluster='DXB_NODE'):",
             "    self.tokens = os.env('SECRET_ELITE')",
             "    self.brain = Matrix_Inversion_V22(777)",
+            "    self.sync = True",
             "",
             "while elite.active_autonomous_stream:",
             "  elite.scale_global(infinite_volume=1)",
             "  deploy.to_meta_cloud(node_target='UAE')",
+            "  verify.integrity(logic_hash='CHALABI')",
             "",
             "> REVENUE_OPTIMIZATION_LEVEL: MAXIMUM",
             "> LATENCY_OVERRIDE: 0.0000001ms_STABLE",
+            "> THREAD_CONCURRENCY: 1024_CORES_ACTIVE",
+            "> MEMORY_ISOLATION: 100%_SECURE",
             "> [CHALABI_CORE_INFRA_LOCKED_AND_READY]"
         ];
         const rightCode = [
@@ -334,10 +338,12 @@
             "192.168.1.1 -> DB_ENT_CENTRAL_UAE_77",
             "10.0.0.92 -> CLOUD_ORCHESTRATOR_MAIN",
             "172.16.2.2 -> SATELLITE_UPLINK_ENCRYPT",
+            "213.42.1.2 -> REGIONAL_DATA_CENTER_DXB",
             "",
             "iptables -t nat -A PREROUTING_RULES",
             "-p tcp --dport 443 -j REDIRECT_HUB_77",
             "docker exec -it elite-ai-core-bridge",
+            "systemctl restart autonomous-agent-sync",
             "",
             "> SHA3_BITSTREAM_HASHING_VERIFIED...",
             "8f4e2c...d7a1b9_ELITE_CHALABI_001_X",
@@ -351,6 +357,8 @@
             "",
             "> SYSTEM_STATUS: FULLY_OPERATIONAL",
             "> TOTAL_STREAM_OPS: 200_MILLION_OPS",
+            "> SECURITY_LEVEL: MILITARY_GRADE",
+            "> UPTIME: 99.99999999%_STABLE",
             "> FOUNDER_ACCESS: CHALABI_VERIFIED"
         ];
         function typeHub(lines, element) {
