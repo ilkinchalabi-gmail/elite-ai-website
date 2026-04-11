@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="reader-mode" content="false">
     <title>Elite AI | Intelligent Autonomous Automation</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./premium.css?v=460">
+    <link rel="stylesheet" href="./premium.css?v=470">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -25,10 +26,10 @@
         #cyber-terminal {
             display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px;
             font-family: 'Fira Code', monospace; font-size: 13px; line-height: 1.4; color: #d8b4fe;
-            background: #000; min-height: 480px; border-radius: 0 0 12px 12px;
-            border: 2px solid rgba(168, 85, 247, 0.2); overflow: hidden;
+            background: #000 !important; min-height: 480px !important; border-radius: 0 0 12px 12px;
+            border: 2px solid rgba(168, 85, 247, 0.2); overflow: hidden !important;
         }
-        .terminal-col { overflow: hidden; white-space: pre-wrap; height: 100%; }
+        .terminal-col { overflow: hidden !important; white-space: pre-wrap !important; height: 100% !important; font-size: 11px !important; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
         /* Pricing - V35 Premium Sync */
@@ -146,11 +147,11 @@
                     <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V46_MOBILE_NAV_FIX</span>
+                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V47_STABLE</span>
                         </div>
                         <div id="cyber-terminal">
-                            <div id="col-L" class="terminal-col"></div>
-                            <div id="col-R" class="terminal-col"></div>
+                            <div id="col-L" class="terminal-col" aria-hidden="true"></div>
+                            <div id="col-R" class="terminal-col" aria-hidden="true"></div>
                         </div>
                     </div>
                 </div>
@@ -307,7 +308,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V46_MOBILE_NAV_FIX",
+            "// KERNEL_OVERRIDE_V47_STABLE",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
