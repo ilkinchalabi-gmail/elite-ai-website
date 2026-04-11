@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <!-- CACHE BUMP v123 -->
-    <link rel="stylesheet" href="./premium.css?v=123">
+    <!-- CACHE BUMP v155 -->
+    <link rel="stylesheet" href="./premium.css?v=155">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -31,6 +31,17 @@
         }
         .terminal-col { overflow: hidden; white-space: pre-wrap; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+        /* Performance Pricing 2-Column Force */
+        .pricing-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 30px !important;
+            margin-top: 60px;
+        }
+        .pricing-card {
+            min-height: 550px !important;
+        }
     </style>
 </head>
 
@@ -78,44 +89,61 @@
             </div>
         </section>
 
-        <!-- BENTO FEATURES - FIXED SYMMETRY -->
+        <!-- BENTO FEATURES -->
         <section class="container" style="padding: 100px 0;">
             <div style="text-align: center; margin-bottom: 60px;">
                 <h2 class="led-text" style="font-size: 48px; font-family: 'Outfit'; font-weight: 900;">Engineered for Limitless<br>Operational Excellence</h2>
             </div>
-            <!-- Clean 2-column grid without spanning classes for perfect symmetry -->
             <div class="bento-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
-                <div class="bento-card">
-                    <h3>Autonomous Agent Orchestration</h3>
-                    <p>We build thinking agents that orchestrate your Hospitality, Real Estate, and Drone services from a single command center.</p>
-                </div>
-                <div class="bento-card">
-                    <h3>Global Reach</h3>
-                    <p>Engage guests from anywhere in the world in their native language personally.</p>
-                </div>
-                <div class="bento-card">
-                    <h3>Full Ownership</h3>
-                    <p>You own 100% of your automation logic. Export your systems as production-ready code anytime.</p>
-                </div>
-                <div class="bento-card">
-                    <h3>Omnichannel</h3>
-                    <p>Connect WhatsApp, Telegram, Booking.com, and CRM systems in real-time.</p>
-                </div>
+                <div class="bento-card"><h3>Autonomous Agent Orchestration</h3><p>We build thinking agents that orchestrate your Hospitality, Real Estate, and Drone services.</p></div>
+                <div class="bento-card"><h3>Global Reach</h3><p>Engage guests from anywhere in the world personally.</p></div>
+                <div class="bento-card"><h3>Full Ownership</h3><p>You own 100% of your automation logic.</p></div>
+                <div class="bento-card"><h3>Omnichannel</h3><p>Connect WhatsApp, Telegram, and CRM systems in real-time.</p></div>
             </div>
         </section>
 
-        <!-- PRICING -->
+        <!-- PRICING - MASSIVE 2-COLUMN RESTORED -->
         <section id="pricing-target" class="container" style="padding: 100px 0;">
             <div style="text-align: center; margin-bottom: 70px;">
                 <h2 class="led-text" style="font-size: 52px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
             </div>
             <div class="pricing-grid">
-                <div class="pricing-card"><span class="p-tag led-text">HOSPITALITY</span><h3 class="led-text">AI Hotel Reservation System</h3><div class="p-price">$1 — $2</div><a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
-                <div class="pricing-card"><span class="p-tag led-text">REAL ESTATE</span><h3 class="led-text">AI CRM for Real Estate</h3><div class="p-price">$499</div><a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
-                <div class="pricing-card"><span class="p-tag led-text">FUNNEL</span><h3 class="led-text">AI Sales Funnel Automation</h3><div class="p-price">$999</div><a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
-                <div class="pricing-card"><span class="p-tag led-text">LEAD GENERATION</span><h3 class="led-text">AI Lead Outreach Automation</h3><div class="p-price">$1 — $5</div><a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
-                <div class="pricing-card"><span class="p-tag led-text">STOCK</span><h3 class="led-text">AI Powered Stock Automation</h3><div class="p-price">20%</div><a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
-                <div class="pricing-card"><span class="p-tag led-text">DRONE</span><h3 class="led-text">AI Premium Drone Showcase</h3><div class="p-price">$49</div><a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
+                <div class="pricing-card">
+                    <span class="p-tag led-text">HOSPITALITY</span>
+                    <h3 class="led-text">AI Hotel Reservation System</h3>
+                    <div class="p-price">$1 — $2</div>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                </div>
+                <div class="pricing-card">
+                    <span class="p-tag led-text">REAL ESTATE</span>
+                    <h3 class="led-text">AI CRM for Real Estate</h3>
+                    <div class="p-price">$499</div>
+                    <a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                </div>
+                <div class="pricing-card">
+                    <span class="p-tag led-text">FUNNEL</span>
+                    <h3 class="led-text">AI Sales Funnel Automation</h3>
+                    <div class="p-price">$999</div>
+                    <a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                </div>
+                <div class="pricing-card">
+                    <span class="p-tag led-text">LEAD GENERATION</span>
+                    <h3 class="led-text">AI Lead Outreach Automation</h3>
+                    <div class="p-price">$1 — $5</div>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                </div>
+                <div class="pricing-card">
+                    <span class="p-tag led-text">STOCK</span>
+                    <h3 class="led-text">AI Powered Stock Automation</h3>
+                    <div class="p-price">20%</div>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                </div>
+                <div class="pricing-card">
+                    <span class="p-tag led-text">DRONE</span>
+                    <h3 class="led-text">AI Premium Drone Showcase</h3>
+                    <div class="p-price">$49</div>
+                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                </div>
             </div>
         </section>
 
@@ -150,7 +178,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V23_STABLE",
+            "// KERNEL_OVERRIDE_V24_SYNC",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
