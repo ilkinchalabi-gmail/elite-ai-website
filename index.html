@@ -31,6 +31,30 @@
         }
         .terminal-col { overflow: hidden !important; white-space: pre-wrap !important; height: 100% !important; font-size: 15px !important; }      @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
+        /* Audio Control Styles */
+        #audio-controls {
+            position: fixed; bottom: 30px; right: 30px; z-index: 9999;
+            width: 45px; height: 45px; border-radius: 50%;
+            background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.4);
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+        }
+        #audio-controls:hover {
+            transform: scale(1.1); background: rgba(168, 85, 247, 0.3);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        }
+        .audio-pulse {
+            position: absolute; width: 100%; height: 100%;
+            border-radius: 50%; border: 1px solid #a855f7;
+            animation: audioPulse 2s infinite; pointer-events: none;
+        }
+        @keyframes audioPulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
         /* Pricing - V35 Premium Sync */
         .pricing-grid {
             display: grid !important; grid-template-columns: repeat(3, 1fr) !important;
@@ -303,6 +327,70 @@
         </div>
     </footer>
 
+    <!-- Background Audio (YouTube Hidden) -->
+    <div id="audio-player-container" style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none;">
+        <div id="youtube-player"></div>
+    </div>
+
+    <!-- Audio Controls -->
+    <div id="audio-controls" onclick="toggleAudio()">
+        <div class="audio-pulse"></div>
+        <i data-lucide="volume-x" id="audio-icon" style="color: #a855f7; width: 22px; height: 22px;"></i>
+    </div>
+
+    <script>
+        // YouTube API - V50 Audio Sync
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        var isPlaying = false;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-player', {
+                height: '0',
+                width: '0',
+                videoId: '0WOo3uIr72E',
+                playerVars: {
+                    'autoplay': 1,
+                    'loop': 1,
+                    'playlist': '0WOo3uIr72E',
+                    'controls': 0,
+                    'showinfo': 0,
+                    'modestbranding': 1,
+                    'mute': 1
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.setVolume(30); // Low, elegant volume as requested
+        }
+
+        function toggleAudio() {
+            const icon = document.getElementById('audio-icon');
+            const controls = document.getElementById('audio-controls');
+            
+            if (!isPlaying) {
+                player.unMute();
+                player.playVideo();
+                icon.setAttribute('data-lucide', 'volume-2');
+                controls.style.background = "rgba(168, 85, 247, 0.4)";
+                isPlaying = true;
+            } else {
+                player.mute();
+                icon.setAttribute('data-lucide', 'volume-x');
+                controls.style.background = "rgba(168, 85, 247, 0.1)";
+                isPlaying = false;
+            }
+            lucide.createIcons();
+        }
+    </script>
     <script>
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
