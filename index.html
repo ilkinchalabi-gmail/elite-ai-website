@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <!-- CACHE BUMP v290 -->
-    <link rel="stylesheet" href="./premium.css?v=290">
+    <!-- CACHE BUMP v300 -->
+    <link rel="stylesheet" href="./premium.css?v=300">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -32,33 +32,40 @@
         .terminal-col { overflow: hidden; white-space: pre-wrap; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
-        /* Pricing - Final Perfection V29 */
+        /* Pricing - Ultra Compact LED V30 */
         .pricing-grid {
             display: grid !important; grid-template-columns: repeat(3, 1fr) !important;
             gap: 15px !important; margin-top: 40px;
         }
         .pricing-card {
-            padding: 25px 20px !important; min-height: 480px !important;
+            padding: 20px 15px !important; min-height: 440px !important;
             display: flex; flex-direction: column; justify-content: space-between;
         }
-        .card-title-group { text-align: center; margin-bottom: 20px; }
-        .p-tag { display: block; font-size: 10px !important; letter-spacing: 3px !important; color: #a855f7; margin-bottom: 5px; text-transform: uppercase; font-weight: 800; }
-        .p-name { display: block; font-size: 19px !important; font-weight: 900; color: #fff; line-height: 1.2; font-family: 'Outfit'; }
+        .card-title-group { text-align: center; margin-bottom: 12px; }
+        .p-tag { display: block; font-size: 10px !important; letter-spacing: 3px !important; color: #a855f7; margin-bottom: 4px; text-transform: uppercase; font-weight: 800; }
+        
+        /* LED Text for Product Names */
+        .p-name { 
+            display: block; font-size: 18px !important; font-weight: 900; 
+            color: #d8b4fe !important; 
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+            line-height: 1.2; font-family: 'Outfit'; 
+        }
 
         .p-price-display { 
-            font-size: 36px !important; 
+            font-size: 34px !important; 
             color: #fff !important; 
             font-weight: 900 !important; 
             text-align: center !important; 
-            margin: 15px 0 !important;
+            margin: 12px 0 !important;
             font-family: 'Outfit';
         }
         
         .pricing-features {
-            list-style: none; padding: 0; margin: 15px 0; text-align: left;
-            font-size: 11px; color: #aaa; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;
+            list-style: none; padding: 0; margin: 12px 0; text-align: left;
+            font-size: 11px; color: #aaa; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px;
         }
-        .pricing-features li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; line-height: 1.4; }
+        .pricing-features li { margin-bottom: 6px; display: flex; align-items: center; gap: 6px; line-height: 1.4; }
         .pricing-features li i { color: #a855f7; font-size: 14px; flex-shrink: 0; }
 
         @media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr 1fr !important; } }
@@ -99,7 +106,7 @@
                     <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V29_PRICE_LOCKED</span>
+                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V30_LED_SYNC</span>
                         </div>
                         <div id="cyber-terminal">
                             <div id="col-L" class="terminal-col"></div>
@@ -123,7 +130,7 @@
             </div>
         </section>
 
-        <!-- PRICING - PRICE LOCKED V29 -->
+        <!-- PRICING - LED SYNC V30 -->
         <section id="pricing-target" class="container" style="padding: 60px 0;">
             <div style="text-align: center; margin-bottom: 50px;">
                 <h2 class="led-text" style="font-size: 44px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
@@ -252,7 +259,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V29_PRICE_LOCKED",
+            "// KERNEL_OVERRIDE_V30_LED_SYNC",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
