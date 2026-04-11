@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   ELITE AI — ULTIMATE PREMIUM SYSTEM V36
+   ELITE AI — ULTIMATE PREMIUM SYSTEM V12
    ═══════════════════════════════════════════════ */
 
 :root {
@@ -83,7 +83,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .facebook:hover { color: #1877F2 !important; }
 .tiktok:hover { color: #ff0050 !important; }
 .linkedin:hover { color: #0077B5 !important; }
-.mail:hover { color: #EA4335 !important; }
+.mail:hover { color: #4285F4 !important; }
 .linktree:hover { color: #43E55E !important; }
 
 .footer-bottom { border-top: 1px solid var(--border); margin-top: 80px; padding-top: 30px; display: flex; justify-content: space-between; color: #444; font-size: 13px; }
