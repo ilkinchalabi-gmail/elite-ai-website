@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <!-- CACHE BUMP v330 -->
-    <link rel="stylesheet" href="./premium.css?v=330">
+    <!-- CACHE BUMP v340 -->
+    <link rel="stylesheet" href="./premium.css?v=340">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -32,7 +32,7 @@
         .terminal-col { overflow: hidden; white-space: pre-wrap; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
-        /* Pricing - Ultra Nano Compact V33 with Bolder Tags */
+        /* Pricing - V34 Full Font Clarity Sync */
         .pricing-grid {
             display: grid !important; grid-template-columns: repeat(3, 1fr) !important;
             gap: 12px !important; margin-top: 30px;
@@ -43,7 +43,6 @@
         }
         .card-title-group { text-align: center; margin-bottom: 8px; }
         
-        /* Bolder and Larger Category Tags */
         .p-tag { 
             display: block; font-size: 13px !important; letter-spacing: 2.5px !important; 
             color: #a855f7; margin-bottom: 4px; text-transform: uppercase; font-weight: 900; 
@@ -66,14 +65,16 @@
             font-family: 'Outfit';
         }
         
+        /* Larger Feature Text and Icons */
         .pricing-features {
             list-style: none; padding: 0; margin: 8px 0; text-align: left;
-            font-size: 10.5px; color: #aaa; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px;
+            font-size: 13.5px !important; color: #bbb !important; 
+            border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px;
         }
-        .pricing-features li { margin-bottom: 5px; display: flex; align-items: center; gap: 5px; line-height: 1.3; }
-        .pricing-features li i { color: #a855f7; font-size: 12px; flex-shrink: 0; }
+        .pricing-features li { margin-bottom: 7px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.3; }
+        .pricing-features li i { color: #a855f7; font-size: 14px !important; flex-shrink: 0; margin-top: 2px; }
         
-        .btn-order { font-size: 12px !important; padding: 10px !important; border-radius: 4px; }
+        .btn-order { font-size: 13px !important; padding: 12px !important; border-radius: 4px; font-weight: 700; }
 
         @media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr 1fr !important; } }
         @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr !important; } }
@@ -113,7 +114,7 @@
                     <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V33_BOLD_TAGS</span>
+                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V34_FULL_TEXT_SYNC</span>
                         </div>
                         <div id="cyber-terminal">
                             <div id="col-L" class="terminal-col"></div>
@@ -137,7 +138,7 @@
             </div>
         </section>
 
-        <!-- PRICING - BOLD TAGS V33 -->
+        <!-- PRICING - FULL TEXT SYNC V34 -->
         <section id="pricing-target" class="container" style="padding: 40px 0;">
             <div style="text-align: center; margin-bottom: 30px;">
                 <h2 class="led-text" style="font-size: 40px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
@@ -265,7 +266,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V33_BOLD_TAGS",
+            "// KERNEL_OVERRIDE_V34_FULL_TEXT_SYNC",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
