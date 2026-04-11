@@ -5,52 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite AI | Intelligent Autonomous Automation</title>
-    <!-- Google Fonts: Inter & Outfit -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap"
-        rel="stylesheet">
-    <!-- CACHE BUMP v77 -->
-    <link rel="stylesheet" href="./premium.css?v=77">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- CACHE BUMP v88 -->
+    <link rel="stylesheet" href="./premium.css?v=88">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Cyber-Vahime Terminal Styles */
+        /* Ultra-Complex Terminal Styles */
         .terminal-header {
-            background: #1a1a1a;
-            padding: 8px 15px;
+            background: #111;
+            padding: 10px 15px;
             border-radius: 12px 12px 0 0;
             display: flex;
             align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid #333;
+            gap: 10px;
+            border-bottom: 2px solid #222;
         }
-        .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .t-dot { width: 12px; height: 12px; border-radius: 50%; }
         .t-red { background: #ff5f56; box-shadow: 0 0 10px #ff5f56; }
         .t-yellow { background: #ffbd2e; }
-        .t-green { background: #27c93f; box-shadow: 0 0 15px #27c93f; animation: pulse 1.5s infinite; }
+        .t-green { background: #27c93f; box-shadow: 0 0 15px #27c93f; animation: pulse 1s infinite; }
 
-        .typing-cursor {
-            border-right: 2px solid #a855f7;
-            animation: blink 0.7s infinite;
+        #cyber-terminal {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns for massive volume */
+            gap: 20px;
+            padding: 20px;
+            font-family: 'Fira Code', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #d8b4fe;
+            overflow-y: hidden;
+            background: rgba(0,0,0,0.95);
+            min-height: 450px;
         }
 
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+        .terminal-col {
+            overflow: hidden;
+            border-right: 1px solid rgba(168, 85, 247, 0.1);
+        }
 
-        .scary-glitch {
-            text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-            animation: glitch 500ms infinite;
-        }
-        @keyframes glitch {
-            0% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
-            14% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
-            15% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
-            49% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
-            50% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
-            99% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
-            100% { text-shadow: -0.025em 0 0 rgba(255,0,0,0.75), -0.025em -0.025em 0 rgba(0,255,0,0.75), -0.025em -0.05em 0 rgba(0,0,255,0.75); }
-        }
+        .highlight-red { color: #ff5f56; font-weight: bold; }
+        .highlight-green { color: #27c93f; }
+        .highlight-blue { color: #3b82f6; }
+
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
     </style>
 </head>
 
@@ -86,110 +87,60 @@
                     <a href="tel:+971582339884" class="btn btn-secondary">Book a Strategy Call</a>
                 </div>
 
-                <!-- CYBER-VAHIME TERMINAL -->
-                <div class="hero-console-wrapper" style="margin-top: 50px;">
-                    <div class="hero-console" style="border: 2px solid #a855f7; box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);">
+                <!-- VOLUMINOUS CYBER TERMINAL -->
+                <div class="hero-console-wrapper" style="margin-top: 60px; max-width: 1100px; margin-left: auto; margin-right: auto;">
+                    <div class="hero-console" style="border: 1px solid #a855f7; box-shadow: 0 0 50px rgba(168, 85, 247, 0.2), inset 0 0 20px rgba(168, 85, 247, 0.1);">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div>
                             <div class="t-dot t-yellow"></div>
                             <div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 12px; font-family: monospace; border-left: 1px solid #333; padding-left: 10px;">root@elite-ai:~/cluster/kernel_bypass</span>
+                            <span style="color: #444; font-size: 11px; margin-left: 10px;">SYSTEM_CONTROL_CONSOLE_V.2.0.0_CHALABI_INFRA</span>
                         </div>
-                        <div id="cyber-terminal" class="console-code" style="min-height: 350px; font-size: 13px; color: #d8b4fe; line-height: 1.6;">
-                            <!-- TYPING CONTENT WILL BE INSERTED BY JS -->
+                        <div id="cyber-terminal">
+                            <div id="col-left" class="terminal-col"></div>
+                            <div id="col-right" class="terminal-col"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- BENTO FEATURES -->
+        <!-- (Rest of sections remain same but with version updates in links if needed) -->
         <section class="container" style="padding: 100px 0;">
             <div style="text-align: center; margin-bottom: 60px;">
                 <h2 class="led-text" style="font-size: 48px; font-family: 'Outfit'; font-weight: 900;">Engineered for Limitless<br>Operational Excellence</h2>
-                <p style="color: #888; margin-top: 15px;">Intelligence meets execution. Scale with autonomous precision.</p>
             </div>
-
             <div class="bento-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-                <div class="bento-card card-large">
-                    <h3>Autonomous Agent Orchestration</h3>
-                    <p>We build thinking agents that orchestrate your Hospitality, Real Estate, and Drone services from a single command center.</p>
-                </div>
-                <div class="bento-card">
-                    <h3>Global Reach</h3>
-                    <p>Engage guests from anywhere in the world in their native language personally.</p>
-                </div>
-                <div class="bento-card card-wide" style="grid-column: span 2;">
-                    <h3>Full Ownership</h3>
-                    <p>You own 100% of your automation logic. Export your systems as production-ready code anytime.</p>
-                </div>
-                <div class="bento-card">
-                    <h3>Omnichannel</h3>
-                    <p>Connect WhatsApp, Telegram, Booking.com, and CRM systems in real-time.</p>
-                </div>
+                <div class="bento-card card-large"><h3>Autonomous Agent Orchestration</h3><p>We build thinking agents that orchestrate your Hospitality, Real Estate, and Drone services.</p></div>
+                <div class="bento-card"><h3>Global Reach</h3><p>Engage guests from anywhere in the world personally.</p></div>
+                <div class="bento-card card-wide" style="grid-column: span 2;"><h3>Full Ownership</h3><p>You own 100% of your automation logic. Export as production-ready code anytime.</p></div>
+                <div class="bento-card"><h3>Omnichannel</h3><p>Connect WhatsApp, Telegram, and CRM systems in real-time.</p></div>
             </div>
         </section>
 
-        <!-- PRICING -->
         <section id="pricing-target" class="container" style="padding: 100px 0;">
             <div style="text-align: center; margin-bottom: 70px;">
                 <h2 class="led-text" style="font-size: 52px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
-                <p style="color: #888; margin-top: 15px;">Transparent, scalable models tailored to your volume.</p>
             </div>
-
             <div class="pricing-grid">
-                <!-- Pricing items remain the same -->
-                <div class="pricing-card">
-                    <span class="p-tag led-text">HOSPITALITY</span>
-                    <h3 class="led-text">AI Hotel Reservation System</h3>
-                    <div class="p-price">$1 — $2</div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
-                </div>
-                <div class="pricing-card">
-                    <span class="p-tag led-text">REAL ESTATE</span>
-                    <h3 class="led-text">AI CRM for Real Estate</h3>
-                    <div class="p-price">$499</div>
-                    <a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
-                </div>
-                <div class="pricing-card">
-                    <span class="p-tag led-text">FUNNEL</span>
-                    <h3 class="led-text">AI Sales Funnel Automation</h3>
-                    <div class="p-price">$999</div>
-                    <a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
-                </div>
-                <div class="pricing-card">
-                    <span class="p-tag led-text">LEAD GENERATION</span>
-                    <h3 class="led-text">AI Lead Outreach Automation</h3>
-                    <div class="p-price">$1 — $5</div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
-                </div>
-                <div class="pricing-card">
-                    <span class="p-tag led-text">STOCK</span>
-                    <h3 class="led-text">AI Powered Stock Automation</h3>
-                    <div class="p-price">20%</div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
-                </div>
-                <div class="pricing-card">
-                    <span class="p-tag led-text">DRONE</span>
-                    <h3 class="led-text">AI Premium Drone Showcase</h3>
-                    <div class="p-price">$49</div>
-                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a>
-                </div>
+                <div class="pricing-card"><span class="p-tag led-text">HOSPITALITY</span><h3 class="led-text">AI Hotel Reservation System</h3><div class="p-price">$1 — $2</div><a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
+                <div class="pricing-card"><span class="p-tag led-text">REAL ESTATE</span><h3 class="led-text">AI CRM for Real Estate</h3><div class="p-price">$499</div><a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
+                <div class="pricing-card"><span class="p-tag led-text">FUNNEL</span><h3 class="led-text">AI Sales Funnel Automation</h3><div class="p-price">$999</div><a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
+                <div class="pricing-card"><span class="p-tag led-text">LEAD GENERATION</span><h3 class="led-text">AI Lead Outreach Automation</h3><div class="p-price">$1 — $5</div><a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
+                <div class="pricing-card"><span class="p-tag led-text">STOCK</span><h3 class="led-text">AI Powered Stock Automation</h3><div class="p-price">20%</div><a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
+                <div class="pricing-card"><span class="p-tag led-text">DRONE</span><h3 class="led-text">AI Premium Drone Showcase</h3><div class="p-price">$49</div><a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Order</a></div>
             </div>
         </section>
 
-        <!-- FINAL CTA -->
         <section class="container" style="padding: 100px 0;">
             <div class="cta-box">
                 <h2 class="led-text">Ready to Outpace<br>the Competition?</h2>
-                <p>Deploy your autonomous revenue systems today and scale your business with Elite AI.</p>
                 <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary shine-effect" style="padding: 20px 50px;">Deploy Your Agent</a>
             </div>
         </section>
     </main>
 
     <footer id="contact" class="footer">
-        <!-- Footer remains the same -->
         <div class="container">
             <h4 class="led-text" style="font-size: 24px; margin-bottom: 20px;">Connect with ilkin chalabi</h4>
             <div class="social-horizontal-bar">
@@ -202,81 +153,98 @@
                 <a href="https://linktr.ee/ilkinchalabi" target="_blank" class="social-item linktree"><img src="https://cdn.simpleicons.org/linktree/43E55E" width="20" height="20" alt=""> Linktree</a>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=founder@elite-ai.vip" target="_blank" class="social-item mail"><img src="https://cdn.simpleicons.org/maildotru/EA4335" width="20" height="20" alt=""> E-mail</a>
             </div>
-
             <div style="margin: 40px auto; display: flex; justify-content: center; gap: 30px;">
                 <a href="#top" class="led-text" style="text-decoration: none; font-weight: 700;">About</a>
                 <a href="#pricing-target" class="led-text" style="text-decoration: none; font-weight: 700;">Products</a>
                 <a href="#contact" class="led-text" style="text-decoration: none; font-weight: 700;">Contact</a>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Elite AI. Founder: Ilkin Chalabi</p>
-                <p style="color: #25D366;">● System Online</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Elite AI. Founder: Ilkin Chalabi</p><p style="color: #25D366;">● System Online</p></div>
         </div>
     </footer>
 
-    <!-- CYBER TERMINAL SCRIPT -->
+    <!-- ULTRA-VOLUMINOUS TYPING SCRIPT -->
     <script>
-        const terminal = document.getElementById('cyber-terminal');
-        const codeLines = [
-            "> [UPLOADING_KERNEL_OVERRIDE_V77]",
-            "> SYNCING_RSA_4096_SHA512_ENCRYPTION... DONE.",
-            "MOV RAX, 0x3B ; EXEC_SYS_CALL",
-            "MOV RDI, OFFSET '_CHALABI_CORE_INFRA'",
-            "SYSCALL ; CRITICAL OVERRIDE SUCCESSFUL",
+        const leftCol = document.getElementById('col-left');
+        const rightCol = document.getElementById('col-right');
+
+        const leftContent = [
+            "#include <chalabi_core.h>",
+            "void* heap = malloc(0x10000000);",
+            "memset(heap, 0xAA, 256*1024*1024);",
+            "MOV RAX, 0xFFFFFFFF00001234",
+            "MOV RBX, [FS:0x28] ; STACK_CANARY",
+            "JMP _KERNEL_ENTRY_CRITICAL",
             "",
-            "class NeuralBridge(ec.Substrate):",
-            "    def __init__(self, node='CHALABI_PRIMARY'):",
-            "        self._auth = os.environ['SECRET_ELITE_TOKEN']",
-            "        self.orchestrator = ec.Chain(node_id=id(self))",
-            "        self.bypass_restrict(level='MAX_Z')",
+            "// NEURAL_WEIGHTS_DUMP_V4.2",
+            "0x000: 4F 6E 6C 79 20 45 6C 69 74 65",
+            "0x010: 41 49 20 43 61 62 20 53 6F 6C",
+            "0x020: 76 65 20 54 68 69 73 20 50 72",
+            "0x030: 6F 62 6C 65 6D 20 37 37 37 37",
             "",
-            "> ANALYZING_REVENUE_STREAMS: [Hospitality, RealEstate, Stock]",
-            "> OPTIMIZING_AGENT_LATENCY... CURRENT: 0.0004ms",
-            "> [WARNING] NEURAL_BRIDGE_DETECTED_UNAUTHORIZED_ACCESS",
-            "> DEPLOYING_COUNTER_MEASURES... SUCCESS.",
+            "> INITIALIZING QUANTUM_KEY_SYNC...",
+            "> STATUS: ENCRYPT_AES_256_GCM_SUCCESS",
             "",
-            "while elite.active:",
-            "    elite.scale(business_volume_infinite=True)",
-            "    deploy.to_meta_cloud(target='GLOBAL_PRIMARY')",
-            "    if revenue < target: elite.optimize_aggressively()",
+            "class MatrixInversion(nn.Module):",
+            "    def __init__(self, data_size=1e9):",
+            "        self.tensor = torch.cuda.HalfTensor()",
+            "        self.optimize = lambda x: exp(x**2)",
             "",
-            "> ELITE_AI_ORCHESTRATOR_ONLINE: 99.98% EFFICIENCY",
-            "> MONITORING_10_MILLION_OPS_PER_SECOND",
-            "> ALL SYSTEMS GREEN. ELITE AI ACTIVE."
+            "> SCANNING LOCAL CLUSTER UAE-4...",
+            "> SYSTEM_TEMPERATURE: 32.4C",
+            "> BANDWIDTH_UTIL: 99.8% (100Gbps)",
+            "> PING: 0.12ms (TO_META_SERVER)"
         ];
 
-        let lineIdx = 0;
-        let charIdx = 0;
+        const rightContent = [
+            "struct Node { volatile int locked; };",
+            "while (__sync_lock_test_and_set(&l, 1));",
+            "__asm__ __volatile__('pause');",
+            "",
+            "0xFFFF0092... [01001101 11010010]",
+            "0xFFFF00A4... [11010110 00101101]",
+            "0xFFFF00B8... [11110001 01010101]",
+            "",
+            "docker run -d --privileged elite-ai-core",
+            "kubectl apply -f chalabi_infra.yaml",
+            "helm install autonomous-agent-v9",
+            "",
+            "// AI_ORCHESTRATION_LOG",
+            "T-12: Agent_A connected to WhatsAppAPI",
+            "T-13: Agent_B optimizing RealEstate CRM",
+            "T-14: Agent_C syncing Hospitality Logs",
+            "T-15: Agent_D overriding manual human input",
+            "",
+            "ERROR: UNAUTHORIZED_ACCESS_PREVENTED",
+            "IP_TRACE: 192.168.1.1 (REDACTED)",
+            "COUNTER_MEASURE: BRAIN_WAVE_SCRAMBLE",
+            "",
+            "> ALL SYSTEMS SYNCED TO MAIN_NODE",
+            "> ELITE_AI_ORCHESTRATOR: ACTIVE",
+            "> FOUNDER: ILKIN CHALABI"
+        ];
 
-        function typeCode() {
-            if (lineIdx < codeLines.length) {
-                const currentLine = codeLines[lineIdx];
-                if (charIdx < currentLine.length) {
-                    terminal.innerHTML += currentLine[charIdx];
-                    charIdx++;
-                    setTimeout(typeCode, 15); // Fast typing
-                } else {
-                    terminal.innerHTML += "<br>";
-                    lineIdx++;
-                    charIdx = 0;
-                    setTimeout(typeCode, 200); // Small pause between lines
+        function typeArray(arr, element, speed) {
+            let lIdx = 0;
+            let cIdx = 0;
+            function step() {
+                if (lIdx < arr.length) {
+                    if (cIdx < arr[lIdx].length) {
+                        element.innerHTML += arr[lIdx][cIdx];
+                        cIdx++;
+                        setTimeout(step, speed);
+                    } else {
+                        element.innerHTML += "<br>";
+                        lIdx++;
+                        cIdx = 0;
+                        setTimeout(step, speed * 5);
+                    }
                 }
-            } else {
-                // Restart typing after a delay to keep it dynamic
-                setTimeout(() => {
-                    terminal.innerHTML = "";
-                    lineIdx = 0;
-                    charIdx = 0;
-                    typeCode();
-                }, 10000);
             }
-            // Auto scroll to bottom
-            terminal.scrollTop = terminal.scrollHeight;
+            step();
         }
 
-        typeCode();
+        typeArray(leftContent, leftCol, 5);
+        setTimeout(() => typeArray(rightContent, rightCol, 7), 500);
     </script>
 
     <script> lucide.createIcons(); </script>
