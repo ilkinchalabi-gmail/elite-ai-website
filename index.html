@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./premium.css?v=410">
+    <link rel="stylesheet" href="./premium.css?v=420">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -97,7 +97,6 @@
             flex-wrap: wrap;
         }
         .footer-links a {
-            color: #fff;
             text-decoration: none;
             font-family: 'Outfit', sans-serif;
             font-size: 14px;
@@ -106,6 +105,9 @@
             letter-spacing: 2px;
             transition: 0.3s;
             opacity: 0.8;
+        }
+        .footer-links a:not(.led-text) {
+            color: #fff;
         }
         .footer-links a:hover { color: #a855f7; text-shadow: 0 0 10px #a855f7; opacity: 1; }
     </style>
@@ -144,7 +146,7 @@
                     <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V41_FINAL_FIXES</span>
+                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V42_LED_NAVIGATION_SYNC</span>
                         </div>
                         <div id="cyber-terminal">
                             <div id="col-L" class="terminal-col"></div>
@@ -183,9 +185,9 @@
                         </div>
                         <div class="p-price-display">1$ — 2$ — 3$</div>
                         <ul class="pricing-features">
-                            <li><i data-lucide="check-circle-2"></i> Per room 1$ 1 channel</li>
-                            <li><i data-lucide="check-circle-2"></i> Per room 2$ 2 channel</li>
-                            <li><i data-lucide="check-circle-2"></i> Per room 3$ 3 channel</li>
+                            <li><i data-lucide=\"check-circle-2\"></i> Per room 1$ 1 channel</li>
+                            <li><i data-lucide=\"check-circle-2\"></i> Per room 2$ 2 channel</li>
+                            <li><i data-lucide=\"check-circle-2\"></i> Per room 3$ 3 channel</li>
                         </ul>
                     </div>
                     <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary btn-order" style="width: 100%;">Order Now</a>
@@ -266,7 +268,7 @@
                             <li><i data-lucide="check-circle-2"></i> Fast Professional Delivery</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary btn-order" style="width: 100%;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi/49" target=\"_blank\" class=\"btn btn-primary btn-order\" style=\"width: 100%;\">Order Now</a>
                 </div>
             </div>
         </section>
@@ -283,9 +285,9 @@
         <div class="container">
             <p class="led-text" style="font-weight: 800; font-size: 14px; letter-spacing: 4px; margin-bottom: 20px;">Founded by Ilkin Chalabi</p>
             <div class="footer-links">
-                <a href="#top">About</a>
-                <a href="#pricing-target">Products</a>
-                <a href="#contact">Contact</a>
+                <a href="#top" class="led-text">About</a>
+                <a href="#pricing-target" class="led-text">Products</a>
+                <a href="#contact" class="led-text">Contact</a>
             </div>
             <div class="social-horizontal-bar">
                 <a href="https://wa.me/971582339884" target="_blank" class="social-item whatsapp"><img src="https://cdn.simpleicons.org/whatsapp/25D366" width="20" height="20" alt=""> WhatsApp</a>
@@ -305,7 +307,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V41_FINAL_FIXES",
+            "// KERNEL_OVERRIDE_V42_LED_NAVIGATION_SYNC",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
