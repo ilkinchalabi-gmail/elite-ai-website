@@ -347,6 +347,7 @@
 
         var player;
         var isPlaying = false;
+        let isPlayerReady = false;
 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('youtube-player', {
@@ -369,19 +370,23 @@
         }
 
         function onPlayerReady(event) {
-            event.target.setVolume(30); // Low, elegant volume as requested
+            isPlayerReady = true;
+            event.target.setVolume(30);
+            // Visual cue: Button is now fully active
+            const btn = document.getElementById('audio-controls');
+            btn.style.opacity = "1";
+            btn.style.pointerEvents = "auto";
         }
 
         function toggleAudio(e) {
             if (e) { e.preventDefault(); e.stopPropagation(); }
+            if (!isPlayerReady || !player) return;
+
             const icon = document.getElementById('audio-icon');
             const controls = document.getElementById('audio-controls');
             
-            if (!player || typeof player.unMute !== 'function') return;
-
             if (!isPlaying) {
                 player.unMute();
-                player.setVolume(30);
                 player.playVideo();
                 icon.setAttribute('data-lucide', 'volume-2');
                 controls.style.background = "rgba(168, 85, 247, 0.4)";
@@ -395,10 +400,13 @@
             if (window.lucide) lucide.createIcons();
         }
 
-        // Fast touch support for mobile
         const audioBtn = document.getElementById('audio-controls');
+        // Start disabled visually until ready
+        audioBtn.style.opacity = "0.5";
+        audioBtn.style.pointerEvents = "none";
+        
         audioBtn.addEventListener('click', toggleAudio);
-        audioBtn.addEventListener('touchstart', toggleAudio, {passive: false});
+        audioBtn.addEventListener('touchend', toggleAudio, {passive: false});
     </script>
     <script>
         const colL = document.getElementById('col-L');
