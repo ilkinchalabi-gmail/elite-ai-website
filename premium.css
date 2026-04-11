@@ -154,8 +154,14 @@ body {
   .hero-title { font-size: 34px; padding-top: 20px !important; }
   #cyber-terminal { 
       grid-template-columns: 1fr !important; 
+      height: 580px !important;
       min-height: 580px !important;
       font-size: 13px !important;
+      overflow: hidden !important;
+  }
+  .hero-console-wrapper { 
+      contain: paint !important; 
+      backface-visibility: hidden;
   }
   section[id] { scroll-margin-top: 100px; }
 }
