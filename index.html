@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <!-- CACHE BUMP v155 -->
-    <link rel="stylesheet" href="./premium.css?v=155">
+    <!-- CACHE BUMP v200 -->
+    <link rel="stylesheet" href="./premium.css?v=200">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -32,16 +32,15 @@
         .terminal-col { overflow: hidden; white-space: pre-wrap; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
-        /* Performance Pricing 2-Column Force */
+        /* Pricing - Classic 3-Column Restoration */
         .pricing-grid {
             display: grid !important;
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 30px !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 20px !important;
             margin-top: 60px;
         }
-        .pricing-card {
-            min-height: 550px !important;
-        }
+        @media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr 1fr !important; } }
+        @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr !important; } }
     </style>
 </head>
 
@@ -102,7 +101,7 @@
             </div>
         </section>
 
-        <!-- PRICING - MASSIVE 2-COLUMN RESTORED -->
+        <!-- PRICING - CLASSIC 3-COLUMN RESTORED -->
         <section id="pricing-target" class="container" style="padding: 100px 0;">
             <div style="text-align: center; margin-bottom: 70px;">
                 <h2 class="led-text" style="font-size: 52px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
@@ -112,37 +111,37 @@
                     <span class="p-tag led-text">HOSPITALITY</span>
                     <h3 class="led-text">AI Hotel Reservation System</h3>
                     <div class="p-price">$1 — $2</div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 15px; width: 100%; border-radius: 8px;">Order Now</a>
                 </div>
                 <div class="pricing-card">
                     <span class="p-tag led-text">REAL ESTATE</span>
                     <h3 class="led-text">AI CRM for Real Estate</h3>
                     <div class="p-price">$499</div>
-                    <a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary" style="margin-top: 15px; width: 100%; border-radius: 8px;">Order Now</a>
                 </div>
                 <div class="pricing-card">
                     <span class="p-tag led-text">FUNNEL</span>
                     <h3 class="led-text">AI Sales Funnel Automation</h3>
                     <div class="p-price">$999</div>
-                    <a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary" style="margin-top: 15px; width: 100%; border-radius: 8px;">Order Now</a>
                 </div>
                 <div class="pricing-card">
                     <span class="p-tag led-text">LEAD GENERATION</span>
                     <h3 class="led-text">AI Lead Outreach Automation</h3>
                     <div class="p-price">$1 — $5</div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 15px; width: 100%; border-radius: 8px;">Order Now</a>
                 </div>
                 <div class="pricing-card">
                     <span class="p-tag led-text">STOCK</span>
                     <h3 class="led-text">AI Powered Stock Automation</h3>
                     <div class="p-price">20%</div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="margin-top: 15px; width: 100%; border-radius: 8px;">Order Now</a>
                 </div>
                 <div class="pricing-card">
                     <span class="p-tag led-text">DRONE</span>
                     <h3 class="led-text">AI Premium Drone Showcase</h3>
                     <div class="p-price">$49</div>
-                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary shine-effect">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary" style="margin-top: 15px; width: 100%; border-radius: 8px;">Order Now</a>
                 </div>
             </div>
         </section>
@@ -178,7 +177,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V24_SYNC",
+            "// KERNEL_OVERRIDE_V25_STABLE",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
