@@ -333,7 +333,7 @@
     </div>
 
     <!-- Audio Controls -->
-    <div id="audio-controls" onclick="toggleAudio()">
+    <div id="audio-controls">
         <div class="audio-pulse"></div>
         <i data-lucide="volume-x" id="audio-icon" style="color: #a855f7; width: 22px; height: 22px;"></i>
     </div>
@@ -372,12 +372,16 @@
             event.target.setVolume(30); // Low, elegant volume as requested
         }
 
-        function toggleAudio() {
+        function toggleAudio(e) {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
             const icon = document.getElementById('audio-icon');
             const controls = document.getElementById('audio-controls');
             
+            if (!player || typeof player.unMute !== 'function') return;
+
             if (!isPlaying) {
                 player.unMute();
+                player.setVolume(30);
                 player.playVideo();
                 icon.setAttribute('data-lucide', 'volume-2');
                 controls.style.background = "rgba(168, 85, 247, 0.4)";
@@ -388,8 +392,13 @@
                 controls.style.background = "rgba(168, 85, 247, 0.1)";
                 isPlaying = false;
             }
-            lucide.createIcons();
+            if (window.lucide) lucide.createIcons();
         }
+
+        // Fast touch support for mobile
+        const audioBtn = document.getElementById('audio-controls');
+        audioBtn.addEventListener('click', toggleAudio);
+        audioBtn.addEventListener('touchstart', toggleAudio, {passive: false});
     </script>
     <script>
         const colL = document.getElementById('col-L');
