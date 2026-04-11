@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Elite AI | Intelligent Autonomous Automation</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./premium.css?v=420">
+    <link rel="stylesheet" href="./premium.css?v=430">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -28,7 +28,7 @@
             background: #000; min-height: 480px; border-radius: 0 0 12px 12px;
             border: 2px solid rgba(168, 85, 247, 0.2); overflow: hidden;
         }
-        .terminal-col { overflow: hidden; white-space: pre-wrap; }
+        .terminal-col { overflow: hidden; white-space: pre-wrap; height: 100%; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
         /* Pricing - V35 Premium Sync */
@@ -146,7 +146,7 @@
                     <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V42_LED_NAVIGATION_SYNC</span>
+                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V43_MOBILE_STABILITY</span>
                         </div>
                         <div id="cyber-terminal">
                             <div id="col-L" class="terminal-col"></div>
@@ -185,9 +185,9 @@
                         </div>
                         <div class="p-price-display">1$ — 2$ — 3$</div>
                         <ul class="pricing-features">
-                            <li><i data-lucide=\"check-circle-2\"></i> Per room 1$ 1 channel</li>
-                            <li><i data-lucide=\"check-circle-2\"></i> Per room 2$ 2 channel</li>
-                            <li><i data-lucide=\"check-circle-2\"></i> Per room 3$ 3 channel</li>
+                            <li><i data-lucide="check-circle-2"></i> Per room 1$ 1 channel</li>
+                            <li><i data-lucide="check-circle-2"></i> Per room 2$ 2 channel</li>
+                            <li><i data-lucide="check-circle-2"></i> Per room 3$ 3 channel</li>
                         </ul>
                     </div>
                     <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary btn-order" style="width: 100%;">Order Now</a>
@@ -268,7 +268,7 @@
                             <li><i data-lucide="check-circle-2"></i> Fast Professional Delivery</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi/49" target=\"_blank\" class=\"btn btn-primary btn-order\" style=\"width: 100%;\">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary btn-order" style="width: 100%;">Order Now</a>
                 </div>
             </div>
         </section>
@@ -307,7 +307,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V42_LED_NAVIGATION_SYNC",
+            "// KERNEL_OVERRIDE_V43_MOBILE_STABILITY",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
