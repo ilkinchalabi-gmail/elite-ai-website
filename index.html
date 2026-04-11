@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./premium.css?v=370">
+    <link rel="stylesheet" href="./premium.css?v=390">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -31,7 +31,7 @@
         .terminal-col { overflow: hidden; white-space: pre-wrap; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
-        /* Pricing - V37 Text Stabilization */
+        /* Pricing - V35 Premium Sync */
         .pricing-grid {
             display: grid !important; grid-template-columns: repeat(3, 1fr) !important;
             gap: 12px !important; margin-top: 30px;
@@ -49,7 +49,7 @@
             opacity: 0.9;
         }
         
-        /* Larger Product Names V36/V37 */
+        /* Larger Product Names V36 */
         .p-name { 
             display: block; font-size: 28px !important; font-weight: 900; 
             color: #d8b4fe !important; 
@@ -76,6 +76,15 @@
         .pricing-features li i { color: #a855f7; font-size: 18px; flex-shrink: 0; margin-top: 3px; }
         
         .btn-order { font-size: 13px !important; padding: 12px !important; border-radius: 4px; font-weight: 700; }
+
+        .cta-box {
+            display: flex;
+            flex-direction: column !important;
+            align-items: center;
+            gap: 25px;
+            padding: 80px 40px !important;
+            text-align: center;
+        }
 
         @media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr 1fr !important; } }
         @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr !important; } }
@@ -115,7 +124,7 @@
                     <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V37_TEXT_STABILIZATION</span>
+                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V39_FINAL_STABILIZATION</span>
                         </div>
                         <div id="cyber-terminal">
                             <div id="col-L" class="terminal-col"></div>
@@ -139,7 +148,7 @@
             </div>
         </section>
 
-        <!-- PRICING - STABILIZATION V37 -->
+        <!-- PRICING - PREMIUM SYNC V35 -->
         <section id="pricing-target" class="container" style="padding: 40px 0;">
             <div style="text-align: center; margin-bottom: 30px;">
                 <h2 class="led-text" style="font-size: 40px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
@@ -257,8 +266,11 @@
                 <a href="https://wa.me/971582339884" target="_blank" class="social-item whatsapp"><img src="https://cdn.simpleicons.org/whatsapp/25D366" width="20" height="20" alt=""> WhatsApp</a>
                 <a href="https://t.me/Ilkin_Chalabi" target="_blank" class="social-item telegram"><img src="https://cdn.simpleicons.org/telegram/26A8E1" width="20" height="20" alt=""> Telegram</a>
                 <a href="https://instagram.com/ilkin_chalabi" target="_blank" class="social-item instagram"><img src="https://cdn.simpleicons.org/instagram/E4405F" width="20" height="20" alt=""> Instagram</a>
-                <a href="https://linkedin.com/in/ilkin-chalabi-8798b5250" target="_blank" class="social-item linkedin"><img src="https://cdn.simpleicons.org/linkedin/0077B5" width="20" height="20" alt=""> LinkedIn</a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=founder@elite-ai.vip" target="_blank" class="social-item mail"><img src="https://cdn.simpleicons.org/maildotru/EA4335" width="20" height="20" alt=""> E-mail</a>
+                <a href="https://facebook.com/ilkin.chalabi" target="_blank" class="social-item facebook"><img src="https://cdn.simpleicons.org/facebook/1877F2" width="20" height="20" alt=""> Facebook</a>
+                <a href="https://tiktok.com/@ilkin_chalabi" target="_blank" class="social-item tiktok"><img src="https://cdn.simpleicons.org/tiktok/FFFFFF" width="20" height="20" alt=""> TikTok</a>
+                <a href="https://linkedin.com/in/ilkin-chalabi-8798b5250" target="_blank" class="social-item linkedin"><img src="https://cdn.simpleicons.org/linkedin/0A66C2" width="20" height="20" alt=""> LinkedIn</a>
+                <a href="https://linktr.ee/ilkin_chalabi" target="_blank" class="social-item linktree"><img src="https://cdn.simpleicons.org/linktree/43E55E" width="20" height="20" alt=""> Linktree</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=founder@elite-ai.vip" target="_blank" class="social-item mail"><img src="https://cdn.simpleicons.org/maildotru/4285F4" width="20" height="20" alt=""> E-mail</a>
             </div>
             <div class="footer-bottom"><p>&copy; 2026 Elite AI. Founder: Ilkin Chalabi</p></div>
         </div>
@@ -268,7 +280,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V37_TEXT_STABILIZATION",
+            "// KERNEL_OVERRIDE_V39_FINAL_STABILIZATION",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
@@ -325,7 +337,7 @@
                         element.innerHTML += "<br>"; lIdx++; cIdx = 0; setTimeout(step, 100);
                     }
                 } else {
-                    setTimeout(() => { element.innerHTML = ""; lIdx = 0; cIdx = 0; typeHub(lines, element); }, 4000);
+                    element.innerHTML = ""; lIdx = 0; cIdx = 0; setTimeout(() => typeHub(lines, element), 4000);
                 }
             }
             step();
