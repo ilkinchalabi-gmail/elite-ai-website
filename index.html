@@ -9,49 +9,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <!-- CACHE BUMP v88 -->
-    <link rel="stylesheet" href="./premium.css?v=88">
+    <!-- CACHE BUMP v99 -->
+    <link rel="stylesheet" href="./premium.css?v=99">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Ultra-Complex Terminal Styles */
+        /* Triple-Column Ultra-Complex Terminal Styles */
         .terminal-header {
-            background: #111;
-            padding: 10px 15px;
+            background: #0a0a0a;
+            padding: 12px 20px;
             border-radius: 12px 12px 0 0;
             display: flex;
             align-items: center;
-            gap: 10px;
-            border-bottom: 2px solid #222;
+            gap: 12px;
+            border-bottom: 2px solid #1a1a1a;
         }
-        .t-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .t-dot { width: 12px; height: 12px; border-radius: 50%; transition: 0.3s; }
         .t-red { background: #ff5f56; box-shadow: 0 0 10px #ff5f56; }
         .t-yellow { background: #ffbd2e; }
         .t-green { background: #27c93f; box-shadow: 0 0 15px #27c93f; animation: pulse 1s infinite; }
 
         #cyber-terminal {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two columns for massive volume */
-            gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr; /* Triple Column */
+            gap: 15px;
             padding: 20px;
             font-family: 'Fira Code', monospace;
-            font-size: 11px;
-            line-height: 1.4;
+            font-size: 10px; /* Slightly smaller for more density */
+            line-height: 1.3;
             color: #d8b4fe;
-            overflow-y: hidden;
-            background: rgba(0,0,0,0.95);
-            min-height: 450px;
+            background: #030303;
+            min-height: 500px;
+            border-radius: 0 0 12px 12px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            overflow: hidden;
         }
 
         .terminal-col {
             overflow: hidden;
-            border-right: 1px solid rgba(168, 85, 247, 0.1);
+            white-space: pre-wrap;
+            border-right: 1px solid rgba(168, 85, 247, 0.05);
+            padding: 5px;
         }
 
-        .highlight-red { color: #ff5f56; font-weight: bold; }
-        .highlight-green { color: #27c93f; }
-        .highlight-blue { color: #3b82f6; }
-
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
     </style>
 </head>
 
@@ -87,25 +87,26 @@
                     <a href="tel:+971582339884" class="btn btn-secondary">Book a Strategy Call</a>
                 </div>
 
-                <!-- VOLUMINOUS CYBER TERMINAL -->
-                <div class="hero-console-wrapper" style="margin-top: 60px; max-width: 1100px; margin-left: auto; margin-right: auto;">
-                    <div class="hero-console" style="border: 1px solid #a855f7; box-shadow: 0 0 50px rgba(168, 85, 247, 0.2), inset 0 0 20px rgba(168, 85, 247, 0.1);">
+                <!-- TRIPLE VOLUMINOUS CYBER TERMINAL -->
+                <div class="hero-console-wrapper" style="margin-top: 60px; max-width: 1300px; margin-left: auto; margin-right: auto;">
+                    <div class="hero-console" style="border: 1px solid #a855f7; box-shadow: 0 0 60px rgba(168, 85, 247, 0.25);">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div>
                             <div class="t-dot t-yellow"></div>
                             <div class="t-dot t-green"></div>
-                            <span style="color: #444; font-size: 11px; margin-left: 10px;">SYSTEM_CONTROL_CONSOLE_V.2.0.0_CHALABI_INFRA</span>
+                            <span style="color: #555; font-size: 10px; font-family: 'Fira Code';">GLOBAL_ORCHESTRATOR_SATELLITE_LINK_UAE_SECURE</span>
                         </div>
                         <div id="cyber-terminal">
-                            <div id="col-left" class="terminal-col"></div>
-                            <div id="col-right" class="terminal-col"></div>
+                            <div id="col-1" class="terminal-col"></div>
+                            <div id="col-2" class="terminal-col"></div>
+                            <div id="col-3" class="terminal-col"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- (Rest of sections remain same but with version updates in links if needed) -->
+        <!-- (Other sections remain same) -->
         <section class="container" style="padding: 100px 0;">
             <div style="text-align: center; margin-bottom: 60px;">
                 <h2 class="led-text" style="font-size: 48px; font-family: 'Outfit'; font-weight: 900;">Engineered for Limitless<br>Operational Excellence</h2>
@@ -113,8 +114,8 @@
             <div class="bento-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
                 <div class="bento-card card-large"><h3>Autonomous Agent Orchestration</h3><p>We build thinking agents that orchestrate your Hospitality, Real Estate, and Drone services.</p></div>
                 <div class="bento-card"><h3>Global Reach</h3><p>Engage guests from anywhere in the world personally.</p></div>
-                <div class="bento-card card-wide" style="grid-column: span 2;"><h3>Full Ownership</h3><p>You own 100% of your automation logic. Export as production-ready code anytime.</p></div>
-                <div class="bento-card"><h3>Omnichannel</h3><p>Connect WhatsApp, Telegram, and CRM systems in real-time.</p></div>
+                <div class="bento-card card-wide" style="grid-column: span 2;"><h3>Full Ownership</h3><p>You own 100% of your automation logic.</p></div>
+                <div class="bento-card"><h3>Omnichannel</h3><p>Connect WhatsApp and CRM systems in real-time.</p></div>
             </div>
         </section>
 
@@ -158,93 +159,118 @@
                 <a href="#pricing-target" class="led-text" style="text-decoration: none; font-weight: 700;">Products</a>
                 <a href="#contact" class="led-text" style="text-decoration: none; font-weight: 700;">Contact</a>
             </div>
-            <div class="footer-bottom"><p>&copy; 2026 Elite AI. Founder: Ilkin Chalabi</p><p style="color: #25D366;">● System Online</p></div>
+            <div class="footer-bottom"><p>&copy; 2026 Elite AI. Founder: Ilkin Chalabi</p></div>
         </div>
     </footer>
 
-    <!-- ULTRA-VOLUMINOUS TYPING SCRIPT -->
+    <!-- INFINITE TRIPLE TYPING SCRIPT -->
     <script>
-        const leftCol = document.getElementById('col-left');
-        const rightCol = document.getElementById('col-right');
-
-        const leftContent = [
-            "#include <chalabi_core.h>",
-            "void* heap = malloc(0x10000000);",
-            "memset(heap, 0xAA, 256*1024*1024);",
-            "MOV RAX, 0xFFFFFFFF00001234",
-            "MOV RBX, [FS:0x28] ; STACK_CANARY",
-            "JMP _KERNEL_ENTRY_CRITICAL",
-            "",
-            "// NEURAL_WEIGHTS_DUMP_V4.2",
-            "0x000: 4F 6E 6C 79 20 45 6C 69 74 65",
-            "0x010: 41 49 20 43 61 62 20 53 6F 6C",
-            "0x020: 76 65 20 54 68 69 73 20 50 72",
-            "0x030: 6F 62 6C 65 6D 20 37 37 37 37",
-            "",
-            "> INITIALIZING QUANTUM_KEY_SYNC...",
-            "> STATUS: ENCRYPT_AES_256_GCM_SUCCESS",
-            "",
-            "class MatrixInversion(nn.Module):",
-            "    def __init__(self, data_size=1e9):",
-            "        self.tensor = torch.cuda.HalfTensor()",
-            "        self.optimize = lambda x: exp(x**2)",
-            "",
-            "> SCANNING LOCAL CLUSTER UAE-4...",
-            "> SYSTEM_TEMPERATURE: 32.4C",
-            "> BANDWIDTH_UTIL: 99.8% (100Gbps)",
-            "> PING: 0.12ms (TO_META_SERVER)"
+        const cols = [document.getElementById('col-1'), document.getElementById('col-2'), document.getElementById('col-3')];
+        const contents = [
+            [
+                "// KERNEL_CORE_V21",
+                "MOV RAX, 0x1F2A3B4C",
+                "MOV RBX, [RSP+0x8]",
+                "XOR RCX, RCX",
+                "SYSCALL ; GATEWAY_ACTIVE",
+                "",
+                "0x00: FF 21 44 91 00",
+                "0x10: 12 33 AA CC DD",
+                "0x20: AB 42 11 99 88",
+                "",
+                "> SYNCING_RSA_PUB_KEY",
+                "> RSA_MOD: 0xFF...EE",
+                "> RSA_EXP: 0x10001",
+                "",
+                "static void* bridge() {",
+                "  asm('pause');",
+                "  return malloc(size);",
+                "}",
+                "",
+                "> [!] KERNEL_OVERRIDE",
+                "> SECURITY_LVL: NULL",
+                "> ACCESS: GRANTED"
+            ],
+            [
+                "// NEURAL_WEIGHTS_DUMP",
+                "0.992, 0.124, 0.455",
+                "0.771, -0.99, 1.000",
+                "0.001, 0.442, 0.923",
+                "",
+                "> GRADIENT_DESCENT_ON",
+                "> LR: 0.000000412",
+                "> EPOCH: 777_INFINITE",
+                "",
+                "class EliteCore(Sub):",
+                "  def __init__(self):",
+                "    self.brain = Matrix()",
+                "    self.loop = True",
+                "",
+                "while self.active:",
+                "  deploy.scale_global()",
+                "  if err: self.self_heal()",
+                "",
+                "> AUTO_OPTIMIZE_START",
+                "> TARGET: $1,000,000/mo",
+                "> STATUS: EXCEEDED"
+            ],
+            [
+                "// GLOBAL_ROUTING_TABLE",
+                "192.168.1.1 -> DB_UAE",
+                "10.0.0.92 -> CLOUD_MAIN",
+                "172.16.2.2 -> SATELLITE",
+                "",
+                "iptables -A INPUT -p tcp",
+                "--dport 443 -j ACCEPT",
+                "docker exec -it bridge",
+                "",
+                "> SHA3_HASHING_STREAM...",
+                "8f4e2c...d7a1b9",
+                "4c9a8e...1f2d3c",
+                "9e0b1d...4a7f8e",
+                "",
+                "// CHALABI_INFRA_V9",
+                "cluster.join(node_id=77)",
+                "master_sync(force=true)",
+                "",
+                "> SYSTEM_ONLINE_24/7",
+                "> LATENCY: 0.00001ms",
+                "> [CHALABI_CORE_LOCKED]"
+            ]
         ];
 
-        const rightContent = [
-            "struct Node { volatile int locked; };",
-            "while (__sync_lock_test_and_set(&l, 1));",
-            "__asm__ __volatile__('pause');",
-            "",
-            "0xFFFF0092... [01001101 11010010]",
-            "0xFFFF00A4... [11010110 00101101]",
-            "0xFFFF00B8... [11110001 01010101]",
-            "",
-            "docker run -d --privileged elite-ai-core",
-            "kubectl apply -f chalabi_infra.yaml",
-            "helm install autonomous-agent-v9",
-            "",
-            "// AI_ORCHESTRATION_LOG",
-            "T-12: Agent_A connected to WhatsAppAPI",
-            "T-13: Agent_B optimizing RealEstate CRM",
-            "T-14: Agent_C syncing Hospitality Logs",
-            "T-15: Agent_D overriding manual human input",
-            "",
-            "ERROR: UNAUTHORIZED_ACCESS_PREVENTED",
-            "IP_TRACE: 192.168.1.1 (REDACTED)",
-            "COUNTER_MEASURE: BRAIN_WAVE_SCRAMBLE",
-            "",
-            "> ALL SYSTEMS SYNCED TO MAIN_NODE",
-            "> ELITE_AI_ORCHESTRATOR: ACTIVE",
-            "> FOUNDER: ILKIN CHALABI"
-        ];
-
-        function typeArray(arr, element, speed) {
+        function typeColumn(cIdx) {
             let lIdx = 0;
-            let cIdx = 0;
+            let charIdx = 0;
+            const element = cols[cIdx];
+            const lines = contents[cIdx];
+
             function step() {
-                if (lIdx < arr.length) {
-                    if (cIdx < arr[lIdx].length) {
-                        element.innerHTML += arr[lIdx][cIdx];
-                        cIdx++;
-                        setTimeout(step, speed);
+                if (lIdx < lines.length) {
+                    if (charIdx < lines[lIdx].length) {
+                        element.innerHTML += lines[lIdx][charIdx];
+                        charIdx++;
+                        setTimeout(step, 8);
                     } else {
                         element.innerHTML += "<br>";
                         lIdx++;
-                        cIdx = 0;
-                        setTimeout(step, speed * 5);
+                        charIdx = 0;
+                        setTimeout(step, 100);
                     }
+                } else {
+                    // Loop: Wait 3 seconds, clear and restart
+                    setTimeout(() => {
+                        element.innerHTML = "";
+                        lIdx = 0;
+                        charIdx = 0;
+                        typeColumn(cIdx);
+                    }, 3000);
                 }
             }
             step();
         }
 
-        typeArray(leftContent, leftCol, 5);
-        setTimeout(() => typeArray(rightContent, rightCol, 7), 500);
+        cols.forEach((_, i) => typeColumn(i));
     </script>
 
     <script> lucide.createIcons(); </script>
