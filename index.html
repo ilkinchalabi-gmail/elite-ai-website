@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./premium.css?v=360">
+    <link rel="stylesheet" href="./premium.css?v=370">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -31,7 +31,7 @@
         .terminal-col { overflow: hidden; white-space: pre-wrap; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
-        /* Pricing - V35 Premium Sync */
+        /* Pricing - V37 Text Stabilization */
         .pricing-grid {
             display: grid !important; grid-template-columns: repeat(3, 1fr) !important;
             gap: 12px !important; margin-top: 30px;
@@ -49,7 +49,7 @@
             opacity: 0.9;
         }
         
-        /* Larger Product Names V36 */
+        /* Larger Product Names V36/V37 */
         .p-name { 
             display: block; font-size: 28px !important; font-weight: 900; 
             color: #d8b4fe !important; 
@@ -115,7 +115,7 @@
                     <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V36_PREMIUM_PRICING</span>
+                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V37_TEXT_STABILIZATION</span>
                         </div>
                         <div id="cyber-terminal">
                             <div id="col-L" class="terminal-col"></div>
@@ -139,7 +139,7 @@
             </div>
         </section>
 
-        <!-- PRICING - PREMIUM SYNC V35 -->
+        <!-- PRICING - STABILIZATION V37 -->
         <section id="pricing-target" class="container" style="padding: 40px 0;">
             <div style="text-align: center; margin-bottom: 30px;">
                 <h2 class="led-text" style="font-size: 40px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
@@ -229,7 +229,7 @@
                     <div>
                         <div class="card-title-group">
                             <span class="p-tag">DRONE</span>
-                            <span class="p-name">AI Premium DroneShowCase</span>
+                            <span class="p-name">AI Drone Showcase</span>
                         </div>
                         <div class="p-price-display">49$</div>
                         <ul class="pricing-features">
@@ -268,7 +268,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V36_PREMIUM_PRICING",
+            "// KERNEL_OVERRIDE_V37_TEXT_STABILIZATION",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
