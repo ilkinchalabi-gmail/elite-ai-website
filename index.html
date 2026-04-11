@@ -9,47 +9,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <!-- CACHE BUMP v260 -->
-    <link rel="stylesheet" href="./premium.css?v=260">
+    <!-- CACHE BUMP v270 -->
+    <link rel="stylesheet" href="./premium.css?v=270">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
         .terminal-header {
-            background: #0d0d0d; padding: 12px 20px; border-radius: 12px 12px 0 0;
-            display: flex; align-items: center; gap: 12px; border-bottom: 3px solid #1a1a1a;
+            background: #0d0d0d; padding: 10px 18px; border-radius: 12px 12px 0 0;
+            display: flex; align-items: center; gap: 10px; border-bottom: 3px solid #1a1a1a;
         }
-        .t-dot { width: 12px; height: 12px; border-radius: 50%; }
-        .t-red { background: #ff5f56; box-shadow: 0 0 10px #ff5f56; }
+        .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .t-red { background: #ff5f56; box-shadow: 0 0 8px #ff5f56; }
         .t-yellow { background: #ffbd2e; }
-        .t-green { background: #27c93f; box-shadow: 0 0 15px #27c93f; animation: pulse 1s infinite; }
+        .t-green { background: #27c93f; box-shadow: 0 0 12px #27c93f; animation: pulse 1s infinite; }
 
         #cyber-terminal {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 25px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px;
             font-family: 'Fira Code', monospace; font-size: 13px; line-height: 1.4; color: #d8b4fe;
-            background: #000; min-height: 500px; border-radius: 0 0 12px 12px;
+            background: #000; min-height: 480px; border-radius: 0 0 12px 12px;
             border: 2px solid rgba(168, 85, 247, 0.2); overflow: hidden;
         }
         .terminal-col { overflow: hidden; white-space: pre-wrap; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
-        /* Pricing - Detailed & Compact Restored */
+        /* Pricing - Compact & Exact Restoration */
         .pricing-grid {
             display: grid !important; grid-template-columns: repeat(3, 1fr) !important;
-            gap: 15px !important; margin-top: 50px;
+            gap: 12px !important; margin-top: 40px;
         }
         .pricing-card {
-            padding: 30px 20px !important; min-height: 480px !important;
+            padding: 20px !important; min-height: 420px !important;
             display: flex; flex-direction: column; justify-content: space-between;
         }
         .pricing-features {
-            list-style: none; padding: 0; margin: 15px 0; text-align: left;
-            font-size: 12px; color: #aaa; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;
+            list-style: none; padding: 0; margin: 10px 0; text-align: left;
+            font-size: 11px; color: #aaa; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px;
         }
-        .pricing-features li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-        .pricing-features li i { color: #a855f7; font-size: 14px; }
+        .pricing-features li { margin-bottom: 6px; display: flex; align-items: center; gap: 6px; line-height: 1.3; }
+        .pricing-features li i { color: #a855f7; font-size: 13px; flex-shrink: 0; }
         
-        .p-price { font-size: 42px !important; margin: 10px 0 !important; }
-        .pricing-card h3 { font-size: 20px !important; margin-bottom: 10px !important; }
+        .p-price { font-size: 32px !important; margin: 8px 0 !important; color: #fff; font-weight: 900; }
+        .pricing-card h3 { font-size: 17px !important; margin-bottom: 8px !important; color: #d8b4fe; }
+        .p-tag { font-size: 10px !important; letter-spacing: 2px !important; }
 
         @media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr 1fr !important; } }
         @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr !important; } }
@@ -89,7 +90,7 @@
                     <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V26_DETAIL_RECO</span>
+                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V27_EXACT_SYNC</span>
                         </div>
                         <div id="cyber-terminal">
                             <div id="col-L" class="terminal-col"></div>
@@ -102,132 +103,123 @@
 
         <!-- BENTO FEATURES -->
         <section class="container" style="padding: 80px 0;">
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h2 class="led-text" style="font-size: 44px; font-family: 'Outfit'; font-weight: 900;">Operational Excellence</h2>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 class="led-text" style="font-size: 40px; font-family: 'Outfit'; font-weight: 900;">Operational Excellence</h2>
             </div>
-            <div class="bento-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-                <div class="bento-card" style="padding: 30px;"><h3>Agent Orchestration</h3><p>We build thinking agents that orchestrate your Hospitality and Real Estate services.</p></div>
-                <div class="bento-card" style="padding: 30px;"><h3>Global Reach</h3><p>Engage guests personally in any native language 24/7.</p></div>
-                <div class="bento-card" style="padding: 30px;"><h3>Full Ownership</h3><p>You own 100% of your logic and production-ready code.</p></div>
-                <div class="bento-card" style="padding: 30px;"><h3>Omnichannel</h3><p>Real-time sync between WhatsApp, Telegram, and CRMs.</p></div>
+            <div class="bento-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                <div class="bento-card" style="padding: 25px;"><h3>Agent Orchestration</h3><p>We build thinking agents that orchestrate your Hospitality and Real Estate services.</p></div>
+                <div class="bento-card" style="padding: 25px;"><h3>Global Reach</h3><p>Engage guests personally in any native language 24/7.</p></div>
+                <div class="bento-card" style="padding: 25px;"><h3>Full Ownership</h3><p>You own 100% of your logic and production-ready code.</p></div>
+                <div class="bento-card" style="padding: 25px;"><h3>Omnichannel</h3><p>Real-time sync between WhatsApp, Telegram, and CRMs.</p></div>
             </div>
         </section>
 
-        <!-- PRICING - DETAILED RESTORATION -->
-        <section id="pricing-target" class="container" style="padding: 80px 0;">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 class="led-text" style="font-size: 48px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
+        <!-- PRICING - EXACT SYNC -->
+        <section id="pricing-target" class="container" style="padding: 60px 0;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 class="led-text" style="font-size: 44px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
             </div>
             <div class="pricing-grid">
                 <!-- HOSPITALITY -->
                 <div class="pricing-card">
                     <div>
                         <span class="p-tag led-text">HOSPITALITY</span>
-                        <h3 class="led-text">Hotel Reservation AI</h3>
-                        <div class="p-price">$1 — $2</div>
+                        <h3 class="led-text">Hotel AI Reservation Agent</h3>
                         <ul class="pricing-features">
-                            <li><i data-lucide="check-circle-2"></i> PMS Direct Integration (Opera)</li>
-                            <li><i data-lucide="check-circle-2"></i> 24/7 Multilingual Chat & Voice</li>
-                            <li><i data-lucide="check-circle-2"></i> No Monthly Base Fee</li>
+                            <li><i data-lucide="check-circle-2"></i> Per room 1 usd 1 channel (whatsapp)</li>
+                            <li><i data-lucide="check-circle-2"></i> Per room 2 usd 2 channel (whatsapp+instagram)</li>
+                            <li><i data-lucide="check-circle-2"></i> Per room 3 usd 3 channel (whatsapp+insta+fb)</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 8px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
                 </div>
                 <!-- REAL ESTATE -->
                 <div class="pricing-card">
                     <div>
                         <span class="p-tag led-text">REAL ESTATE</span>
-                        <h3 class="led-text">Real Estate AI CRM</h3>
-                        <div class="p-price">$499</div>
+                        <h3 class="led-text">Real Estate AI CRM Agent</h3>
+                        <div class="p-price">499 usd</div>
                         <ul class="pricing-features">
-                            <li><i data-lucide="check-circle-2"></i> Automatic Lead Scoring</li>
-                            <li><i data-lucide="check-circle-2"></i> Instant WhatsApp Follow-ups</li>
-                            <li><i data-lucide="check-circle-2"></i> AI-PDF Brochure Generation</li>
+                            <li><i data-lucide="check-circle-2"></i> Automatic Lead Management</li>
+                            <li><i data-lucide="check-circle-2"></i> Professional Setup & Branding</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 8px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
                 </div>
                 <!-- FUNNEL -->
                 <div class="pricing-card">
                     <div>
                         <span class="p-tag led-text">FUNNEL</span>
-                        <h3 class="led-text">Sales Funnel AI</h3>
-                        <div class="p-price">$999</div>
+                        <h3 class="led-text">Sales Funnel Automation</h3>
+                        <div class="p-price">999 usd</div>
                         <ul class="pricing-features">
-                            <li><i data-lucide="check-circle-2"></i> High-Conversion AI Copy</li>
-                            <li><i data-lucide="check-circle-2"></i> Full Email Sequence Setup</li>
-                            <li><i data-lucide="check-circle-2"></i> Optimized Pixel Tracking</li>
+                            <li><i data-lucide="check-circle-2"></i> End-to-End Campaign Setup</li>
+                            <li><i data-lucide="check-circle-2"></i> AI High-Conversion Logic</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 8px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
                 </div>
                 <!-- LEAD GEN -->
                 <div class="pricing-card">
                     <div>
                         <span class="p-tag led-text">LEAD GENERATION</span>
                         <h3 class="led-text">AI Lead Outreach</h3>
-                        <div class="p-price">$1 — $5</div>
                         <ul class="pricing-features">
-                            <li><i data-lucide="check-circle-2"></i> LinkedIn & Cold Email Sync</li>
-                            <li><i data-lucide="check-circle-2"></i> Verified Niche-Targeted Leads</li>
-                            <li><i data-lucide="check-circle-2"></i> Real-time Performance Logs</li>
+                            <li><i data-lucide="check-circle-2"></i> per lead 1 email message 1 usd</li>
+                            <li><i data-lucide="check-circle-2"></i> per lead 1 tel number message 3 usd</li>
+                            <li><i data-lucide="check-circle-2"></i> per lead whatsapp message 5 usd</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 8px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
                 </div>
                 <!-- STOCK -->
                 <div class="pricing-card">
                     <div>
                         <span class="p-tag led-text">STOCK</span>
-                        <h3 class="led-text">Stock Automation AI</h3>
-                        <div class="p-price">20%</div>
+                        <h3 class="led-text">AI Stock Automation</h3>
+                        <div class="p-price">20% of product</div>
                         <ul class="pricing-features">
-                            <li><i data-lucide="check-circle-2"></i> Predictive Sentiment Analysis</li>
-                            <li><i data-lucide="check-circle-2"></i> Autonomous Trade Execution</li>
-                            <li><i data-lucide="check-circle-2"></i> Zero Fixed Maintenance Fee</li>
+                            <li><i data-lucide="check-circle-2"></i> 1000 product 200 usd</li>
+                            <li><i data-lucide="check-circle-2"></i> 5000 product 1000 usd</li>
+                            <li><i data-lucide="check-circle-2"></i> 10.000 product 2000 usd</li>
+                            <li><i data-lucide="check-circle-2"></i> 20.000 product 4000 usd</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 8px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
                 </div>
                 <!-- DRONE -->
                 <div class="pricing-card">
                     <div>
                         <span class="p-tag led-text">DRONE</span>
-                        <h3 class="led-text">Premium Drone AI</h3>
-                        <div class="p-price">$49</div>
+                        <h3 class="led-text">AI Premium DroneShowCase</h3>
+                        <div class="p-price">per video 49 usd</div>
                         <ul class="pricing-features">
-                            <li><i data-lucide="check-circle-2"></i> 4K Cinematic FPV Filming</li>
-                            <li><i data-lucide="check-circle-2"></i> AI-Enhanced Vision Grading</li>
-                            <li><i data-lucide="check-circle-2"></i> Same-Day Pro Delivery</li>
+                            <li><i data-lucide="check-circle-2"></i> 4K Cinematic AI Grading</li>
+                            <li><i data-lucide="check-circle-2"></i> Fast Professional Delivery</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 8px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
                 </div>
             </div>
         </section>
 
-        <section class="container" style="padding: 100px 0;">
+        <section class="container" style="padding: 80px 0;">
             <div class="cta-box">
                 <h2 class="led-text">Outpace the Competition</h2>
-                <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary shine-effect" style="padding: 20px 50px;">Deploy Your Agent</a>
+                <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary shine-effect" style="padding: 15px 40px;">Deploy Your Agent</a>
             </div>
         </section>
     </main>
 
     <footer id="contact" class="footer">
         <div class="container">
-            <h4 class="led-text" style="font-size: 24px; margin-bottom: 20px;">Connect with ilkin chalabi</h4>
+            <p class="led-text" style="font-weight: 800; font-size: 14px; letter-spacing: 4px; margin-bottom: 20px;">Founded by Ilkin Chalabi</p>
             <div class="social-horizontal-bar">
                 <a href="https://wa.me/971582339884" target="_blank" class="social-item whatsapp"><img src="https://cdn.simpleicons.org/whatsapp/25D366" width="20" height="20" alt=""> WhatsApp</a>
                 <a href="https://t.me/Ilkin_Chalabi" target="_blank" class="social-item telegram"><img src="https://cdn.simpleicons.org/telegram/26A8E1" width="20" height="20" alt=""> Telegram</a>
                 <a href="https://instagram.com/ilkin_chalabi" target="_blank" class="social-item instagram"><img src="https://cdn.simpleicons.org/instagram/E4405F" width="20" height="20" alt=""> Instagram</a>
                 <a href="https://linkedin.com/in/ilkin-chalabi-8798b5250" target="_blank" class="social-item linkedin"><img src="https://cdn.simpleicons.org/linkedin/0077B5" width="20" height="20" alt=""> LinkedIn</a>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=founder@elite-ai.vip" target="_blank" class="social-item mail"><img src="https://cdn.simpleicons.org/maildotru/EA4335" width="20" height="20" alt=""> E-mail</a>
-            </div>
-            <div style="margin: 40px auto; display: flex; justify-content: center; gap: 30px;">
-                <a href="#top" class="led-text" style="text-decoration: none; font-weight: 700;">About</a>
-                <a href="#pricing-target" class="led-text" style="text-decoration: none; font-weight: 700;">Products</a>
-                <a href="#contact" class="led-text" style="text-decoration: none; font-weight: 700;">Contact</a>
             </div>
             <div class="footer-bottom"><p>&copy; 2026 Elite AI. Founder: Ilkin Chalabi</p></div>
         </div>
@@ -237,7 +229,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V26_DETAIL_RECO",
+            "// KERNEL_OVERRIDE_V27_EXACT_SYNC",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
