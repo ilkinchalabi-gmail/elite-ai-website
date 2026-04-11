@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./style.css?v=50">
+    <link rel="stylesheet" href="./style.css?v=52">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -64,7 +64,7 @@
         <!-- SECTION 1: HERO -->
         <section class="hero">
             <div class="hero-glow"></div>
-            <div class="container hero-container">
+            <div class="container">
                 <h1 class="hero-title led-text">
                     Transform Your Business with <br>Autonomous AI Agents
                 </h1>
@@ -72,19 +72,9 @@
                     Automate your hospitality, real estate, and retail operations with intelligent agents that think,
                     learn, and execute 24/7.
                 </p>
-                <p style="margin-bottom: 48px; font-size: 14px; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; font-weight: 600;">Founded by Ilkin Chalabi</p>
                 <div class="hero-buttons">
                     <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary btn-lg shine-effect">Launch Your AI Agent</a>
-                    <a href="tel:+971582339884" class="btn btn-secondary btn-lg">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        Book a Strategy Call
-                    </a>
+                    <a href="tel:+971582339884" class="btn btn-secondary btn-lg">Book a Strategy Call</a>
                 </div>
 
                 <div class="hero-console-wrapper">
@@ -93,42 +83,26 @@
                             <span class="dot"></span>
                             <span class="dot"></span>
                             <span class="dot"></span>
-                            <span class="console-title">EliteAI Control Center — v4.0.2</span>
+                            <span class="console-title led-text" style="font-size: 14px; font-weight: 600;">EliteAI Control Center — v4.1.0</span>
                         </div>
                         <div class="console-content">
-                            <div id="typing-console" class="console-code">import torch.nn as nn
-from elite_core import AutonomousAgent
-from transformers import AutoModelForCausalLM
-
-DEBUG: Attached to [0x7FFDDB8A9C] within the UAE Data Center cluster.
-class AutonomousAgent(nn.Module):
-    def __init__(self, business_id='CHALABI_77'):
+                            <div class="console-code">DEBUG: Connected to UAE Data Center cluster... SUCCESS.
+class NeuralBridge(nn.Module):
+    def __init__(self, node='GLOBAL_PRIMARY'):
         super().__init__()
-        self.neural_bridge = ec.Bridge(protocol='TLS_1.3')
-        self.latent_space = nn.Linear(4096, 128)
+        self.orchestrator = ec.Orchestrator(business_id='CHALABI_77')
 
-> Connecting to MetaCloud... latency: 12ms. Handshake protocol active.
-> Patching NeuralWeights to 0xBC11A..0xFF23. [SUCCESSFULLY COMPLETED]
-async function deployNode(target) {
-    const res = await fetch(`${target}/handshake`);
-    return new NativeAgent(res, { mode: 'fast', sync: true });
+> Syncing Industry Shards: [Hospitality, RealEstate, LeadGen]...
+> Handshake with MetaCloud active... Latency: 4ms.
+> Deploying Neural Link: WhatsApp Gateway <=> Instagram CRM v4.2
+async function eliteDeployment(target) {
+    const bridge = await NeuralBridge.attach(target);
+    return bridge.deploy({ force: true, async: true });
 }
 
-> Initializing Industry Shards: [Hospitality, RealEstate, Retail]...
-> [THREAD 0] Syncing with Booking.com/Airbnb API hooks... [STABLE]
-> [THREAD 1] Injecting LeadScraper into PropertyFinder DOM... [OK]
-> Building Cross-Channel Bridge: WhatsApp <=> Instagram <=> CRM v4.2
-REGEX: /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+)/gi [GLOBAL]
----------------------------------------------------------------------------
-> OPTIMIZING CORE FLOPs... 98.4% Efficiency reached. ACTIVE_STALL_FREE
-> Root: /home/ilkin/elite-ai/agents/deploy.sh --silent --force-neural
-Elite AI System Ready. Monitoring 1,024 Autonomous Streams per second...</div>
-                            <div class="console-footer">
-                                <span class="badge">n8n Engine</span>
-                                <span class="badge">Make Cloud</span>
-                                <span class="badge">Claude 3.5 Sonnet</span>
-                                <span class="badge">OpenAI GPT-4o</span>
-                            </div>
+SYSTEM_REPORT: System operating at optimal 99.8% Efficiency in PRESET_AUTOMATION mode.
+Elite AI System Online. Monitoring 1,024 streams per second.
+n8n Engine | Make Cloud | Claude 3.5 Sonnet | OpenAI GPT-4o</div>
                         </div>
                     </div>
                 </div>
@@ -138,53 +112,27 @@ Elite AI System Ready. Monitoring 1,024 Autonomous Streams per second...</div>
         <!-- SECTION 3: FEATURES -->
         <section id="features" class="features-section">
             <div class="container">
-                <div class="section-header" style="text-align: center !important; margin-bottom: 60px;">
-                    <h2 class="led-text" style="display: block !important; margin: 0 auto !important;">Engineered for Limitless <br>Operational Excellence</h2>
-                    <p style="margin: 0 auto !important; max-width: 600px; text-align: center !important;">Step into the next era of business automation where intelligence meets execution. Eliminate
-                        manual constraints and scale with autonomous precision.</p>
+                <div class="section-header">
+                    <h2 class="led-text">Engineered for Limitless<br>Operational Excellence</h2>
+                    <p>Intelligence meets execution. Scale with autonomous precision.</p>
                 </div>
 
                 <div class="bento-grid">
                     <div class="bento-card card-large">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <h3>Autonomous Agent Orchestration</h3>
-                            <p>We build thinking agents, not just simple bots. An AI ecosystem that orchestrates your
-                                Hospitality, Real Estate, and Drone services from a single command center.</p>
-                            <div class="card-visual">
-                                <div class="mini-console">
-                                    <div class="mini-line">> Analyzing 128 hospitality leads... [OK]</div>
-                                </div>
-                            </div>
-                        </div>
+                        <h3>Autonomous Agent Orchestration</h3>
+                        <p>We build thinking agents that orchestrate your Hospitality, Real Estate, and Drone services from a single command center.</p>
                     </div>
-                    <div class="bento-card card-small">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <h3>Global Multi-Language Support</h3>
-                            <p>Engage guests from anywhere in the world in their native language personally.</p>
-                            <div class="card-visual-text">🌍 FULL GLOBAL REACH</div>
-                        </div>
+                    <div class="bento-card">
+                        <h3>Global Reach</h3>
+                        <p>Engage guests from anywhere in the world in their native language personally.</p>
                     </div>
                     <div class="bento-card card-wide">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <h3>Full Logic Ownership & Export</h3>
-                            <p>You own 100% of your automation logic. Export your systems as production-ready code
-                                anytime.</p>
-                            <div class="card-visual-code">
-                                <pre><code>import { Agent } from "elite-ai";
-const agent = new HotelAgent();
-agent.sync(); </code></pre>
-                            </div>
-                        </div>
+                        <h3>Full Ownership</h3>
+                        <p>You own 100% of your automation logic. Export your systems as production-ready code anytime.</p>
                     </div>
-                    <div class="bento-card card-small">
-                        <div class="card-glow"></div>
-                        <div class="card-content">
-                            <h3>Omnichannel Integration</h3>
-                            <p>Connect WhatsApp, Telegram, Booking.com, and CRM systems in real-time.</p>
-                        </div>
+                    <div class="bento-card">
+                        <h3>Omnichannel</h3>
+                        <p>Connect WhatsApp, Telegram, Booking.com, and CRM systems in real-time.</p>
                     </div>
                 </div>
             </div>
@@ -193,99 +141,91 @@ agent.sync(); </code></pre>
         <!-- SECTION 4: PROCESS -->
         <section class="process-section">
             <div class="container">
-                <div class="section-header" style="text-align: center !important; margin-bottom: 60px;">
-                    <h2 class="led-text" style="display: block !important; margin: 0 auto !important;">Where imagination<br>becomes code</h2>
-                    <p style="margin: 0 auto !important; max-width: 700px; text-align: center !important;">Building with Elite AI is as simple as having a conversation. Describe your idea, and watch it
-                        turn into a real product through our 3-step neural workflow.</p>
+                <div class="section-header">
+                    <h2 class="led-text">Where imagination<br>becomes code</h2>
+                    <p>Describe your idea, and watch it turn into a real product.</p>
                 </div>
                 <div class="process-grid">
                     <div class="process-step">
                         <div class="step-num">01</div>
                         <h3>Tell us what you want</h3>
-                        <p>Share your business challenges or automation ideas in natural language.</p>
+                        <p>Share your business challenges in natural language.</p>
                     </div>
                     <div class="process-step">
                         <div class="step-num">02</div>
-                        <h3>AI builds your foundation</h3>
-                        <p>Our orchestrator agents design the logic and technical framework instantly.</p>
+                        <h3>AI builds foundation</h3>
+                        <p>Our orchestrator agents design the technical framework instantly.</p>
                     </div>
                     <div class="process-step">
                         <div class="step-num">03</div>
-                        <h3>Iterate with ease</h3>
-                        <p>Refine and deploy. Your autonomous agent is ready for production 24/7.</p>
+                        <h3>Iterate & Deploy</h3>
+                        <p>Refine and deploy. Your agent is ready for production 24/7.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-
         <!-- SECTION 6: PRICING -->
         <section id="pricing-target" class="pricing-page-section">
             <div class="container">
-                <div class="section-header" style="text-align: center !important; margin-bottom: 60px;">
-                    <h2 class="pricing-title led-text" style="display: block !important; margin: 0 auto !important;">Performance Pricing</h2>
-                    <p style="margin: 0 auto !important; max-width: 600px; text-align: center !important;">Transparent, scalable models tailored to your operational volume.</p>
+                <div class="section-header">
+                    <h2 class="led-text">Performance Pricing</h2>
+                    <p>Transparent, scalable models tailored to your volume.</p>
                 </div>
 
                 <div class="pricing-grid">
                     <div class="pricing-card">
-                        <div class="card-glow"></div>
                         <div class="p-header">
-                            <span class="p-tag led-text" style="font-size: 16px;">HOSPITALITY</span>
+                            <span class="p-tag led-text">HOSPITALITY</span>
                             <h3 class="led-text">AI Hotel Reservation System</h3>
-                            <div class="p-price">$1 <small>—</small> $2</div>
+                            <div class="p-price">$1 — $2</div>
+                            <p class="p-desc">Tiered per-room pricing based on channel orchestration.</p>
                         </div>
-                        <p class="p-desc">Tiered per-room pricing based on channel orchestration.</p>
                         <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary">Order</a>
                     </div>
                     <div class="pricing-card">
-                        <div class="card-glow"></div>
                         <div class="p-header">
-                            <span class="p-tag led-text" style="font-size: 16px;">REAL ESTATE</span>
+                            <span class="p-tag led-text">REAL ESTATE</span>
                             <h3 class="led-text">AI CRM for Real Estate</h3>
                             <div class="p-price">$499</div>
+                            <p class="p-desc">Market-Leading Lead Management setup.</p>
                         </div>
-                        <p class="p-desc">Market-Leading Lead Management setup.</p>
                         <a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary">Order</a>
                     </div>
                     <div class="pricing-card">
-                        <div class="card-glow"></div>
                         <div class="p-header">
-                            <span class="p-tag led-text" style="font-size: 16px;">FUNNEL</span>
+                            <span class="p-tag led-text">FUNNEL</span>
                             <h3 class="led-text">AI Sales Funnel Automation</h3>
                             <div class="p-price">$999</div>
+                            <p class="p-desc">Full Stack Revenue Engine Management.</p>
                         </div>
-                        <p class="p-desc">Full Stack Revenue Engine Management.</p>
                         <a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary">Order</a>
                     </div>
                     <div class="pricing-card">
-                        <div class="card-glow"></div>
                         <div class="p-header">
-                            <span class="p-tag led-text" style="font-size: 16px;">LEAD GENERATION</span>
+                            <span class="p-tag led-text">LEAD GENERATION</span>
                             <h3 class="led-text">AI Lead Outreach Automation</h3>
-                            <div class="p-price">$1 <small>—</small> $5</div>
+                            <div class="p-price">$1 — $5</div>
+                            <p class="p-desc">Surgical outreach per target volume.</p>
                         </div>
-                        <p class="p-desc">Surgical outreach per target volume.</p>
                         <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary">Order</a>
                     </div>
                     <div class="pricing-card">
-                        <div class="card-glow"></div>
                         <div class="p-header">
-                            <span class="p-tag led-text" style="font-size: 16px;">STOCK</span>
+                            <span class="p-tag led-text">STOCK</span>
                             <h3 class="led-text">AI Powered Stock Automation</h3>
                             <div class="p-price">20%</div>
+                            <p class="p-desc">Supply chain mastery fee.</p>
                         </div>
-                        <p class="p-desc">Supply chain mastery fee.</p>
                         <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary">Order</a>
                     </div>
                     <div class="pricing-card">
-                        <div class="card-glow"></div>
                         <div class="p-header">
-                            <span class="p-tag led-text" style="font-size: 16px;">DRONE</span>
+                            <span class="p-tag led-text">DRONE</span>
                             <h3 class="led-text">AI Premium Drone Showcase</h3>
                             <div class="p-price">$49</div>
+                            <p class="p-desc">Luxury Real Estate AI Drone Video.</p>
                         </div>
-                        <p class="p-desc">Luxury Real Estate AI Drone Video.</p>
                         <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary">Order</a>
                     </div>
                 </div>
@@ -293,93 +233,39 @@ agent.sync(); </code></pre>
         </section>
 
         <div id="target-about" style="scroll-margin-top: 100px;"></div>
-        <!-- SECTION 8: FINAL CTA / ABOUT -->
+        <!-- SECTION 8: FINAL CTA -->
         <section id="about" class="cta-section">
             <div class="container container-narrow">
-                <div class="cta-box" style="display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; width: 100% !important; margin: 0 auto !important;">
-                    <div class="hero-glow"></div>
+                <div class="cta-box">
                     <h2 class="led-text">Ready to Outpace<br>the Competition?</h2>
-                    <p style="max-width: 600px !important; margin: 0 auto 30px !important; text-align: center !important;">Founded by <b>Ilkin Chalabi</b>, Elite AI is the cohort of innovators deploying autonomous revenue systems. 
-                       Turn your vision into a 24/7 self-sustaining asset today.</p>
-                    <div class="cta-buttons">
-                        <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary btn-lg shine-effect">Deploy Your
-                            Agent</a>
-                    </div>
+                    <p>Founded by <b>Ilkin Chalabi</b>, Elite AI deploys autonomous revenue systems 24/7.</p>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary btn-lg shine-effect">Deploy Your Agent</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- SECTION 9: FOOTER / CONTACT -->
     <footer id="contact" class="footer">
         <div class="container">
-            <div class="footer-top">
-                <div class="footer-links-grid">
-                    <div class="footer-col" style="justify-content: center !important;">
-                        <a href="#target-about">About</a>
-                        <a href="#pricing-target">Products</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                    <div class="footer-col social-full-width" style="text-align: center !important; width: 100% !important;">
-                        <h4 style="margin: 40px auto 20px !important;">Connect with ilkin chalabi</h4>
-                        <div class="social-horizontal-bar" style="justify-content: center !important;">
-                            <a href="https://wa.me/971582339884"
-                                target="_blank" class="social-item"><img
-                                    src="https://cdn.simpleicons.org/whatsapp/25D366" width="18" height="18" alt="">
-                                WhatsApp</a>
-                            <a href="https://t.me/Ilkin_Chalabi" target="_blank" class="social-item"><img
-                                    src="https://cdn.simpleicons.org/telegram/26A8E1" width="18" height="18" alt="">
-                                Telegram</a>
-                            <a href="https://instagram.com/ilkin_chalabi" target="_blank" class="social-item"><img
-                                    src="https://cdn.simpleicons.org/instagram/E4405F" width="18" height="18" alt="">
-                                Instagram</a>
-                            <a href="https://facebook.com/profile.php?id=61568958956116" target="_blank"
-                                class="social-item"><img src="https://cdn.simpleicons.org/facebook/1877F2" width="18"
-                                    height="18" alt=""> Facebook</a>
-                            <a href="https://tiktok.com/@ilkin_chalabi" target="_blank" class="social-item"><img
-                                    src="https://cdn.simpleicons.org/tiktok/FFFFFF" width="18" height="18" alt="">
-                                TikTok</a>
-                            <a href="https://linkedin.com/in/ilkin-chalabi-8798b5250" target="_blank"
-                                class="social-item">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="white"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.981 0 1.775-.773 1.775-1.729V1.729c0-.955-.794-1.729-1.775-1.729z" />
-                                </svg>
-                                LinkedIn
-                            </a>
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=founder@elite-ai.vip"
-                                target="_blank" class="social-item"><img
-                                    src="https://cdn.simpleicons.org/maildotru/FFFFFF" width="18" height="18" alt="">
-                                E-mail</a>
-                            <a href="https://linktr.ee/ilkinchalabi" target="_blank" class="social-item"><img
-                                    src="https://cdn.simpleicons.org/linktree/19AD33" width="18" height="18" alt="">
-                                Linktree</a>
-                        </div>
-                    </div>
-                </div>
+            <h4 class="led-text">Connect with ilkin chalabi</h4>
+            <div class="social-horizontal-bar">
+                <a href="https://wa.me/971582339884" target="_blank" class="social-item"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt=""> WhatsApp</a>
+                <a href="https://t.me/Ilkin_Chalabi" target="_blank" class="social-item"><img src="https://cdn.simpleicons.org/telegram/26A8E1" alt=""> Telegram</a>
+                <a href="https://instagram.com/ilkin_chalabi" target="_blank" class="social-item"><img src="https://cdn.simpleicons.org/instagram/E4405F" alt=""> Instagram</a>
+                <a href="https://facebook.com/profile.php?id=61568958956116" target="_blank" class="social-item"><img src="https://cdn.simpleicons.org/facebook/1877F2" alt=""> Facebook</a>
+                <a href="https://tiktok.com/@ilkin_chalabi" target="_blank" class="social-item"><img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt=""> TikTok</a>
+                <a href="https://linkedin.com/in/ilkin-chalabi-8798b5250" target="_blank" class="social-item"><img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt=""> LinkedIn</a>
+                <a href="https://linktr.ee/ilkinchalabi" target="_blank" class="social-item"><img src="https://cdn.simpleicons.org/linktree/19AD33" alt=""> Linktree</a>
             </div>
-            <div class="logo led-text" style="font-size: 24px; white-space: nowrap; margin-bottom: 24px; display: inline-block !important;">ELITE AI</div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Elite AI. All rights reserved. | <b>Founder & CEO: Ilkin Chalabi</b></p>
-                <div class="footer-status">
-                    <span class="status-dot"></span> System Online
-                </div>
+                <p>&copy; 2026 Elite AI. Founder: Ilkin Chalabi</p>
+                <p>System Online</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Prevent browser from restoring old scroll position
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        window.scrollTo(0, 0);
-        // Initialize Lucide icons
         lucide.createIcons();
     </script>
-
-    <script type="module" src="./main.js"></script>
 </body>
-
 </html>
