@@ -11,12 +11,50 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap"
         rel="stylesheet">
-    <!-- CACHE BUMP v60 -->
-    <link rel="stylesheet" href="./premium.css?v=60">
+    <!-- CACHE BUMP v77 -->
+    <link rel="stylesheet" href="./premium.css?v=77">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Cyber-Vahime Terminal Styles */
+        .terminal-header {
+            background: #1a1a1a;
+            padding: 8px 15px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #333;
+        }
+        .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .t-red { background: #ff5f56; box-shadow: 0 0 10px #ff5f56; }
+        .t-yellow { background: #ffbd2e; }
+        .t-green { background: #27c93f; box-shadow: 0 0 15px #27c93f; animation: pulse 1.5s infinite; }
+
+        .typing-cursor {
+            border-right: 2px solid #a855f7;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+
+        .scary-glitch {
+            text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+            animation: glitch 500ms infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
+            14% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
+            15% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
+            49% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
+            50% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
+            99% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
+            100% { text-shadow: -0.025em 0 0 rgba(255,0,0,0.75), -0.025em -0.025em 0 rgba(0,255,0,0.75), -0.025em -0.05em 0 rgba(0,0,255,0.75); }
+        }
+    </style>
 </head>
 
-<body id="top"> <!-- ADDED TOP ID FOR ULTIMATE ANCHOR -->
+<body id="top">
 
     <div id="star-field"></div>
 
@@ -24,12 +62,10 @@
         <div class="container nav-container">
             <a href="#top" class="logo led-text">ELITE AI</a>
             <div class="nav-menu">
-                <!-- REDIRECTED TO ABSOLUTE TOP -->
                 <a href="#top" class="led-text">About</a>
                 <a href="#pricing-target" class="led-text">Products</a>
                 <a href="#contact" class="led-text">Contact</a>
             </div>
-            <!-- Unified Primary Button -->
             <a href="https://wa.me/971582339884" target="_blank" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Get Started</a>
         </div>
     </nav>
@@ -41,7 +77,6 @@
                 <h1 class="hero-title led-text" style="padding-top: 50px;">Transform Your Business with <br>Autonomous AI Agents</h1>
                 <p class="hero-subtitle">Automate your operations with intelligent agents that think and execute 24/7. Engineered for limitless excellence.</p>
                 
-                <!-- FOUNDER TEXT -->
                 <div style="padding: 20px 0; text-align: center;">
                     <p class="led-text" style="font-weight: 800; font-size: 14px; letter-spacing: 4px; text-transform: uppercase;">Founded by Ilkin Chalabi</p>
                 </div>
@@ -51,32 +86,25 @@
                     <a href="tel:+971582339884" class="btn btn-secondary">Book a Strategy Call</a>
                 </div>
 
-                <div class="hero-console-wrapper">
-                    <div class="hero-console">
-                        <div class="console-code">> Connected to UAE Data Center cluster... SUCCESS.
-class NeuralBridge(nn.Module):
-    def __init__(self, node='GLOBAL_PRIMARY'):
-        super().__init__()
-        self.orchestrator = ec.Orchestrator(business_id='CHALABI_77')
-
-> Syncing Industry Shards: [Hospitality, RealEstate, LeadGen]...
-> Handshake with MetaCloud active... Latency: 4ms.
-> Deploying Neural Link: WhatsApp Gateway <=> Instagram CRM v4.2
-async function eliteDeployment(target) {
-    const bridge = await NeuralBridge.attach(target);
-    return bridge.deploy({ force: true, async: true });
-}
-
-SYSTEM_REPORT: System operating at optimal 99.8% Efficiency in PRESET_AUTOMATION mode.
-Elite AI System Online. Monitoring 1,024 streams per second.
-n8n Engine | Make Cloud | Claude 3.5 Sonnet | OpenAI GPT-4o</div>
+                <!-- CYBER-VAHIME TERMINAL -->
+                <div class="hero-console-wrapper" style="margin-top: 50px;">
+                    <div class="hero-console" style="border: 2px solid #a855f7; box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);">
+                        <div class="terminal-header">
+                            <div class="t-dot t-red"></div>
+                            <div class="t-dot t-yellow"></div>
+                            <div class="t-dot t-green"></div>
+                            <span style="color: #666; font-size: 12px; font-family: monospace; border-left: 1px solid #333; padding-left: 10px;">root@elite-ai:~/cluster/kernel_bypass</span>
+                        </div>
+                        <div id="cyber-terminal" class="console-code" style="min-height: 350px; font-size: 13px; color: #d8b4fe; line-height: 1.6;">
+                            <!-- TYPING CONTENT WILL BE INSERTED BY JS -->
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- BENTO FEATURES -->
-        <section id="features" class="container" style="padding: 100px 0;">
+        <section class="container" style="padding: 100px 0;">
             <div style="text-align: center; margin-bottom: 60px;">
                 <h2 class="led-text" style="font-size: 48px; font-family: 'Outfit'; font-weight: 900;">Engineered for Limitless<br>Operational Excellence</h2>
                 <p style="color: #888; margin-top: 15px;">Intelligence meets execution. Scale with autonomous precision.</p>
@@ -110,6 +138,7 @@ n8n Engine | Make Cloud | Claude 3.5 Sonnet | OpenAI GPT-4o</div>
             </div>
 
             <div class="pricing-grid">
+                <!-- Pricing items remain the same -->
                 <div class="pricing-card">
                     <span class="p-tag led-text">HOSPITALITY</span>
                     <h3 class="led-text">AI Hotel Reservation System</h3>
@@ -160,6 +189,7 @@ n8n Engine | Make Cloud | Claude 3.5 Sonnet | OpenAI GPT-4o</div>
     </main>
 
     <footer id="contact" class="footer">
+        <!-- Footer remains the same -->
         <div class="container">
             <h4 class="led-text" style="font-size: 24px; margin-bottom: 20px;">Connect with ilkin chalabi</h4>
             <div class="social-horizontal-bar">
@@ -185,6 +215,69 @@ n8n Engine | Make Cloud | Claude 3.5 Sonnet | OpenAI GPT-4o</div>
             </div>
         </div>
     </footer>
+
+    <!-- CYBER TERMINAL SCRIPT -->
+    <script>
+        const terminal = document.getElementById('cyber-terminal');
+        const codeLines = [
+            "> [UPLOADING_KERNEL_OVERRIDE_V77]",
+            "> SYNCING_RSA_4096_SHA512_ENCRYPTION... DONE.",
+            "MOV RAX, 0x3B ; EXEC_SYS_CALL",
+            "MOV RDI, OFFSET '_CHALABI_CORE_INFRA'",
+            "SYSCALL ; CRITICAL OVERRIDE SUCCESSFUL",
+            "",
+            "class NeuralBridge(ec.Substrate):",
+            "    def __init__(self, node='CHALABI_PRIMARY'):",
+            "        self._auth = os.environ['SECRET_ELITE_TOKEN']",
+            "        self.orchestrator = ec.Chain(node_id=id(self))",
+            "        self.bypass_restrict(level='MAX_Z')",
+            "",
+            "> ANALYZING_REVENUE_STREAMS: [Hospitality, RealEstate, Stock]",
+            "> OPTIMIZING_AGENT_LATENCY... CURRENT: 0.0004ms",
+            "> [WARNING] NEURAL_BRIDGE_DETECTED_UNAUTHORIZED_ACCESS",
+            "> DEPLOYING_COUNTER_MEASURES... SUCCESS.",
+            "",
+            "while elite.active:",
+            "    elite.scale(business_volume_infinite=True)",
+            "    deploy.to_meta_cloud(target='GLOBAL_PRIMARY')",
+            "    if revenue < target: elite.optimize_aggressively()",
+            "",
+            "> ELITE_AI_ORCHESTRATOR_ONLINE: 99.98% EFFICIENCY",
+            "> MONITORING_10_MILLION_OPS_PER_SECOND",
+            "> ALL SYSTEMS GREEN. ELITE AI ACTIVE."
+        ];
+
+        let lineIdx = 0;
+        let charIdx = 0;
+
+        function typeCode() {
+            if (lineIdx < codeLines.length) {
+                const currentLine = codeLines[lineIdx];
+                if (charIdx < currentLine.length) {
+                    terminal.innerHTML += currentLine[charIdx];
+                    charIdx++;
+                    setTimeout(typeCode, 15); // Fast typing
+                } else {
+                    terminal.innerHTML += "<br>";
+                    lineIdx++;
+                    charIdx = 0;
+                    setTimeout(typeCode, 200); // Small pause between lines
+                }
+            } else {
+                // Restart typing after a delay to keep it dynamic
+                setTimeout(() => {
+                    terminal.innerHTML = "";
+                    lineIdx = 0;
+                    charIdx = 0;
+                    typeCode();
+                }, 10000);
+            }
+            // Auto scroll to bottom
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        typeCode();
+    </script>
 
     <script> lucide.createIcons(); </script>
 </body>
