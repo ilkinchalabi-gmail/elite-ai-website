@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
-    <!-- CACHE BUMP v270 -->
-    <link rel="stylesheet" href="./premium.css?v=270">
+    <!-- CACHE BUMP v280 -->
+    <link rel="stylesheet" href="./premium.css?v=280">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Massive Dual-Column Terminal Styles */
@@ -32,25 +32,27 @@
         .terminal-col { overflow: hidden; white-space: pre-wrap; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
-        /* Pricing - Compact & Exact Restoration */
+        /* Pricing - Perfect Sync V28 */
         .pricing-grid {
             display: grid !important; grid-template-columns: repeat(3, 1fr) !important;
-            gap: 12px !important; margin-top: 40px;
+            gap: 15px !important; margin-top: 40px;
         }
         .pricing-card {
-            padding: 20px !important; min-height: 420px !important;
+            padding: 25px 20px !important; min-height: 460px !important;
             display: flex; flex-direction: column; justify-content: space-between;
         }
-        .pricing-features {
-            list-style: none; padding: 0; margin: 10px 0; text-align: left;
-            font-size: 11px; color: #aaa; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px;
-        }
-        .pricing-features li { margin-bottom: 6px; display: flex; align-items: center; gap: 6px; line-height: 1.3; }
-        .pricing-features li i { color: #a855f7; font-size: 13px; flex-shrink: 0; }
+        .card-title-group { text-align: center; margin-bottom: 15px; }
+        .p-tag { display: block; font-size: 10px !important; letter-spacing: 3px !important; color: #a855f7; margin-bottom: 5px; text-transform: uppercase; font-weight: 800; }
+        .p-name { display: block; font-size: 19px !important; font-weight: 900; color: #fff; line-height: 1.2; font-family: 'Outfit'; }
+
+        .p-price { font-size: 38px !important; margin: 15px 0 !important; color: #fff; font-weight: 900; text-align: center; }
         
-        .p-price { font-size: 32px !important; margin: 8px 0 !important; color: #fff; font-weight: 900; }
-        .pricing-card h3 { font-size: 17px !important; margin-bottom: 8px !important; color: #d8b4fe; }
-        .p-tag { font-size: 10px !important; letter-spacing: 2px !important; }
+        .pricing-features {
+            list-style: none; padding: 0; margin: 15px 0; text-align: left;
+            font-size: 11px; color: #aaa; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;
+        }
+        .pricing-features li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; line-height: 1.4; }
+        .pricing-features li i { color: #a855f7; font-size: 14px; flex-shrink: 0; }
 
         @media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr 1fr !important; } }
         @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr !important; } }
@@ -90,7 +92,7 @@
                     <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
-                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V27_EXACT_SYNC</span>
+                            <span style="color: #666; font-size: 11px; font-family: 'Fira Code'; margin-left: 12px;">root@elite-ai:~/CHALABI_INFRA_V28_UI_SYNC</span>
                         </div>
                         <div id="cyber-terminal">
                             <div id="col-L" class="terminal-col"></div>
@@ -114,7 +116,7 @@
             </div>
         </section>
 
-        <!-- PRICING - EXACT SYNC -->
+        <!-- PRICING - UI SYNC V28 -->
         <section id="pricing-target" class="container" style="padding: 60px 0;">
             <div style="text-align: center; margin-bottom: 50px;">
                 <h2 class="led-text" style="font-size: 44px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
@@ -123,60 +125,72 @@
                 <!-- HOSPITALITY -->
                 <div class="pricing-card">
                     <div>
-                        <span class="p-tag led-text">HOSPITALITY</span>
-                        <h3 class="led-text">Hotel AI Reservation Agent</h3>
+                        <div class="card-title-group">
+                            <span class="p-tag">HOSPITALITY</span>
+                            <span class="p-name">Hotel AI Reservation Agent</span>
+                        </div>
+                        <div class="p-price">1$ — 3$</div>
                         <ul class="pricing-features">
                             <li><i data-lucide="check-circle-2"></i> Per room 1 usd 1 channel (whatsapp)</li>
-                            <li><i data-lucide="check-circle-2"></i> Per room 2 usd 2 channel (whatsapp+instagram)</li>
+                            <li><i data-lucide="check-circle-2"></i> Per room 2 usd 2 channel (whatsapp+insta)</li>
                             <li><i data-lucide="check-circle-2"></i> Per room 3 usd 3 channel (whatsapp+insta+fb)</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px;">Order Now</a>
                 </div>
                 <!-- REAL ESTATE -->
                 <div class="pricing-card">
                     <div>
-                        <span class="p-tag led-text">REAL ESTATE</span>
-                        <h3 class="led-text">Real Estate AI CRM Agent</h3>
+                        <div class="card-title-group">
+                            <span class="p-tag">REAL ESTATE</span>
+                            <span class="p-name">Real Estate AI CRM Agent</span>
+                        </div>
                         <div class="p-price">499 usd</div>
                         <ul class="pricing-features">
                             <li><i data-lucide="check-circle-2"></i> Automatic Lead Management</li>
                             <li><i data-lucide="check-circle-2"></i> Professional Setup & Branding</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi/499" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px;">Order Now</a>
                 </div>
                 <!-- FUNNEL -->
                 <div class="pricing-card">
                     <div>
-                        <span class="p-tag led-text">FUNNEL</span>
-                        <h3 class="led-text">Sales Funnel Automation</h3>
+                        <div class="card-title-group">
+                            <span class="p-tag">FUNNEL</span>
+                            <span class="p-name">Sales Funnel Automation</span>
+                        </div>
                         <div class="p-price">999 usd</div>
                         <ul class="pricing-features">
                             <li><i data-lucide="check-circle-2"></i> End-to-End Campaign Setup</li>
                             <li><i data-lucide="check-circle-2"></i> AI High-Conversion Logic</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi/999" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px;">Order Now</a>
                 </div>
                 <!-- LEAD GEN -->
                 <div class="pricing-card">
                     <div>
-                        <span class="p-tag led-text">LEAD GENERATION</span>
-                        <h3 class="led-text">AI Lead Outreach</h3>
+                        <div class="card-title-group">
+                            <span class="p-tag">LEAD GENERATION</span>
+                            <span class="p-name">AI Lead Outreach</span>
+                        </div>
+                        <div class="p-price">1$ — 5$</div>
                         <ul class="pricing-features">
                             <li><i data-lucide="check-circle-2"></i> per lead 1 email message 1 usd</li>
                             <li><i data-lucide="check-circle-2"></i> per lead 1 tel number message 3 usd</li>
                             <li><i data-lucide="check-circle-2"></i> per lead whatsapp message 5 usd</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px;">Order Now</a>
                 </div>
                 <!-- STOCK -->
                 <div class="pricing-card">
                     <div>
-                        <span class="p-tag led-text">STOCK</span>
-                        <h3 class="led-text">AI Stock Automation</h3>
+                        <div class="card-title-group">
+                            <span class="p-tag">STOCK</span>
+                            <span class="p-name">AI Stock Automation</span>
+                        </div>
                         <div class="p-price">20% of product</div>
                         <ul class="pricing-features">
                             <li><i data-lucide="check-circle-2"></i> 1000 product 200 usd</li>
@@ -185,20 +199,22 @@
                             <li><i data-lucide="check-circle-2"></i> 20.000 product 4000 usd</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px;">Order Now</a>
                 </div>
                 <!-- DRONE -->
                 <div class="pricing-card">
                     <div>
-                        <span class="p-tag led-text">DRONE</span>
-                        <h3 class="led-text">AI Premium DroneShowCase</h3>
-                        <div class="p-price">per video 49 usd</div>
+                        <div class="card-title-group">
+                            <span class="p-tag">DRONE</span>
+                            <span class="p-name">AI Premium DroneShowCase</span>
+                        </div>
+                        <div class="p-price">49 usd</div>
                         <ul class="pricing-features">
                             <li><i data-lucide="check-circle-2"></i> 4K Cinematic AI Grading</li>
                             <li><i data-lucide="check-circle-2"></i> Fast Professional Delivery</li>
                         </ul>
                     </div>
-                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px; font-size: 13px;">Order Now</a>
+                    <a href="https://paypal.me/ilkinchalabi/49" target="_blank" class="btn btn-primary" style="width: 100%; border-radius: 6px;">Order Now</a>
                 </div>
             </div>
         </section>
@@ -229,7 +245,7 @@
         const colL = document.getElementById('col-L');
         const colR = document.getElementById('col-R');
         const leftCode = [
-            "// KERNEL_OVERRIDE_V27_EXACT_SYNC",
+            "// KERNEL_OVERRIDE_V28_UI_SYNC",
             "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
             "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
             "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
