@@ -8,47 +8,47 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <!-- CACHE BUMP v99 -->
-    <link rel="stylesheet" href="./premium.css?v=99">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@800;900&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
+    <!-- CACHE BUMP v111 -->
+    <link rel="stylesheet" href="./premium.css?v=111">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Triple-Column Ultra-Complex Terminal Styles */
+        /* Massive Dual-Column Terminal Styles */
         .terminal-header {
-            background: #0a0a0a;
-            padding: 12px 20px;
+            background: #0d0d0d;
+            padding: 15px 25px;
             border-radius: 12px 12px 0 0;
             display: flex;
             align-items: center;
-            gap: 12px;
-            border-bottom: 2px solid #1a1a1a;
+            gap: 15px;
+            border-bottom: 3px solid #1a1a1a;
         }
-        .t-dot { width: 12px; height: 12px; border-radius: 50%; transition: 0.3s; }
-        .t-red { background: #ff5f56; box-shadow: 0 0 10px #ff5f56; }
+        .t-dot { width: 14px; height: 14px; border-radius: 50%; }
+        .t-red { background: #ff5f56; box-shadow: 0 0 15px #ff5f56; }
         .t-yellow { background: #ffbd2e; }
-        .t-green { background: #27c93f; box-shadow: 0 0 15px #27c93f; animation: pulse 1s infinite; }
+        .t-green { background: #27c93f; box-shadow: 0 0 20px #27c93f; animation: pulse 1s infinite; }
 
         #cyber-terminal {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* Triple Column */
-            gap: 15px;
-            padding: 20px;
+            grid-template-columns: 1fr 1fr; /* Strong 2-Column */
+            gap: 40px; /* Space between columns but filled with text */
+            padding: 30px;
             font-family: 'Fira Code', monospace;
-            font-size: 10px; /* Slightly smaller for more density */
-            line-height: 1.3;
+            font-size: 14px; /* Larger font size as requested */
+            line-height: 1.5;
             color: #d8b4fe;
-            background: #030303;
-            min-height: 500px;
+            background: #000;
+            min-height: 550px;
             border-radius: 0 0 12px 12px;
-            border: 1px solid rgba(168, 85, 247, 0.2);
+            border: 2px solid rgba(168, 85, 247, 0.3);
             overflow: hidden;
+            letter-spacing: 0.5px;
         }
 
         .terminal-col {
             overflow: hidden;
             white-space: pre-wrap;
-            border-right: 1px solid rgba(168, 85, 247, 0.05);
-            padding: 5px;
+            border-right: 1px solid rgba(168, 85, 247, 0.1);
         }
 
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
@@ -87,19 +87,18 @@
                     <a href="tel:+971582339884" class="btn btn-secondary">Book a Strategy Call</a>
                 </div>
 
-                <!-- TRIPLE VOLUMINOUS CYBER TERMINAL -->
-                <div class="hero-console-wrapper" style="margin-top: 60px; max-width: 1300px; margin-left: auto; margin-right: auto;">
-                    <div class="hero-console" style="border: 1px solid #a855f7; box-shadow: 0 0 60px rgba(168, 85, 247, 0.25);">
+                <!-- MASSIVE DUAL CYBER TERMINAL -->
+                <div class="hero-console-wrapper" style="margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+                    <div class="hero-console">
                         <div class="terminal-header">
                             <div class="t-dot t-red"></div>
                             <div class="t-dot t-yellow"></div>
                             <div class="t-dot t-green"></div>
-                            <span style="color: #555; font-size: 10px; font-family: 'Fira Code';">GLOBAL_ORCHESTRATOR_SATELLITE_LINK_UAE_SECURE</span>
+                            <span style="color: #666; font-size: 12px; font-family: 'Fira Code'; margin-left: 15px;">root@elite-ai:~/CHALABI_INFRA_OVERRIDE_ACTIVE</span>
                         </div>
                         <div id="cyber-terminal">
-                            <div id="col-1" class="terminal-col"></div>
-                            <div id="col-2" class="terminal-col"></div>
-                            <div id="col-3" class="terminal-col"></div>
+                            <div id="col-L" class="terminal-col"></div>
+                            <div id="col-R" class="terminal-col"></div>
                         </div>
                     </div>
                 </div>
@@ -163,114 +162,90 @@
         </div>
     </footer>
 
-    <!-- INFINITE TRIPLE TYPING SCRIPT -->
+    <!-- MASSIVE INFINITE TYPING SCRIPT -->
     <script>
-        const cols = [document.getElementById('col-1'), document.getElementById('col-2'), document.getElementById('col-3')];
-        const contents = [
-            [
-                "// KERNEL_CORE_V21",
-                "MOV RAX, 0x1F2A3B4C",
-                "MOV RBX, [RSP+0x8]",
-                "XOR RCX, RCX",
-                "SYSCALL ; GATEWAY_ACTIVE",
-                "",
-                "0x00: FF 21 44 91 00",
-                "0x10: 12 33 AA CC DD",
-                "0x20: AB 42 11 99 88",
-                "",
-                "> SYNCING_RSA_PUB_KEY",
-                "> RSA_MOD: 0xFF...EE",
-                "> RSA_EXP: 0x10001",
-                "",
-                "static void* bridge() {",
-                "  asm('pause');",
-                "  return malloc(size);",
-                "}",
-                "",
-                "> [!] KERNEL_OVERRIDE",
-                "> SECURITY_LVL: NULL",
-                "> ACCESS: GRANTED"
-            ],
-            [
-                "// NEURAL_WEIGHTS_DUMP",
-                "0.992, 0.124, 0.455",
-                "0.771, -0.99, 1.000",
-                "0.001, 0.442, 0.923",
-                "",
-                "> GRADIENT_DESCENT_ON",
-                "> LR: 0.000000412",
-                "> EPOCH: 777_INFINITE",
-                "",
-                "class EliteCore(Sub):",
-                "  def __init__(self):",
-                "    self.brain = Matrix()",
-                "    self.loop = True",
-                "",
-                "while self.active:",
-                "  deploy.scale_global()",
-                "  if err: self.self_heal()",
-                "",
-                "> AUTO_OPTIMIZE_START",
-                "> TARGET: $1,000,000/mo",
-                "> STATUS: EXCEEDED"
-            ],
-            [
-                "// GLOBAL_ROUTING_TABLE",
-                "192.168.1.1 -> DB_UAE",
-                "10.0.0.92 -> CLOUD_MAIN",
-                "172.16.2.2 -> SATELLITE",
-                "",
-                "iptables -A INPUT -p tcp",
-                "--dport 443 -j ACCEPT",
-                "docker exec -it bridge",
-                "",
-                "> SHA3_HASHING_STREAM...",
-                "8f4e2c...d7a1b9",
-                "4c9a8e...1f2d3c",
-                "9e0b1d...4a7f8e",
-                "",
-                "// CHALABI_INFRA_V9",
-                "cluster.join(node_id=77)",
-                "master_sync(force=true)",
-                "",
-                "> SYSTEM_ONLINE_24/7",
-                "> LATENCY: 0.00001ms",
-                "> [CHALABI_CORE_LOCKED]"
-            ]
+        const colL = document.getElementById('col-L');
+        const colR = document.getElementById('col-R');
+
+        const leftCode = [
+            "// KERNEL_OVERRIDE_V22_CHALABI",
+            "MOV RAX, 0xFFFFFFFF12345678_HUB_77",
+            "XOR RBX, RBX ; CLEAR_GLOBAL_CPU_REG",
+            "SYSCALL ; CRITICAL_OVERRIDE_ACTIVE",
+            "",
+            "> INITIALIZING_RSA_4096_ENCRYPTION_SYNC...",
+            "MOD: 0xEEA1_0021_FF42_BB99_AA77_CC88",
+            "EXP: 0x10001 (PUBLIC_KEY_AUTHORIZED)",
+            "",
+            "class NeuralChain(nn.Hub_Substrate):",
+            "  def __init__(self, cluster='DXB_NODE'):",
+            "    self.tokens = os.env('SECRET_ELITE')",
+            "    self.brain = Matrix_Inversion_V22(777)",
+            "",
+            "while elite.active_autonomous_stream:",
+            "  elite.scale_global(infinite_volume=1)",
+            "  deploy.to_meta_cloud(node_target='UAE')",
+            "",
+            "> REVENUE_OPTIMIZATION_LEVEL: MAXIMUM",
+            "> LATENCY_OVERRIDE: 0.0000001ms_STABLE",
+            "> [CHALABI_CORE_INFRA_LOCKED_AND_READY]"
         ];
 
-        function typeColumn(cIdx) {
+        const rightCode = [
+            "// GLOBAL_ROUTING_SECURE_INFRA",
+            "192.168.1.1 -> DB_ENT_CENTRAL_UAE_77",
+            "10.0.0.92 -> CLOUD_ORCHESTRATOR_MAIN",
+            "172.16.2.2 -> SATELLITE_UPLINK_ENCRYPT",
+            "",
+            "iptables -t nat -A PREROUTING_RULES",
+            "-p tcp --dport 443 -j REDIRECT_HUB_77",
+            "docker exec -it elite-ai-core-bridge",
+            "",
+            "> SHA3_BITSTREAM_HASHING_VERIFIED...",
+            "8f4e2c...d7a1b9_ELITE_CHALABI_001_X",
+            "4c9a8e...1f2d3c_ELITE_CHALABI_002_Y",
+            "9e0b1d...4a7f8e_ELITE_CHALABI_003_Z",
+            "",
+            "// NEURAL_WEIGHTS_SNAPSHOT_ACTIVE",
+            "W1: [0.99, -0.12, 0.45, 0.77, 0.88, 0.1]",
+            "W2: [0.33, 0.92, -0.41, 0.11, 0.55, 0.9]",
+            "W3: [0.01, 0.88, 1.000, 0.22, 0.44, 1.0]",
+            "",
+            "> SYSTEM_STATUS: FULLY_OPERATIONAL",
+            "> TOTAL_STREAM_OPS: 200_MILLION_OPS",
+            "> FOUNDER_ACCESS: CHALABI_VERIFIED"
+        ];
+
+        function typeHub(lines, element) {
             let lIdx = 0;
-            let charIdx = 0;
-            const element = cols[cIdx];
-            const lines = contents[cIdx];
+            let cIdx = 0;
 
             function step() {
                 if (lIdx < lines.length) {
-                    if (charIdx < lines[lIdx].length) {
-                        element.innerHTML += lines[lIdx][charIdx];
-                        charIdx++;
-                        setTimeout(step, 8);
+                    if (cIdx < lines[lIdx].length) {
+                        element.innerHTML += lines[lIdx][cIdx];
+                        cIdx++;
+                        setTimeout(step, 7);
                     } else {
                         element.innerHTML += "<br>";
                         lIdx++;
-                        charIdx = 0;
+                        cIdx = 0;
                         setTimeout(step, 100);
                     }
                 } else {
-                    // Loop: Wait 3 seconds, clear and restart
                     setTimeout(() => {
                         element.innerHTML = "";
                         lIdx = 0;
-                        charIdx = 0;
-                        typeColumn(cIdx);
-                    }, 3000);
+                        cIdx = 0;
+                        typeHub(lines, element);
+                    }, 4000);
                 }
             }
             step();
         }
 
-        cols.forEach((_, i) => typeColumn(i));
+        typeHub(leftCode, colL);
+        setTimeout(() => typeHub(rightCode, colR), 500);
     </script>
 
     <script> lucide.createIcons(); </script>
