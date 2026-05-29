@@ -1,66 +1,102 @@
-/* ═══════════════════════════════════════════════
-   ELITE AI — CORE ENGINE (v2.1)
-   ═══════════════════════════════════════════════ */
+/**
+ * ELITE AI — ADVANCED CONSOLE ENGINE
+ * Hardcore Mix Coding Simulation (Python/JS/Neural)
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initTyping();
-    initStars();
-});
-
-function initTyping() {
-    const el = document.getElementById('typing-console');
-    if (!el) return;
-
-    // ELONGATED CODE LINES AS REQUESTED BY USER
-    const lines = [
-        "import { AutonomousKernel, NeuralBridge } from '@elite-systems/core/v4-stable';",
-        "const ecosystem = new AutonomousKernel({ founder: 'Ilkin Chalabi', region: 'Global' });",
-        "const protocol = ecosystem.attachProtocol('Neural_Bridge_v2.0_CrossChannel_Relay');",
-        "",
-        "> Initializing industry bridges for Real Estate & Global Hospitality sectors...",
-        "> Handshake protocol with Booking.com Enterprise API... [ ESTABLISHED - 200 OK ]",
-        "> Syncing Real Estate Private CRM database shards... [ INDEXING COMPLETED ]",
-        "> Deploying Neural Link: WhatsApp Business API <=> Instagram Direct Messages v12",
-        "",
-        "DEBUG_LOG: Connected to secure node 0x7FFDDB8A9C within the UAE Data Center cluster.",
-        "SYSTEM_REPORT: Processing 128 global high-intent leads across 4 autonomous channels.",
-        "STATUS_CHECK: System operating at optimal 99.8% Efficiency in PRESET_AUTOMATION mode.",
-        "",
-        "> Deployment sequence initiated: Orchestrating autonomous revenue systems globally...",
-        "> [THREAD_0] Monitoring Meta Ads Pixel conversion rates in real-time... [STABLE]"
-    ];
-
-    let line = 0, char = 0, text = '';
-
-    function type() {
-        if (line < lines.length) {
-            if (char < lines[line].length) {
-                text += lines[line][char++];
-                el.textContent = text + '█'; // Solid cursor for terminal feel
-                setTimeout(type, 15); // Slightly faster for longer lines
-            } else {
-                text += '\n';
-                line++;
-                char = 0;
-                setTimeout(type, 300);
-            }
-        } else {
-            setTimeout(() => { line = 0; char = 0; text = ''; type(); }, 3000);
+    
+    // 1. STAR FIELD INITIALIZATION
+    const starField = document.getElementById('star-field');
+    const starCount = 150;
+    if (starField) {
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const size = Math.random() * 2 + 1;
+            const duration = Math.random() * 3 + 2;
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.setProperty('--duration', `${duration}s`);
+            starField.appendChild(star);
         }
     }
-    type();
-}
 
-function initStars() {
-    const field = document.getElementById('star-field');
-    if (!field) return;
-    for (let i = 0; i < 120; i++) {
-        const star = document.createElement('div');
-        star.style.cssText = `position:absolute;left:${Math.random()*100}%;top:${Math.random()*100}%;width:1.5px;height:1.5px;background:#fff;border-radius:50%;opacity:${Math.random()};animation:twinkle 4s infinite ${Math.random()*5}s`;
-        field.appendChild(star);
+    // 2. HARDCORE CONSOLE TYPING (Complex IT Logic)
+    const consoleElem = document.getElementById('typing-console');
+    const hardcoreCommands = [
+        "import torch.nn as nn",
+        "import elite_core as ec",
+        "from transformers import AutoModelForCausalLM",
+        "",
+        "DEBUG: Attached to [0x7FFDDB8A9C]",
+        "class AutonomousAgent(nn.Module):",
+        "    def __init__(self, business_id='CHALABI_77'):",
+        "        super().__init__()",
+        "        self.neural_bridge = ec.Bridge(protocol='TLS_1.3')",
+        "        self.latent_space = nn.Linear(4096, 128)",
+        "",
+        "> Connecting to MetaCloud... latency: 12ms",
+        "> Patching NeuralWeights to 0xBC11A..0xFF23",
+        "async function deployNode(target) {",
+        "    const response = await fetch(`${target}/api/v2/handshake`);",
+        "    const buffer = await response.arrayBuffer();",
+        "    return new NativeAgent(buffer, { mode: 'aggressive' });",
+        "}",
+        "",
+        "> Initializing Industry Shards: [Hospitality, RealEstate, Retail]",
+        "> [THREAD 0] Syncing with Booking.com/Airbnb API hooks...",
+        "> [THREAD 1] Injecting LeadScraper into PropertyFinder DOM...",
+        "> Building Cross-Channel Bridge: WhatsApp <=> CRM v4.2",
+        "REGEX: /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9_-]+)/gi",
+        "",
+        "> OPTIMIZING CORE FLOPs... 98% Efficiency reached.",
+        "> SYTEM_STATE: AUTONOMOUS_ACTIVE",
+        "> Root: /home/ilkin/elite-ai/agents/deploy.sh --silent",
+        "Waiting for input..."
+    ];
+
+    let cmdIdx = 0;
+    let charIdx = 0;
+    
+    function typeCommand() {
+        if (consoleElem && cmdIdx < hardcoreCommands.length) {
+            const currentCmd = hardcoreCommands[cmdIdx];
+            if (charIdx < currentCmd.length) {
+                consoleElem.innerHTML += currentCmd.charAt(charIdx);
+                charIdx++;
+                setTimeout(typeCommand, 10); // Faster for code feel
+            } else {
+                consoleElem.innerHTML += "\n";
+                cmdIdx++;
+                charIdx = 0;
+                setTimeout(typeCommand, 300);
+            }
+            consoleElem.scrollTop = consoleElem.scrollHeight;
+        }
     }
-}
 
-const s = document.createElement('style');
-s.innerHTML = `@keyframes twinkle { 0%,100%{opacity:0.3; transform:scale(1)} 50%{opacity:0.8; transform:scale(1.2)} }`;
-document.head.appendChild(s);
+    setTimeout(typeCommand, 1500);
+
+    // 3. LOGO SCROLL CLONING
+    const logosGrid = document.querySelector('.logos-grid');
+    if (logosGrid) {
+        const clone = logosGrid.cloneNode(true);
+        logosGrid.parentElement.appendChild(clone);
+    }
+
+    // 4. MOUSE FLOW GLOW
+    const cards = document.querySelectorAll('.bento-card, .pricing-card, .cta-box');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--glow-x', `${x}px`);
+            card.style.setProperty('--glow-y', `${y}px`);
+        });
+    });
+});

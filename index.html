@@ -200,6 +200,23 @@
                 <h2 class="led-text" style="font-size: 40px; font-family: 'Outfit'; font-weight: 900;">Performance Pricing</h2>
             </div>
             <div class="pricing-grid">
+                <!-- STAY.AI -->
+                <div class="pricing-card" style="border: 2px solid #a855f7; box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);">
+                    <div>
+                        <div class="card-title-group" style="position: relative;">
+                            <img src="https://frontend-production-4cdf.up.railway.app/stay_ai_logo_192.png" alt="Stay.AI Logo" style="width: 45px; height: 45px; border-radius: 10px; margin: 0 auto 10px auto; display: block; border: 1px solid rgba(168, 85, 247, 0.4);">
+                            <span class="p-tag" style="color: #ec4899; text-shadow: 0 0 8px rgba(236, 72, 153, 0.5);">SAAS SYSTEM</span>
+                            <span class="p-name">Stay.AI</span>
+                        </div>
+                        <div class="p-price-display">2$ / Room</div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check-circle-2"></i> Premium Hotel & CRM Dashboard</li>
+                            <li><i data-lucide="check-circle-2"></i> WhatsApp AI Agent Integrated</li>
+                            <li><i data-lucide="check-circle-2"></i> Standalone Windows & Mobile App</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary btn-order" style="width: 100%; background: linear-gradient(135deg, #a855f7, #ec4899); border: none;" onclick="openDownloadModal()">Download Now</button>
+                </div>
                 <!-- HOSPITALITY -->
                 <div class="pricing-card">
                     <div>
@@ -345,8 +362,6 @@
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-        var player;
-        var isPlaying = false;
         let isPlayerReady = false;
 
         function onYouTubeIframeAPIReady() {
@@ -483,6 +498,114 @@
             step();
         }
         typeHub(leftCode, colL); setTimeout(() => typeHub(rightCode, colR), 500);
+    </script>
+
+    <!-- Stay.AI Download Modal -->
+    <div id="download-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 10000; align-items: center; justify-content: center; padding: 20px; transition: all 0.3s ease;">
+        <div style="background: #090918; border: 2px solid rgba(168, 85, 247, 0.3); border-radius: 16px; max-width: 500px; width: 100%; padding: 30px; box-shadow: 0 0 30px rgba(168, 85, 247, 0.3); position: relative; font-family: 'Inter', sans-serif;">
+            <!-- Close Button -->
+            <button onclick="closeDownloadModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #94a3b8; font-size: 20px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; padding: 4px;">
+                <i data-lucide="x" style="width: 24px; height: 24px; color: #94a3b8;"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div style="text-align: center; margin-bottom: 25px;">
+                <img src="https://frontend-production-4cdf.up.railway.app/stay_ai_logo_192.png" alt="Stay.AI Logo" style="width: 60px; height: 60px; border-radius: 12px; margin: 0 auto 12px auto; display: block; border: 2px solid #a855f7;">
+                <h3 class="led-text" style="font-size: 24px; font-family: 'Outfit'; font-weight: 900; margin-bottom: 5px; color: #fff;">Download Stay.AI</h3>
+                <p style="color: #94a3b8; font-size: 13px; line-height: 1.4;">Select your platform to download the standalone application.</p>
+            </div>
+
+            <!-- Platform Options -->
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px;">
+                <!-- Windows -->
+                <a href="https://frontend-production-4cdf.up.railway.app/Stay.AI.exe" download="Stay.AI.exe" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600;" onmouseover="this.style.background='rgba(168, 85, 247, 0.1)'; this.style.borderColor='#a855f7'" onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(168, 85, 247, 0.2)'">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <i data-lucide="laptop" style="color: #a855f7; width: 22px; height: 22px;"></i>
+                        <span>Windows App (.exe)</span>
+                    </div>
+                    <i data-lucide="download" style="width: 18px; height: 18px; color: #a855f7;"></i>
+                </a>
+
+                <!-- Linux -->
+                <a href="https://frontend-production-4cdf.up.railway.app/stay_ai_launcher.sh" download="stay_ai_launcher.sh" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600;" onmouseover="this.style.background='rgba(168, 85, 247, 0.1)'; this.style.borderColor='#a855f7'" onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(168, 85, 247, 0.2)'">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <i data-lucide="terminal" style="color: #a855f7; width: 22px; height: 22px;"></i>
+                        <span>Linux Launcher (.sh)</span>
+                    </div>
+                    <i data-lucide="download" style="width: 18px; height: 18px; color: #a855f7;"></i>
+                </a>
+
+                <!-- Android -->
+                <button onclick="showPlatformInstructions('android')" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600; width: 100%; border-style: solid; text-align: left; cursor: pointer;" onmouseover="this.style.background='rgba(168, 85, 247, 0.1)'; this.style.borderColor='#a855f7'" onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(168, 85, 247, 0.2)'">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <i data-lucide="smartphone" style="color: #a855f7; width: 22px; height: 22px;"></i>
+                        <span>Android App (PWA)</span>
+                    </div>
+                    <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: #a855f7;"></i>
+                </button>
+
+                <!-- iOS -->
+                <button onclick="showPlatformInstructions('ios')" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600; width: 100%; border-style: solid; text-align: left; cursor: pointer;" onmouseover="this.style.background='rgba(168, 85, 247, 0.1)'; this.style.borderColor='#a855f7'" onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(168, 85, 247, 0.2)'">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <i data-lucide="apple" style="color: #a855f7; width: 22px; height: 22px;"></i>
+                        <span>iOS (iPhone / iPad)</span>
+                    </div>
+                    <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: #a855f7;"></i>
+                </button>
+            </div>
+
+            <!-- Dynamic Instructions Box -->
+            <div id="instructions-box" style="display: none; background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 10px; padding: 15px; margin-top: 15px; text-align: left;">
+                <h4 id="instructions-title" style="color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"></h4>
+                <ol id="instructions-list" style="color: #94a3b8; font-size: 13px; padding-left: 20px; line-height: 1.5; margin: 0;"></ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openDownloadModal() {
+            const modal = document.getElementById('download-modal');
+            modal.style.display = 'flex';
+            document.getElementById('instructions-box').style.display = 'none';
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function closeDownloadModal() {
+            const modal = document.getElementById('download-modal');
+            modal.style.display = 'none';
+        }
+
+        function showPlatformInstructions(platform) {
+            const box = document.getElementById('instructions-box');
+            const title = document.getElementById('instructions-title');
+            const list = document.getElementById('instructions-list');
+            
+            box.style.display = 'block';
+            
+            if (platform === 'android') {
+                title.innerHTML = '<i data-lucide="smartphone" style="width: 18px; height: 18px;"></i> Android Installation Steps';
+                list.innerHTML = 
+                    '<li>Open Google Chrome and navigate to: <a href="https://frontend-production-4cdf.up.railway.app" target="_blank" style="color:#a855f7; text-decoration: underline;">https://frontend-production-4cdf.up.railway.app</a></li>' +
+                    '<li>Tap the browser menu (three dots in the top right corner).</li>' +
+                    '<li>Select <b>"Add to Home screen"</b> or <b>"Install App"</b>.</li>' +
+                    '<li>Confirm the prompt. The app will appear in your launcher and run in fullscreen standalone mode.</li>';
+            } else if (platform === 'ios') {
+                title.innerHTML = '<i data-lucide="apple" style="width: 18px; height: 18px;"></i> iOS / iPhone Installation Steps';
+                list.innerHTML = 
+                    '<li>Open Safari and navigate to: <a href="https://frontend-production-4cdf.up.railway.app" target="_blank" style="color:#a855f7; text-decoration: underline;">https://frontend-production-4cdf.up.railway.app</a></li>' +
+                    '<li>Tap the <b>"Share"</b> button (square icon with an arrow pointing up) in Safari.</li>' +
+                    '<li>Scroll down and select <b>"Add to Home Screen"</b>.</li>' +
+                    '<li>Tap <b>"Add"</b>. The app will launch in pure standalone mobile mode without Safari address bars.</li>';
+            }
+            if (window.lucide) lucide.createIcons();
+        }
+
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('download-modal');
+            if (event.target === modal) {
+                closeDownloadModal();
+            }
+        });
     </script>
     <script> lucide.createIcons(); </script>
 </body>
