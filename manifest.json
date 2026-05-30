@@ -1,0 +1,28 @@
+{
+  "short_name": "Elite AI",
+  "name": "Elite AI — Intelligent Autonomous Automation",
+  "description": "AI-powered business automation platform by Ilkin Chalabi. Deploy autonomous agents for hospitality, real estate, and lead generation.",
+  "icons": [
+    {
+      "src": "./stay_ai_logo_192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "./stay_ai_logo_512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./",
+  "scope": "./",
+  "background_color": "#0a0a0c",
+  "theme_color": "#8b5cf6",
+  "display": "standalone",
+  "orientation": "any",
+  "categories": ["business", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}
