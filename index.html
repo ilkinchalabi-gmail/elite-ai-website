@@ -502,71 +502,78 @@
 
     <!-- Stay.AI Download Modal -->
     <div id="download-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 10000; align-items: center; justify-content: center; padding: 20px; transition: all 0.3s ease;">
-        <div style="background: #090918; border: 2px solid rgba(168, 85, 247, 0.3); border-radius: 16px; max-width: 500px; width: 100%; padding: 30px; box-shadow: 0 0 30px rgba(168, 85, 247, 0.3); position: relative; font-family: 'Inter', sans-serif;">
+        <div style="background: #090918; border: 2px solid rgba(168, 85, 247, 0.3); border-radius: 16px; max-width: 600px; width: 100%; padding: 30px; box-shadow: 0 0 30px rgba(168, 85, 247, 0.3); position: relative; font-family: 'Inter', sans-serif;">
             <!-- Close Button -->
-            <button onclick="closeDownloadModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #94a3b8; font-size: 20px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; padding: 4px;">
+            <button onclick="closeDownloadModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #94a3b8; font-size: 20px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; padding: 4px; z-index: 11000;">
                 <i data-lucide="x" style="width: 24px; height: 24px; color: #94a3b8;"></i>
             </button>
 
-            <!-- Modal Header -->
-            <div style="text-align: center; margin-bottom: 25px;">
-                <img src="./stay_ai_logo_192.png" alt="Stay.AI Logo" style="width: 60px; height: 60px; border-radius: 12px; margin: 0 auto 12px auto; display: block; border: 2px solid #a855f7;">
-                <h3 class="led-text" style="font-size: 24px; font-family: 'Outfit'; font-weight: 900; margin-bottom: 5px; color: #fff;">Download Stay.AI</h3>
-                <p style="color: #94a3b8; font-size: 13px; line-height: 1.4;">Select your platform to download the standalone application.</p>
+            <!-- Main Content (Platform Selection List) -->
+            <div id="modal-main-content">
+                <!-- Modal Header -->
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <img src="./stay_ai_logo_192.png" alt="Stay.AI Logo" style="width: 60px; height: 60px; border-radius: 12px; margin: 0 auto 12px auto; display: block; border: 2px solid #a855f7;">
+                    <h3 class="led-text" style="font-size: 24px; font-family: 'Outfit'; font-weight: 900; margin-bottom: 5px; color: #fff;">Download Stay.AI</h3>
+                    <p style="color: #94a3b8; font-size: 13px; line-height: 1.4;">Select your platform to download the standalone application.</p>
+                </div>
+
+                <!-- Platform Options -->
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <!-- Windows PWA -->
+                    <a href="https://app.elite-ai.vip/" target="_blank" onclick="showPlatformInstructions('windows-pwa')" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.4); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600; cursor: pointer;" onmouseover="this.style.background='rgba(168, 85, 247, 0.15)'" onmouseout="this.style.background='rgba(168, 85, 247, 0.05)'">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <i data-lucide="laptop" style="color: #ec4899; width: 22px; height: 22px;"></i>
+                            <span>Windows App (PWA) <span style="font-size: 10px; color: #ec4899; background: rgba(236,72,153,0.1); padding: 2px 6px; border-radius: 4px; margin-left: 5px;">Recommended</span></span>
+                        </div>
+                        <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: #ec4899;"></i>
+                    </a>
+
+                    <!-- Windows EXE -->
+                    <a href="./Stay.AI.exe" download="Stay.AI.exe" onclick="showPlatformInstructions('windows-classic')" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600; cursor: pointer;" onmouseover="this.style.background='rgba(168, 85, 247, 0.1)'; this.style.borderColor='#a855f7'" onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(168, 85, 247, 0.2)'">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <i data-lucide="laptop" style="color: #a855f7; width: 22px; height: 22px;"></i>
+                            <span>Windows Classic (.exe)</span>
+                        </div>
+                        <i data-lucide="download" style="width: 18px; height: 18px; color: #a855f7;"></i>
+                    </a>
+
+                    <!-- Linux -->
+                    <a href="./stay_ai_launcher.sh" download="stay_ai_launcher.sh" onclick="showPlatformInstructions('linux')" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600;" onmouseover="this.style.background='rgba(168, 85, 247, 0.1)'; this.style.borderColor='#a855f7'" onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(168, 85, 247, 0.2)'">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <i data-lucide="terminal" style="color: #a855f7; width: 22px; height: 22px;"></i>
+                            <span>Linux Launcher (.sh)</span>
+                        </div>
+                        <i data-lucide="download" style="width: 18px; height: 18px; color: #a855f7;"></i>
+                    </a>
+
+                    <!-- Android -->
+                    <button onclick="showPlatformInstructions('android')" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600; width: 100%; border-style: solid; text-align: left; cursor: pointer; font-family: 'Inter', sans-serif;" onmouseover="this.style.background='rgba(168, 85, 247, 0.1)'; this.style.borderColor='#a855f7'" onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(168, 85, 247, 0.2)'">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <i data-lucide="smartphone" style="color: #a855f7; width: 22px; height: 22px;"></i>
+                            <span>Android App (PWA)</span>
+                        </div>
+                        <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: #a855f7;"></i>
+                    </button>
+
+                    <!-- iOS -->
+                    <button onclick="showPlatformInstructions('ios')" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600; width: 100%; border-style: solid; text-align: left; cursor: pointer; font-family: 'Inter', sans-serif;" onmouseover="this.style.background='rgba(168, 85, 247, 0.1)'; this.style.borderColor='#a855f7'" onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(168, 85, 247, 0.2)'">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <i data-lucide="apple" style="color: #a855f7; width: 22px; height: 22px;"></i>
+                            <span>iOS (iPhone / iPad)</span>
+                        </div>
+                        <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: #a855f7;"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- Platform Options -->
-            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px;">
-                <!-- Windows PWA -->
-                <a href="https://app.elite-ai.vip/" target="_blank" onclick="showPlatformInstructions('windows-pwa')" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.4); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600; cursor: pointer;" onmouseover="this.style.background='rgba(168, 85, 247, 0.15)'" onmouseout="this.style.background='rgba(168, 85, 247, 0.05)'">
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <i data-lucide="laptop" style="color: #ec4899; width: 22px; height: 22px;"></i>
-                        <span>Windows App (PWA) <span style="font-size: 10px; color: #ec4899; background: rgba(236,72,153,0.1); padding: 2px 6px; border-radius: 4px; margin-left: 5px;">Recommended</span></span>
-                    </div>
-                    <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: #ec4899;"></i>
-                </a>
-
-                <!-- Windows EXE -->
-                <a href="./Stay.AI.exe" download="Stay.AI.exe" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; background: rgba(255,255,255,0.01); border: 1px solid rgba(168, 85, 247, 0.1); border-radius: 10px; color: #94a3b8; text-decoration: none; transition: 0.2s; font-size: 13px;" onmouseover="this.style.color='#fff'; this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.color='#94a3b8'; this.style.background='rgba(255,255,255,0.01)'">
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <i data-lucide="laptop" style="color: #94a3b8; width: 18px; height: 18px;"></i>
-                        <span>Windows Classic (.exe)</span>
-                    </div>
-                    <i data-lucide="download" style="width: 14px; height: 14px; color: #94a3b8;"></i>
-                </a>
-
-                <!-- Linux -->
-                <a href="./stay_ai_launcher.sh" download="stay_ai_launcher.sh" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600;" onmouseover="this.style.background='rgba(168, 85, 247, 0.1)'; this.style.borderColor='#a855f7'" onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(168, 85, 247, 0.2)'">
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <i data-lucide="terminal" style="color: #a855f7; width: 22px; height: 22px;"></i>
-                        <span>Linux Launcher (.sh)</span>
-                    </div>
-                    <i data-lucide="download" style="width: 18px; height: 18px; color: #a855f7;"></i>
-                </a>
-
-                <!-- Android -->
-                <button onclick="showPlatformInstructions('android')" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600; width: 100%; border-style: solid; text-align: left; cursor: pointer;" onmouseover="this.style.background='rgba(168, 85, 247, 0.1)'; this.style.borderColor='#a855f7'" onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(168, 85, 247, 0.2)'">
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <i data-lucide="smartphone" style="color: #a855f7; width: 22px; height: 22px;"></i>
-                        <span>Android App (PWA)</span>
-                    </div>
-                    <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: #a855f7;"></i>
+            <!-- Detailed Content (Platform Step Guides) -->
+            <div id="modal-details-content" style="display: none;">
+                <!-- Back Button -->
+                <button onclick="showPlatformsList()" style="background: transparent; border: none; color: #a855f7; display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 13px; font-weight: 700; margin-bottom: 20px; padding: 0; font-family: 'Outfit', sans-serif;">
+                    <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Back to Platforms
                 </button>
-
-                <!-- iOS -->
-                <button onclick="showPlatformInstructions('ios')" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; color: #fff; text-decoration: none; transition: 0.2s; font-weight: 600; width: 100%; border-style: solid; text-align: left; cursor: pointer;" onmouseover="this.style.background='rgba(168, 85, 247, 0.1)'; this.style.borderColor='#a855f7'" onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(168, 85, 247, 0.2)'">
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <i data-lucide="apple" style="color: #a855f7; width: 22px; height: 22px;"></i>
-                        <span>iOS (iPhone / iPad)</span>
-                    </div>
-                    <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: #a855f7;"></i>
-                </button>
-            </div>
-
-            <!-- Dynamic Instructions Box -->
-            <div id="instructions-box" style="display: none; background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 10px; padding: 15px; margin-top: 15px; text-align: left;">
-                <h4 id="instructions-title" style="color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"></h4>
-                <ol id="instructions-list" style="color: #94a3b8; font-size: 13px; padding-left: 20px; line-height: 1.5; margin: 0;"></ol>
+                <!-- Target container for injected steps content -->
+                <div id="instructions-container"></div>
             </div>
         </div>
     </div>
@@ -575,8 +582,7 @@
         function openDownloadModal() {
             const modal = document.getElementById('download-modal');
             modal.style.display = 'flex';
-            document.getElementById('instructions-box').style.display = 'none';
-            if (window.lucide) lucide.createIcons();
+            showPlatformsList();
         }
 
         function closeDownloadModal() {
@@ -584,34 +590,269 @@
             modal.style.display = 'none';
         }
 
+        function showPlatformsList() {
+            document.getElementById('modal-main-content').style.display = 'block';
+            document.getElementById('modal-details-content').style.display = 'none';
+            if (window.lucide) lucide.createIcons();
+        }
+
         function showPlatformInstructions(platform) {
-            const box = document.getElementById('instructions-box');
-            const title = document.getElementById('instructions-title');
-            const list = document.getElementById('instructions-list');
+            document.getElementById('modal-main-content').style.display = 'none';
+            document.getElementById('modal-details-content').style.display = 'block';
             
-            box.style.display = 'block';
+            const container = document.getElementById('instructions-container');
+            let contentHTML = '';
             
             if (platform === 'windows-pwa') {
-                title.innerHTML = '<i data-lucide="laptop" style="width: 18px; height: 18px;"></i> Windows App (PWA) Installation';
-                list.innerHTML = 
-                    '<li>Open Google Chrome or Microsoft Edge and navigate to: <a href="https://app.elite-ai.vip" target="_blank" style="color:#a855f7; text-decoration: underline;">https://app.elite-ai.vip</a></li>' +
-                    '<li>Click the <b>"Install App"</b> icon (a monitor with a down arrow) at the right side of the address bar.</li>' +
-                    '<li>Confirm the prompt. The app will launch in standalone mode and create a shortcut on your Desktop.</li>';
+                contentHTML = `
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                        <div style="background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 12px; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i data-lucide="laptop" style="width: 24px; height: 24px; color: #a855f7;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #fff; font-size: 18px; font-weight: 800; font-family: 'Outfit'; margin: 0;">Windows App (PWA)</h4>
+                            <p style="color: #94a3b8; font-size: 13px; margin: 2px 0 0 0;">Focused window, zero bloat, runs directly from desktop.</p>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(236, 72, 153, 0.05); border: 1px solid rgba(236, 72, 153, 0.25); border-radius: 12px; padding: 16px; display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start;">
+                        <i data-lucide="sparkles" style="width: 20px; height: 20px; color: #ec4899; flex-shrink: 0; margin-top: 2px;"></i>
+                        <div>
+                            <h5 style="color: #ec4899; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 6px 0; font-family: 'Outfit';">Desktop App Advantages</h5>
+                            <p style="color: rgba(236, 72, 153, 0.85); font-size: 13px; line-height: 1.5; margin: 0;">Stay.AI PWA allows you to run the dashboard as a focused, borderless application. It integrates with your Windows taskbar, runs at login, and syncs data across all devices.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="layers" style="width: 16px; height: 16px; color: #a855f7;"></i>
+                        <span style="color: #fff; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; font-family: 'Outfit';">Download Steps</span>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">1</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Navigate to Web App</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Open Google Chrome or Microsoft Edge and go to <a href="https://app.elite-ai.vip" target="_blank" style="color:#a855f7; text-decoration: underline;">https://app.elite-ai.vip</a></p>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">2</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Click Install Icon</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Click the install icon (monitor with down arrow) at the right side of the address bar.</p>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 6px; padding: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="monitor" style="width: 16px; height: 16px; color: #d8b4fe;"></i>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">3</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Confirm and Launch</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Confirm the installation. The app will launch instantly in its own standalone window.</p>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 6px; padding: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="check" style="width: 16px; height: 16px; color: #d8b4fe;"></i>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (platform === 'windows-classic') {
+                contentHTML = `
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                        <div style="background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 12px; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i data-lucide="laptop" style="width: 24px; height: 24px; color: #a855f7;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #fff; font-size: 18px; font-weight: 800; font-family: 'Outfit'; margin: 0;">Windows Classic Installer</h4>
+                            <p style="color: #94a3b8; font-size: 13px; margin: 2px 0 0 0;">Native desktop installer (.exe) package.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="layers" style="width: 16px; height: 16px; color: #a855f7;"></i>
+                        <span style="color: #fff; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; font-family: 'Outfit';">Launcher Steps</span>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">1</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Download Completed</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">The file <b>"Stay.AI.exe"</b> will start downloading automatically.</p>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">2</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Launch the Installer</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Double-click the downloaded .exe. If Windows SmartScreen blocks it, click "More info" and then select "Run anyway".</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (platform === 'linux') {
+                contentHTML = `
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                        <div style="background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 12px; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i data-lucide="terminal" style="width: 24px; height: 24px; color: #a855f7;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #fff; font-size: 18px; font-weight: 800; font-family: 'Outfit'; margin: 0;">Linux Launcher</h4>
+                            <p style="color: #94a3b8; font-size: 13px; margin: 2px 0 0 0;">Terminal launcher script (.sh) package.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="layers" style="width: 16px; height: 16px; color: #a855f7;"></i>
+                        <span style="color: #fff; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; font-family: 'Outfit';">Terminal Steps</span>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">1</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Grant Execute Permissions</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Open your terminal, navigate to the download folder, and run:<br><code style="background: rgba(0,0,0,0.5); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px; color: #d8b4fe; display: inline-block; margin-top: 4px;">chmod +x stay_ai_launcher.sh</code></p>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">2</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Run the App</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Execute the launcher command:<br><code style="background: rgba(0,0,0,0.5); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px; color: #d8b4fe; display: inline-block; margin-top: 4px;">./stay_ai_launcher.sh</code></p>
+                            </div>
+                        </div>
+                    </div>
+                `;
             } else if (platform === 'android') {
-                title.innerHTML = '<i data-lucide="smartphone" style="width: 18px; height: 18px;"></i> Android Installation Steps';
-                list.innerHTML = 
-                    '<li>Open Google Chrome and navigate to: <a href="https://app.elite-ai.vip" target="_blank" style="color:#a855f7; text-decoration: underline;">https://app.elite-ai.vip</a></li>' +
-                    '<li>Tap the browser menu (three dots in the top right corner).</li>' +
-                    '<li>Select <b>"Add to Home screen"</b> or <b>"Install App"</b>.</li>' +
-                    '<li>Confirm the prompt. The app will appear in your launcher and run in fullscreen standalone mode.</li>';
+                contentHTML = `
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                        <div style="background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 12px; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i data-lucide="smartphone" style="width: 24px; height: 24px; color: #a855f7;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #fff; font-size: 18px; font-weight: 800; font-family: 'Outfit'; margin: 0;">Android Installation</h4>
+                            <p style="color: #94a3b8; font-size: 13px; margin: 2px 0 0 0;">Fast, secure, and native PWA wrapper.</p>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.25); border-radius: 12px; padding: 16px; display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start;">
+                        <i data-lucide="sparkles" style="width: 20px; height: 20px; color: #a855f7; flex-shrink: 0; margin-top: 2px;"></i>
+                        <div>
+                            <h5 style="color: #a855f7; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 6px 0; font-family: 'Outfit';">Android PWA Advantages</h5>
+                            <p style="color: rgba(216, 180, 254, 0.85); font-size: 13px; line-height: 1.5; margin: 0;">PWAs wrap the web app securely. This installation takes zero storage size, updates instantly, and launches from your home screen as a standalone application.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="layers" style="width: 16px; height: 16px; color: #a855f7;"></i>
+                        <span style="color: #fff; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; font-family: 'Outfit';">Download Steps</span>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">1</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Open Chrome</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Open Google Chrome on your phone and go to <a href="https://app.elite-ai.vip" target="_blank" style="color:#a855f7; text-decoration: underline;">https://app.elite-ai.vip</a></p>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">2</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Tap Menu Icon</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Tap the three vertical dots menu icon at the top right of the browser.</p>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 6px; padding: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="more-vertical" style="width: 16px; height: 16px; color: #d8b4fe;"></i>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">3</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Install App</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Select <b>"Install app"</b> or <b>"Add to Home screen"</b> and confirm the pop-up prompt.</p>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 6px; padding: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="plus-square" style="width: 16px; height: 16px; color: #d8b4fe;"></i>
+                            </div>
+                        </div>
+                    </div>
+                `;
             } else if (platform === 'ios') {
-                title.innerHTML = '<i data-lucide="apple" style="width: 18px; height: 18px;"></i> iOS / iPhone Installation Steps';
-                list.innerHTML = 
-                    '<li>Open Safari and navigate to: <a href="https://app.elite-ai.vip" target="_blank" style="color:#a855f7; text-decoration: underline;">https://app.elite-ai.vip</a></li>' +
-                    '<li>Tap the <b>"Share"</b> button (square icon with an arrow pointing up) in Safari.</li>' +
-                    '<li>Scroll down and select <b>"Add to Home Screen"</b>.</li>' +
-                    '<li>Tap <b>"Add"</b>. The app will launch in pure standalone mobile mode without Safari address bars.</li>';
+                contentHTML = `
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                        <div style="background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 12px; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i data-lucide="apple" style="width: 24px; height: 24px; color: #a855f7;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #fff; font-size: 18px; font-weight: 800; font-family: 'Outfit'; margin: 0;">iOS (iPhone / iPad) Installation</h4>
+                            <p style="color: #94a3b8; font-size: 13px; margin: 2px 0 0 0;">Uses web-native app wrapping. Zero bloat, instant updates.</p>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: 12px; padding: 16px; display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start;">
+                        <i data-lucide="alert-triangle" style="width: 20px; height: 20px; color: #f59e0b; flex-shrink: 0; margin-top: 2px;"></i>
+                        <div>
+                            <h5 style="color: #f59e0b; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 6px 0; font-family: 'Outfit';">Apple iOS Security Notice</h5>
+                            <p style="color: rgba(245, 158, 11, 0.85); font-size: 13px; line-height: 1.5; margin: 0;">Apple iOS does not support direct file downloads of third-party apps outside the App Store. Sideloading is prohibited by Apple. However, you can add this dashboard as a standalone PWA directly via Safari browser. Follow the simple steps below.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="layers" style="width: 16px; height: 16px; color: #a855f7;"></i>
+                        <span style="color: #fff; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; font-family: 'Outfit';">Download Steps</span>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">1</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Open Safari Browser</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Open Safari on your iPhone or iPad and navigate to: <a href="https://app.elite-ai.vip" target="_blank" style="color:#a855f7; text-decoration: underline;">https://app.elite-ai.vip</a></p>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">2</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Tap "Share" Button</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Tap the "Share" button (square icon with an arrow pointing up) at the bottom toolbar.</p>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 6px; padding: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="share-2" style="width: 16px; height: 16px; color: #d8b4fe;"></i>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1); display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-weight: 700; font-size: 13px; flex-shrink: 0;">3</div>
+                            <div style="flex-grow: 1;">
+                                <h6 style="color: #fff; font-size: 14px; font-weight: 700; margin: 0 0 2px 0;">Add to Home Screen</h6>
+                                <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">Scroll down and select <b>"Add to Home Screen"</b> from the menu, then tap <b>"Add"</b>.</p>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 6px; padding: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="plus-square" style="width: 16px; height: 16px; color: #d8b4fe;"></i>
+                            </div>
+                        </div>
+                    </div>
+                `;
             }
+            
+            // Add Verified and Compatibility Badges
+            contentHTML += `
+                <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 16px; display: flex; flex-direction: column; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 8px; color: #10b981; font-size: 12px; font-weight: 600;">
+                        <i data-lucide="shield-check" style="width: 16px; height: 16px;"></i>
+                        <span>Verified Secure: Clean binary, SSL-protected data link.</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; color: #94a3b8; font-size: 12px;">
+                        <i data-lucide="globe" style="width: 16px; height: 16px; color: #a855f7;"></i>
+                        <span>Compatible with Chrome, Safari, Edge, and all major standard web browsers.</span>
+                    </div>
+                </div>
+            `;
+            
+            container.innerHTML = contentHTML;
             if (window.lucide) lucide.createIcons();
         }
 
@@ -622,6 +863,5 @@
             }
         });
     </script>
-    <script> lucide.createIcons(); </script>
-</body>
+    <script> lucide.createIcons(); </script></body>
 </html>
