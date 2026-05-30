@@ -7,7 +7,7 @@
     <meta name="reader-mode" content="false">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Elite AI">
+    <meta name="apple-mobile-web-app-title" content="Stay.AI">
     <meta name="theme-color" content="#8b5cf6">
     <link rel="manifest" href="./manifest.json">
     <link rel="apple-touch-icon" href="./stay_ai_logo_192.png">
@@ -368,6 +368,8 @@
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+        var player;
+        var isPlaying = false;
         let isPlayerReady = false;
 
         function onYouTubeIframeAPIReady() {
