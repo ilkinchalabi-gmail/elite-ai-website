@@ -204,10 +204,13 @@
             <!-- Room Count Slider -->
             <div class="pricing-slider-container" style="max-width: 600px; margin: 0 auto 40px auto; background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 16px; padding: 25px; backdrop-filter: blur(10px); text-align: center;">
                 <h3 style="color: #fff; font-family: 'Outfit'; font-size: 22px; margin-bottom: 15px; font-weight: 800;">How many rooms does your hotel have?</h3>
-                <div style="font-size: 32px; font-weight: 900; color: #a855f7; font-family: 'Outfit'; margin-bottom: 20px; text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);" id="room-count-display">250 Rooms</div>
-                <input type="range" id="room-slider" min="100" max="2000" step="50" value="250" style="width: 100%; cursor: pointer; accent-color: #a855f7; height: 6px; border-radius: 5px; outline: none;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
+                    <input type="number" id="room-number-input" value="250" min="1" max="5000" style="background: transparent; border: none; border-bottom: 2px solid #a855f7; color: #a855f7; font-size: 32px; font-weight: 900; font-family: 'Outfit'; width: 100px; text-align: center; outline: none; text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);">
+                    <span style="font-size: 32px; font-weight: 900; color: #a855f7; font-family: 'Outfit'; text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);">Rooms</span>
+                </div>
+                <input type="range" id="room-slider" min="1" max="2000" step="1" value="250" style="width: 100%; cursor: pointer; accent-color: #a855f7; height: 6px; border-radius: 5px; outline: none;">
                 <div style="display: flex; justify-content: space-between; color: #94a3b8; font-size: 13px; margin-top: 10px; font-weight: 600;">
-                    <span>100</span>
+                    <span>1</span>
                     <span>2000+</span>
                 </div>
             </div>
@@ -221,15 +224,19 @@
                             <span class="p-tag" style="color: #ec4899; text-shadow: 0 0 8px rgba(236, 72, 153, 0.5);">SAAS SYSTEM</span>
                             <span class="p-name">Stay.AI</span>
                         </div>
-                        <div class="p-price-display" style="display:flex; flex-direction:column; gap:5px; margin: 20px 0 !important;">
+                        <div class="p-price-display" style="display:flex; flex-direction:column; gap:5px; margin: 20px 0 !important; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
                             <div style="font-size: 32px;"><span id="stayai-pro-price">$2.99</span> <span style="font-size: 14px; color: #a855f7; font-weight: 800; text-shadow:none;">PRO</span></div>
+                            <div style="font-size: 13px; color: #94a3b8; font-weight: 700; text-shadow:none; letter-spacing: 1px; margin-bottom: 10px;">Billed: <span id="stayai-pro-total" style="color:#fff;">$299.00</span> / month</div>
+                            
                             <div style="font-size: 32px;"><span id="stayai-vip-price">$4.99</span> <span style="font-size: 14px; color: #ec4899; font-weight: 800; text-shadow:none;">VIP</span></div>
-                            <div style="font-size: 12px; color: #94a3b8; font-weight: 700; text-shadow:none; letter-spacing: 1px; text-transform: uppercase; margin-top: 5px;">Per Room / Month</div>
+                            <div style="font-size: 13px; color: #94a3b8; font-weight: 700; text-shadow:none; letter-spacing: 1px;">Billed: <span id="stayai-vip-total" style="color:#fff;">$499.00</span> / month</div>
                         </div>
-                        <ul class="pricing-features">
-                            <li><i data-lucide="check-circle-2"></i> <strong>Pro Plan:</strong> 24/7 WhatsApp & Telegram AI</li>
-                            <li><i data-lucide="check-circle-2"></i> <strong>VIP Plan:</strong> Pro + 24/7 Voice Calling</li>
-                            <li><i data-lucide="check-circle-2"></i> One-time Setup: <span style="color:#a855f7; font-weight:bold; margin-left:5px;"><span id="stayai-pro-setup">$299</span> (Pro)</span> / <span style="color:#ec4899; font-weight:bold;"><span id="stayai-vip-setup">$599</span> (VIP)</span></li>
+                        <ul class="pricing-features" style="border-top: none; padding-top: 0;">
+                            <li><i data-lucide="check-circle-2"></i> 24/7 Written WhatsApp AI</li>
+                            <li><i data-lucide="check-circle-2"></i> Manual chat panel</li>
+                            <li><i data-lucide="x" style="color: #ef4444;"></i> <span style="color:#666; text-decoration:line-through;">PMS integration (Pro)</span> <span style="color:#ec4899; margin-left:10px;"><i data-lucide="check" style="width:14px;height:14px;display:inline-block;"></i> VIP</span></li>
+                            <li><i data-lucide="x" style="color: #ef4444;"></i> <span style="color:#666; text-decoration:line-through;">AI Voice Call (Pro)</span> <span style="color:#ec4899; margin-left:10px;"><i data-lucide="check" style="width:14px;height:14px;display:inline-block;"></i> VIP</span></li>
+                            <li><i data-lucide="settings"></i> One-time Setup: <span style="color:#a855f7; font-weight:bold; margin-left:5px;"><span id="stayai-pro-setup">$299</span> (Pro)</span> / <span style="color:#ec4899; font-weight:bold;"><span id="stayai-vip-setup">$599</span> (VIP)</span></li>
                         </ul>
                     </div>
                     <a href="https://app.elite-ai.vip/download?install=true" target="_blank" class="btn btn-primary btn-order" style="width: 100%; background: linear-gradient(135deg, #a855f7, #ec4899); border: none; text-decoration: none; display: flex; align-items: center; justify-content: center;" id="pwa-install-btn">Download App</a>
@@ -899,9 +906,11 @@
     <script>
         // Room Pricing Slider Logic
         const slider = document.getElementById('room-slider');
-        const display = document.getElementById('room-count-display');
+        const numberInput = document.getElementById('room-number-input');
         const proPrice = document.getElementById('stayai-pro-price');
         const vipPrice = document.getElementById('stayai-vip-price');
+        const proTotal = document.getElementById('stayai-pro-total');
+        const vipTotal = document.getElementById('stayai-vip-total');
         const proSetup = document.getElementById('stayai-pro-setup');
         const vipSetup = document.getElementById('stayai-vip-setup');
 
@@ -914,23 +923,40 @@
             else if (rooms >= 601) { pPrice = 2.20; vPrice = 3.70; pSetup = 799; vSetup = 1299; }
             else if (rooms >= 301) { pPrice = 2.50; vPrice = 4.20; pSetup = 499; vSetup = 899; }
             
-            return { pPrice, vPrice, pSetup, vSetup };
+            // Min billable rooms = 100
+            const billedRooms = Math.max(100, rooms);
+            const pTotal = billedRooms * pPrice;
+            const vTotal = billedRooms * vPrice;
+
+            return { pPrice, vPrice, pSetup, vSetup, pTotal, vTotal };
         }
 
         function updatePricing() {
-            if (!slider) return;
-            const rooms = parseInt(slider.value);
-            display.innerText = rooms + (rooms === 2000 ? '+ Rooms' : ' Rooms');
-            const { pPrice, vPrice, pSetup, vSetup } = calculatePricing(rooms);
+            if (!slider || !numberInput) return;
+            
+            let rooms = parseInt(slider.value) || 1;
+            
+            // Keep number input in sync with slider
+            if (document.activeElement !== numberInput) {
+                numberInput.value = rooms;
+            } else {
+                rooms = parseInt(numberInput.value) || 1;
+                slider.value = rooms;
+            }
+
+            const { pPrice, vPrice, pSetup, vSetup, pTotal, vTotal } = calculatePricing(rooms);
             
             if(proPrice) proPrice.innerText = '$' + pPrice.toFixed(2);
             if(vipPrice) vipPrice.innerText = '$' + vPrice.toFixed(2);
+            if(proTotal) proTotal.innerText = '$' + pTotal.toFixed(2);
+            if(vipTotal) vipTotal.innerText = '$' + vTotal.toFixed(2);
             if(proSetup) proSetup.innerText = '$' + pSetup;
             if(vipSetup) vipSetup.innerText = '$' + vSetup;
         }
 
-        if (slider) {
+        if (slider && numberInput) {
             slider.addEventListener('input', updatePricing);
+            numberInput.addEventListener('input', updatePricing);
             updatePricing(); // Init on load
         }
     </script>
