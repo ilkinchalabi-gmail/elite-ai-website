@@ -224,19 +224,23 @@
                             <span class="p-tag" style="color: #ec4899; text-shadow: 0 0 8px rgba(236, 72, 153, 0.5);">SAAS SYSTEM</span>
                             <span class="p-name">Stay.AI</span>
                         </div>
-                        <div class="p-price-display" style="display:flex; flex-direction:column; gap:5px; margin: 20px 0 !important; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
-                            <div style="font-size: 32px;"><span id="stayai-pro-price">$2.99</span> <span style="font-size: 14px; color: #a855f7; font-weight: 800; text-shadow:none;">PRO</span></div>
-                            <div style="font-size: 13px; color: #94a3b8; font-weight: 700; text-shadow:none; letter-spacing: 1px; margin-bottom: 10px;">Billed: <span id="stayai-pro-total" style="color:#fff;">$299.00</span> / month</div>
-                            
-                            <div style="font-size: 32px;"><span id="stayai-vip-price">$4.99</span> <span style="font-size: 14px; color: #ec4899; font-weight: 800; text-shadow:none;">VIP</span></div>
-                            <div style="font-size: 13px; color: #94a3b8; font-weight: 700; text-shadow:none; letter-spacing: 1px;">Billed: <span id="stayai-vip-total" style="color:#fff;">$499.00</span> / month</div>
+
+                        <div class="plan-toggle" style="display: flex; background: rgba(255,255,255,0.05); border-radius: 8px; padding: 4px; margin: 15px 0;">
+                            <button id="btn-pro" style="flex:1; padding: 8px; border: none; background: #a855f7; color: #fff; border-radius: 6px; font-weight: 800; font-family: 'Outfit'; cursor: pointer; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">PRO PLAN</button>
+                            <button id="btn-vip" style="flex:1; padding: 8px; border: none; background: transparent; color: #94a3b8; border-radius: 6px; font-weight: 800; font-family: 'Outfit'; cursor: pointer; transition: 0.3s;">VIP PLAN</button>
                         </div>
-                        <ul class="pricing-features" style="border-top: none; padding-top: 0;">
+
+                        <div class="p-price-display" style="display:flex; flex-direction:column; gap:5px; margin: 20px 0 !important; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <div style="font-size: 42px;"><span id="stayai-dynamic-price">$2.99</span> <span id="stayai-dynamic-badge" style="font-size: 14px; color: #a855f7; font-weight: 800; text-shadow:none;">PRO</span></div>
+                            <div style="font-size: 13px; color: #94a3b8; font-weight: 700; text-shadow:none; letter-spacing: 1px; margin-bottom: 0px;">Billed: <span id="stayai-dynamic-total" style="color:#fff;">$299.00</span> / month</div>
+                        </div>
+
+                        <ul class="pricing-features" style="border-top: none; padding-top: 0; min-height: 160px;">
                             <li><i data-lucide="check-circle-2"></i> 24/7 Written WhatsApp AI</li>
                             <li><i data-lucide="check-circle-2"></i> Manual chat panel</li>
-                            <li><i data-lucide="x" style="color: #ef4444;"></i> <span style="color:#666; text-decoration:line-through;">PMS integration (Pro)</span> <span style="color:#ec4899; margin-left:10px;"><i data-lucide="check" style="width:14px;height:14px;display:inline-block;"></i> VIP</span></li>
-                            <li><i data-lucide="x" style="color: #ef4444;"></i> <span style="color:#666; text-decoration:line-through;">AI Voice Call (Pro)</span> <span style="color:#ec4899; margin-left:10px;"><i data-lucide="check" style="width:14px;height:14px;display:inline-block;"></i> VIP</span></li>
-                            <li><i data-lucide="settings"></i> One-time Setup: <span style="color:#a855f7; font-weight:bold; margin-left:5px;"><span id="stayai-pro-setup">$299</span> (Pro)</span> / <span style="color:#ec4899; font-weight:bold;"><span id="stayai-vip-setup">$599</span> (VIP)</span></li>
+                            <li id="feat-pms"><i data-lucide="x" style="color: #ef4444;" id="icon-pms"></i> <span id="text-pms" style="color:#666; text-decoration:line-through;">No PMS integration</span></li>
+                            <li id="feat-voice"><i data-lucide="x" style="color: #ef4444;" id="icon-voice"></i> <span id="text-voice" style="color:#666; text-decoration:line-through;">No AI Voice Call</span></li>
+                            <li><i data-lucide="settings" style="color:#a855f7;" id="icon-setup"></i> One-time Setup: <span id="stayai-dynamic-setup" style="color:#a855f7; font-weight:bold; margin-left:5px;">$299</span></li>
                         </ul>
                     </div>
                     <a href="https://app.elite-ai.vip/download?install=true" target="_blank" class="btn btn-primary btn-order" style="width: 100%; background: linear-gradient(135deg, #a855f7, #ec4899); border: none; text-decoration: none; display: flex; align-items: center; justify-content: center;" id="pwa-install-btn">Download App</a>
@@ -904,15 +908,22 @@
     </script>
 
     <script>
-        // Room Pricing Slider Logic
+        // Room Pricing Slider & Toggle Logic
         const slider = document.getElementById('room-slider');
         const numberInput = document.getElementById('room-number-input');
-        const proPrice = document.getElementById('stayai-pro-price');
-        const vipPrice = document.getElementById('stayai-vip-price');
-        const proTotal = document.getElementById('stayai-pro-total');
-        const vipTotal = document.getElementById('stayai-vip-total');
-        const proSetup = document.getElementById('stayai-pro-setup');
-        const vipSetup = document.getElementById('stayai-vip-setup');
+        
+        const btnPro = document.getElementById('btn-pro');
+        const btnVip = document.getElementById('btn-vip');
+        
+        const dynPrice = document.getElementById('stayai-dynamic-price');
+        const dynBadge = document.getElementById('stayai-dynamic-badge');
+        const dynTotal = document.getElementById('stayai-dynamic-total');
+        const dynSetup = document.getElementById('stayai-dynamic-setup');
+        
+        const textPms = document.getElementById('text-pms');
+        const textVoice = document.getElementById('text-voice');
+
+        let currentPlan = 'PRO'; // PRO or VIP
 
         function calculatePricing(rooms) {
             let pPrice = 2.99, vPrice = 4.99;
@@ -936,7 +947,6 @@
             
             let rooms = parseInt(slider.value) || 1;
             
-            // Keep number input in sync with slider
             if (document.activeElement !== numberInput) {
                 numberInput.value = rooms;
             } else {
@@ -946,12 +956,56 @@
 
             const { pPrice, vPrice, pSetup, vSetup, pTotal, vTotal } = calculatePricing(rooms);
             
-            if(proPrice) proPrice.innerText = '$' + pPrice.toFixed(2);
-            if(vipPrice) vipPrice.innerText = '$' + vPrice.toFixed(2);
-            if(proTotal) proTotal.innerText = '$' + pTotal.toFixed(2);
-            if(vipTotal) vipTotal.innerText = '$' + vTotal.toFixed(2);
-            if(proSetup) proSetup.innerText = '$' + pSetup;
-            if(vipSetup) vipSetup.innerText = '$' + vSetup;
+            let iP = document.getElementById('icon-pms');
+            let iV = document.getElementById('icon-voice');
+            let iS = document.getElementById('icon-setup');
+
+            if (currentPlan === 'PRO') {
+                if(dynPrice) dynPrice.innerText = '$' + pPrice.toFixed(2);
+                if(dynBadge) { dynBadge.innerText = 'PRO'; dynBadge.style.color = '#a855f7'; }
+                if(dynTotal) dynTotal.innerText = '$' + pTotal.toFixed(2);
+                if(dynSetup) { dynSetup.innerText = '$' + pSetup; dynSetup.style.color = '#a855f7'; }
+                
+                if(textPms) { textPms.style.color = '#666'; textPms.style.textDecoration = 'line-through'; textPms.innerText = 'No PMS integration'; }
+                if(textVoice) { textVoice.style.color = '#666'; textVoice.style.textDecoration = 'line-through'; textVoice.innerText = 'No AI Voice Call'; }
+                
+                if(window.lucide && iP && iV && iS) {
+                    iP.outerHTML = '<i data-lucide="x" style="color: #ef4444;" id="icon-pms"></i>';
+                    iV.outerHTML = '<i data-lucide="x" style="color: #ef4444;" id="icon-voice"></i>';
+                    iS.outerHTML = '<i data-lucide="settings" style="color: #a855f7;" id="icon-setup"></i>';
+                    lucide.createIcons();
+                }
+            } else {
+                if(dynPrice) dynPrice.innerText = '$' + vPrice.toFixed(2);
+                if(dynBadge) { dynBadge.innerText = 'VIP'; dynBadge.style.color = '#ec4899'; }
+                if(dynTotal) dynTotal.innerText = '$' + vTotal.toFixed(2);
+                if(dynSetup) { dynSetup.innerText = '$' + vSetup; dynSetup.style.color = '#ec4899'; }
+                
+                if(textPms) { textPms.style.color = '#fff'; textPms.style.textDecoration = 'none'; textPms.innerText = 'PMS integration'; }
+                if(textVoice) { textVoice.style.color = '#fff'; textVoice.style.textDecoration = 'none'; textVoice.innerText = 'AI Voice Call'; }
+                
+                if(window.lucide && iP && iV && iS) {
+                    iP.outerHTML = '<i data-lucide="check-circle-2" style="color: #10b981;" id="icon-pms"></i>';
+                    iV.outerHTML = '<i data-lucide="check-circle-2" style="color: #10b981;" id="icon-voice"></i>';
+                    iS.outerHTML = '<i data-lucide="settings" style="color: #ec4899;" id="icon-setup"></i>';
+                    lucide.createIcons();
+                }
+            }
+        }
+
+        if (btnPro && btnVip) {
+            btnPro.addEventListener('click', () => {
+                currentPlan = 'PRO';
+                btnPro.style.background = '#a855f7'; btnPro.style.color = '#fff'; btnPro.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+                btnVip.style.background = 'transparent'; btnVip.style.color = '#94a3b8'; btnVip.style.boxShadow = 'none';
+                updatePricing();
+            });
+            btnVip.addEventListener('click', () => {
+                currentPlan = 'VIP';
+                btnVip.style.background = '#ec4899'; btnVip.style.color = '#fff'; btnVip.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+                btnPro.style.background = 'transparent'; btnPro.style.color = '#94a3b8'; btnPro.style.boxShadow = 'none';
+                updatePricing();
+            });
         }
 
         if (slider && numberInput) {
