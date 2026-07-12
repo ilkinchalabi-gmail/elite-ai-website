@@ -240,7 +240,6 @@
                             <li><i data-lucide="check-circle-2"></i> Manual chat panel</li>
                             <li id="feat-pms"><i data-lucide="x" style="color: #ef4444;" id="icon-pms"></i> <span id="text-pms" style="color:#666; text-decoration:line-through;">No PMS integration</span></li>
                             <li id="feat-voice"><i data-lucide="x" style="color: #ef4444;" id="icon-voice"></i> <span id="text-voice" style="color:#666; text-decoration:line-through;">No AI Voice Call</span></li>
-                            <li><i data-lucide="settings" style="color:#a855f7;" id="icon-setup"></i> One-time Setup: <span id="stayai-dynamic-setup" style="color:#a855f7; font-weight:bold; margin-left:5px;">$299</span></li>
                         </ul>
                     </div>
                     <a href="https://app.elite-ai.vip/download?install=true" target="_blank" class="btn btn-primary btn-order" style="width: 100%; background: linear-gradient(135deg, #a855f7, #ec4899); border: none; text-decoration: none; display: flex; align-items: center; justify-content: center;" id="pwa-install-btn">Download App</a>
@@ -918,7 +917,6 @@
         const dynPrice = document.getElementById('stayai-dynamic-price');
         const dynBadge = document.getElementById('stayai-dynamic-badge');
         const dynTotal = document.getElementById('stayai-dynamic-total');
-        const dynSetup = document.getElementById('stayai-dynamic-setup');
         
         const textPms = document.getElementById('text-pms');
         const textVoice = document.getElementById('text-voice');
@@ -927,19 +925,19 @@
 
         function calculatePricing(rooms) {
             let pPrice = 2.99, vPrice = 4.99;
-            let pSetup = 299, vSetup = 599;
 
-            if (rooms >= 1501) { pPrice = 1.60; vPrice = 2.70; pSetup = 1699; vSetup = 2499; }
-            else if (rooms >= 1001) { pPrice = 1.90; vPrice = 3.20; pSetup = 1199; vSetup = 1899; }
-            else if (rooms >= 601) { pPrice = 2.20; vPrice = 3.70; pSetup = 799; vSetup = 1299; }
-            else if (rooms >= 301) { pPrice = 2.50; vPrice = 4.20; pSetup = 499; vSetup = 899; }
-            
+            if (rooms >= 2001) { pPrice = 1.30; vPrice = 2.20; }
+            else if (rooms >= 1501) { pPrice = 1.60; vPrice = 2.70; }
+            else if (rooms >= 1001) { pPrice = 1.90; vPrice = 3.20; }
+            else if (rooms >= 601) { pPrice = 2.20; vPrice = 3.70; }
+            else if (rooms >= 301) { pPrice = 2.50; vPrice = 4.20; }
+
             // Min billable rooms = 100
             const billedRooms = Math.max(100, rooms);
             const pTotal = billedRooms * pPrice;
             const vTotal = billedRooms * vPrice;
 
-            return { pPrice, vPrice, pSetup, vSetup, pTotal, vTotal };
+            return { pPrice, vPrice, pTotal, vTotal };
         }
 
         function updatePricing() {
@@ -954,40 +952,35 @@
                 slider.value = rooms;
             }
 
-            const { pPrice, vPrice, pSetup, vSetup, pTotal, vTotal } = calculatePricing(rooms);
-            
+            const { pPrice, vPrice, pTotal, vTotal } = calculatePricing(rooms);
+
             let iP = document.getElementById('icon-pms');
             let iV = document.getElementById('icon-voice');
-            let iS = document.getElementById('icon-setup');
 
             if (currentPlan === 'PRO') {
                 if(dynPrice) dynPrice.innerText = '$' + pPrice.toFixed(2);
                 if(dynBadge) { dynBadge.innerText = 'PRO'; dynBadge.style.color = '#a855f7'; }
                 if(dynTotal) dynTotal.innerText = '$' + pTotal.toFixed(2);
-                if(dynSetup) { dynSetup.innerText = '$' + pSetup; dynSetup.style.color = '#a855f7'; }
-                
+
                 if(textPms) { textPms.style.color = '#666'; textPms.style.textDecoration = 'line-through'; textPms.innerText = 'No PMS integration'; }
                 if(textVoice) { textVoice.style.color = '#666'; textVoice.style.textDecoration = 'line-through'; textVoice.innerText = 'No AI Voice Call'; }
-                
-                if(window.lucide && iP && iV && iS) {
+
+                if(window.lucide && iP && iV) {
                     iP.outerHTML = '<i data-lucide="x" style="color: #ef4444;" id="icon-pms"></i>';
                     iV.outerHTML = '<i data-lucide="x" style="color: #ef4444;" id="icon-voice"></i>';
-                    iS.outerHTML = '<i data-lucide="settings" style="color: #a855f7;" id="icon-setup"></i>';
                     lucide.createIcons();
                 }
             } else {
                 if(dynPrice) dynPrice.innerText = '$' + vPrice.toFixed(2);
                 if(dynBadge) { dynBadge.innerText = 'VIP'; dynBadge.style.color = '#ec4899'; }
                 if(dynTotal) dynTotal.innerText = '$' + vTotal.toFixed(2);
-                if(dynSetup) { dynSetup.innerText = '$' + vSetup; dynSetup.style.color = '#ec4899'; }
-                
+
                 if(textPms) { textPms.style.color = '#fff'; textPms.style.textDecoration = 'none'; textPms.innerText = 'PMS integration'; }
                 if(textVoice) { textVoice.style.color = '#fff'; textVoice.style.textDecoration = 'none'; textVoice.innerText = 'AI Voice Call'; }
-                
-                if(window.lucide && iP && iV && iS) {
+
+                if(window.lucide && iP && iV) {
                     iP.outerHTML = '<i data-lucide="check-circle-2" style="color: #10b981;" id="icon-pms"></i>';
                     iV.outerHTML = '<i data-lucide="check-circle-2" style="color: #10b981;" id="icon-voice"></i>';
-                    iS.outerHTML = '<i data-lucide="settings" style="color: #ec4899;" id="icon-setup"></i>';
                     lucide.createIcons();
                 }
             }
