@@ -249,6 +249,115 @@
                 <a href="./lead-agent/" class="btn btn-primary shine-effect" style="padding: 15px 40px;">See the AI Agent</a>
             </div>
         </section>
+
+        <!-- LEAD FORM -->
+        <style>
+            #leadForm .lead-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+            #leadForm .lead-field { display: flex; flex-direction: column; gap: 6px; }
+            #leadForm label { font-size: 13px; font-weight: 600; color: #aaa; }
+            #leadForm input, #leadForm textarea {
+                background: rgba(255,255,255,0.04);
+                border: 1px solid rgba(255,255,255,0.12);
+                border-radius: 10px;
+                padding: 14px 16px;
+                color: #fff;
+                font-family: 'Inter', sans-serif;
+                font-size: 15px;
+                width: 100%;
+                box-sizing: border-box;
+                transition: 0.3s;
+            }
+            #leadForm input:focus, #leadForm textarea:focus { outline: none; border-color: #7c3aed; background: rgba(255,255,255,0.06); }
+            #leadForm input::placeholder, #leadForm textarea::placeholder { color: #555; }
+            @media (max-width: 640px) { #leadForm .lead-row { grid-template-columns: 1fr; } }
+        </style>
+        <section id="lead-form" class="container" style="padding: 0 0 80px;">
+            <div class="cta-box" style="max-width: 720px; text-align: left;">
+                <h2 class="led-text" style="font-size: 34px; margin-bottom: 10px;">Let's Talk</h2>
+                <p style="color: #888; margin-bottom: 30px;">Tell us about your agency. We'll reply within 24 hours.</p>
+                <form id="leadForm" novalidate>
+                    <div class="lead-row">
+                        <div class="lead-field">
+                            <label>Name *</label>
+                            <input type="text" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="lead-field">
+                            <label>Phone</label>
+                            <input type="tel" name="phone" placeholder="+971 ...">
+                        </div>
+                    </div>
+                    <div class="lead-row">
+                        <div class="lead-field">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="you@agency.com">
+                        </div>
+                        <div class="lead-field">
+                            <label>Company</label>
+                            <input type="text" name="company" placeholder="Agency name">
+                        </div>
+                    </div>
+                    <div class="lead-field" style="margin-bottom: 20px;">
+                        <label>Message</label>
+                        <textarea name="message" rows="3" placeholder="How many listings do you have? What do you need?"></textarea>
+                    </div>
+                    <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+                    <button type="submit" class="btn btn-primary" style="width:100%; padding: 16px; border: none; cursor: pointer;">Send Message</button>
+                    <p id="leadStatus" style="margin-top: 16px; font-size: 14px; display: none;"></p>
+                </form>
+            </div>
+        </section>
+        <script>
+            (function () {
+                var form = document.getElementById('leadForm');
+                var status = document.getElementById('leadStatus');
+                var btn = form.querySelector('button[type=submit]');
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var fd = new FormData(form);
+                    var payload = {
+                        name: (fd.get('name') || '').trim(),
+                        phone: (fd.get('phone') || '').trim(),
+                        email: (fd.get('email') || '').trim(),
+                        company: (fd.get('company') || '').trim(),
+                        message: (fd.get('message') || '').trim(),
+                        website: (fd.get('website') || '').trim()
+                    };
+                    if (!payload.name || (!payload.phone && !payload.email)) {
+                        status.style.display = 'block';
+                        status.style.color = '#ff6b6b';
+                        status.textContent = 'Please enter your name and a phone or email.';
+                        return;
+                    }
+                    btn.disabled = true;
+                    btn.textContent = 'Sending...';
+                    fetch('https://demo.elite-ai.vip/.netlify/functions/lead', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    }).then(function (r) { return r.json(); })
+                      .then(function (d) {
+                          btn.disabled = false;
+                          btn.textContent = 'Send Message';
+                          status.style.display = 'block';
+                          if (d && d.ok) {
+                              status.style.color = '#52E0C4';
+                              status.textContent = 'Thanks! Your message was sent. We will contact you soon.';
+                              form.reset();
+                          } else {
+                              status.style.color = '#ff6b6b';
+                              status.textContent = 'Something went wrong. Please try again or message us on WhatsApp.';
+                          }
+                      })
+                      .catch(function () {
+                          btn.disabled = false;
+                          btn.textContent = 'Send Message';
+                          status.style.display = 'block';
+                          status.style.color = '#ff6b6b';
+                          status.textContent = 'Network error. Please message us on WhatsApp.';
+                      });
+                });
+            })();
+        </script>
     </main>
 
     <footer id="contact" class="footer">
