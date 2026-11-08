@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elite AI Lead Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Design plan =====
+   Subject: Elite AI, an always-on AI lead agent for Dubai real estate agencies.
+   Audience: agency owners and managers who lose leads to slow replies.
+   Job: prove the agent captures and qualifies every lead 24/7, then convert to a call.
+   Look: "Dubai at night" — deep ink navy, warm off-white, a brass/gold accent
+   (luxury real estate), a teal signal for anything live/AI. Dark-only by choice. */
+:root {
+  --bg: #0B1220;
+  --bg-2: #0E1626;
+  --panel: #111C30;
+  --panel-2: #182338;
+  --line: rgba(238,235,226,0.13);
+  --line-soft: rgba(238,235,226,0.08);
+  --fg: #F3EFE6;
+  --muted: #9FA9BC;
+  --accent: #C9A96B;
+  --accent-2: #E4C98F;
+  --live: #52E0C4;
+  --live-dim: rgba(82,224,196,0.14);
+  --ink: #0B1220;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+[hidden] { display: none !important; }
+.shell { max-width: 1080px; margin: 0 auto; }
+a { color: inherit; }
+img { max-width: 100%; }
+
+/* Typography */
+.eyebrow {
+  font-size: 0.74rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--accent);
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.3rem, 6vw, 4rem); line-height: 1.05; letter-spacing: -0.015em; }
+h2 { font-size: clamp(1.55rem, 3.6vw, 2.35rem); line-height: 1.15; letter-spacing: -0.01em; }
+h3 { font-size: 1.16rem; line-height: 1.3; }
+.lede { font-size: 1.13rem; line-height: 1.62; color: var(--muted); max-width: 62ch; }
+p { margin: 0; }
+.section { padding-block: clamp(3.4rem, 8vw, 6rem); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font-family: var(--font-body); font-weight: 600; font-size: 0.98rem;
+  padding: 0.82rem 1.35rem; border-radius: 12px; border: 1px solid transparent;
+  cursor: pointer; text-decoration: none; transition: transform .12s ease, background .15s ease, border-color .15s ease;
+}
+.btn:focus-visible { outline: 2px solid var(--live); outline-offset: 2px; }
+.btn-primary { background: var(--accent); color: var(--ink); }
+.btn-primary:hover { background: var(--accent-2); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--fg); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent-2); }
+.btn-wa { background: #1FBA6B; color: #07120C; }
+.btn-wa:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+/* Nav */
+.nav { position: sticky; top: 0; z-index: 40; background: rgba(11,18,32,0.82); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 0.85rem; }
+.brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; letter-spacing: 0.02em; font-size: 1.05rem; }
+.brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 4px var(--live-dim); }
+.nav-links { display: flex; gap: 1.6rem; align-items: center; }
+.nav-links a { font-size: 0.92rem; color: var(--muted); text-decoration: none; }
+.nav-links a:hover { color: var(--fg); }
+@media (max-width: 720px) { .nav-links a:not(.btn) { display: none; } }
+
+/* Hero */
+.hero { padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2.5rem, 6vw, 4rem); }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; }
+.hero h1 { margin: 1.1rem 0 1.2rem; }
+.hero h1 .accent { color: var(--accent-2); }
+.hero .lede { margin-bottom: 1.8rem; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.live-note { display: flex; align-items: center; gap: 0.55rem; margin-top: 1.6rem; color: var(--muted); font-size: 0.9rem; }
+.live-note .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--live); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 var(--live-dim);} 50% { box-shadow: 0 0 0 6px rgba(82,224,196,0);} }
+@media (prefers-reduced-motion: reduce) { .live-note .pulse { animation: none; } }
+
+/* Hero demo card */
+.hero-demo { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 1.3rem; box-shadow: 0 30px 60px -30px rgba(0,0,0,0.6); }
+.hero-demo .cap { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
+.hero-demo .cap .live { color: var(--live); }
+.chat-line { padding: 0.7rem 0.85rem; border-radius: 14px; font-size: 0.92rem; margin-bottom: 0.6rem; max-width: 88%; }
+.chat-line.buyer { background: var(--panel-2); color: var(--fg); margin-right: auto; border-bottom-left-radius: 5px; }
+.chat-line.ai { background: var(--live-dim); color: var(--fg); margin-left: auto; border-bottom-right-radius: 5px; border: 1px solid rgba(82,224,196,0.18); }
+.chat-line .who { display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
+.chat-line.ai .who { color: var(--live); }
+@media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 2.2rem; } .hero-demo { order: 2; } }
+
+/* Stats strip (problem) */
+.problem { background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); border-radius: 16px; overflow: hidden; }
+.stat { background: var(--bg-2); padding: 1.6rem 1.5rem; }
+.stat .big { font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; color: var(--accent-2); }
+.stat .lbl { color: var(--muted); font-size: 0.94rem; margin-top: 0.3rem; }
+@media (max-width: 720px) { .stats { grid-template-columns: 1fr; } }
+
+/* Generic split */
+.split { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; align-items: start; }
+.split .left h2 { margin-top: 1rem; }
+.split .left .lede { margin-top: 1.1rem; }
+@media (max-width: 820px) { .split { grid-template-columns: 1fr; gap: 1.6rem; } }
+
+/* Steps */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.6rem; }
+.step { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem; }
+.step .num { font-family: var(--font-display); font-size: 0.9rem; color: var(--accent); letter-spacing: 0.08em; }
+.step h3 { margin: 0.7rem 0 0.55rem; }
+.step p { color: var(--muted); font-size: 0.96rem; }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+
+/* Features */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); border-radius: 16px; overflow: hidden; }
+.feature { background: var(--bg); padding: 1.6rem 1.5rem; }
+.feature .ico { font-size: 1.4rem; }
+.feature h3 { margin: 0.8rem 0 0.45rem; font-size: 1.05rem; }
+.feature p { color: var(--muted); font-size: 0.94rem; }
+@media (max-width: 820px) { .features { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .features { grid-template-columns: 1fr; } }
+
+/* Before/after */
+.change { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.4rem; }
+.change .cell { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.25rem 1.2rem; }
+.change .cell .k { font-size: 0.82rem; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.change .cell .v { font-size: 1.05rem; font-weight: 600; }
+.change .cell .v .from { color: var(--muted); text-decoration: line-through; font-weight: 500; margin-right: 0.5rem; }
+.change .cell .v .to { color: var(--live); }
+@media (max-width: 860px) { .change { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .change { grid-template-columns: 1fr; } }
+
+/* Pricing */
+.pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.6rem; align-items: stretch; }
+.plan { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 1.7rem 1.6rem; display: flex; flex-direction: column; }
+.plan.pop { border-color: var(--accent); position: relative; background: linear-gradient(180deg, rgba(201,169,107,0.08), var(--panel)); }
+.plan .tag { position: absolute; top: -13px; left: 1.4rem; background: var(--accent); color: var(--ink); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.28rem 0.7rem; border-radius: 20px; }
+.plan .name { font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.plan .price { font-family: var(--font-display); font-size: 2.4rem; font-weight: 600; margin: 0.5rem 0 0.1rem; }
+.plan .price small { font-size: 1rem; color: var(--muted); font-weight: 500; }
+.plan .desc { color: var(--muted); font-size: 0.92rem; margin-bottom: 1.2rem; }
+.plan ul { list-style: none; padding: 0; margin: 0 0 1.6rem; display: flex; flex-direction: column; gap: 0.55rem; flex: 1; }
+.plan li { font-size: 0.92rem; color: var(--fg); padding-left: 1.35rem; position: relative; }
+.plan li::before { content: "✓"; position: absolute; left: 0; color: var(--live); font-weight: 700; }
+.plan .btn { width: 100%; }
+@media (max-width: 820px) { .pricing { grid-template-columns: 1fr; } }
+
+/* FAQ */
+.faq { max-width: 720px; margin: 2.2rem auto 0; display: flex; flex-direction: column; gap: 0.7rem; }
+.faq details { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 0; }
+.faq summary { cursor: pointer; padding: 1.1rem 1.3rem; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 1.3rem; color: var(--accent); font-weight: 500; transition: transform .15s ease; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq .a { padding: 0 1.3rem 1.2rem; color: var(--muted); font-size: 0.96rem; }
+
+/* Final CTA */
+.cta { background: var(--bg-2); border: 1px solid var(--line); border-radius: 22px; padding: clamp(2.4rem, 6vw, 4rem); text-align: center; }
+.cta h2 { margin-bottom: 0.9rem; }
+.cta .lede { margin: 0 auto 1.8rem; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-bottom: 1.4rem; }
+.contact-line { display: flex; flex-wrap: wrap; gap: 0.7rem 2rem; justify-content: center; align-items: center; color: var(--muted); font-size: 0.95rem; }
+.contact-line .item { display: flex; align-items: center; gap: 0.5rem; }
+.copy { background: var(--panel-2); border: 1px solid var(--line); color: var(--fg); font-family: var(--font-body); font-size: 0.82rem; padding: 0.35rem 0.7rem; border-radius: 8px; cursor: pointer; }
+.copy:hover { border-color: var(--accent); }
+
+/* Footer */
+.footer { border-top: 1px solid var(--line-soft); padding-block: 2.4rem 3.4rem; color: var(--muted); font-size: 0.88rem; }
+.footer .shell { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; }
+
+/* ===== Chat widget ===== */
+.chat-open {
+  position: fixed; z-index: 50; bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; align-items: center; gap: 0.6rem;
+  background: var(--accent); color: var(--ink); border: none; border-radius: 100px;
+  padding: 0.9rem 1.25rem; font-family: var(--font-body); font-weight: 700; font-size: 0.95rem;
+  cursor: pointer; box-shadow: 0 14px 34px -12px rgba(0,0,0,0.6);
+}
+.chat-open:hover { background: var(--accent-2); }
+.chat-open .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 4px var(--live-dim); }
+.chat-panel {
+  position: fixed; z-index: 60; bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  right: max(16px, env(safe-area-inset-right, 0px));
+  width: min(380px, calc(100vw - 32px)); max-height: min(600px, calc(100vh - 32px - env(safe-area-inset-top, 0px)));
+  background: var(--panel); border: 1px solid var(--line); border-radius: 20px;
+  display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 30px 70px -20px rgba(0,0,0,0.7);
+}
+.chat-head { display: flex; align-items: center; gap: 0.7rem; padding: 1rem 1.1rem; border-bottom: 1px solid var(--line-soft); }
+.chat-head .ava { width: 38px; height: 38px; border-radius: 50%; background: var(--live-dim); border: 1px solid rgba(82,224,196,0.25); display: flex; align-items: center; justify-content: center; color: var(--live); font-size: 1.1rem; }
+.chat-head .t1 { font-weight: 700; font-size: 0.95rem; line-height: 1.2; }
+.chat-head .t2 { font-size: 0.76rem; color: var(--live); display: flex; align-items: center; gap: 0.35rem; }
+.chat-head .t2::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--live); }
+.chat-close { margin-left: auto; background: none; border: none; color: var(--muted); font-size: 1.4rem; cursor: pointer; padding: 0 0.2rem; }
+.chat-log { flex: 1; overflow-y: auto; padding: 1.1rem; display: flex; flex-direction: column; gap: 0.65rem; }
+.msg { max-width: 84%; padding: 0.65rem 0.85rem; border-radius: 14px; font-size: 0.92rem; line-height: 1.5; white-space: pre-wrap; }
+.msg.bot { background: var(--panel-2); color: var(--fg); border-bottom-left-radius: 5px; align-self: flex-start; }
+.msg.user { background: var(--accent); color: var(--ink); border-bottom-right-radius: 5px; align-self: flex-end; }
+.msg .inline-btn { margin-top: 0.5rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.45rem; align-self: flex-start; padding-left: 0.1rem; }
+.chip { background: transparent; border: 1px solid var(--line); color: var(--fg); font-family: var(--font-body); font-size: 0.84rem; padding: 0.42rem 0.8rem; border-radius: 100px; cursor: pointer; }
+.chip:hover { border-color: var(--accent); color: var(--accent-2); }
+.typing { align-self: flex-start; display: flex; gap: 4px; padding: 0.7rem 0.9rem; background: var(--panel-2); border-radius: 14px; border-bottom-left-radius: 5px; }
+.typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: blink 1.2s infinite; }
+.typing span:nth-child(2) { animation-delay: .2s; } .typing span:nth-child(3) { animation-delay: .4s; }
+@keyframes blink { 0%,80%,100% { opacity: .25; } 40% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .typing span { animation: none; opacity: .6; } }
+.chat-input { display: flex; gap: 0.5rem; padding: 0.8rem; border-top: 1px solid var(--line-soft); }
+.chat-input input { flex: 1; background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; color: var(--fg); font-family: var(--font-body); font-size: 0.92rem; padding: 0.65rem 0.8rem; }
+.chat-input input:focus { outline: none; border-color: var(--accent); }
+.chat-input button { background: var(--accent); color: var(--ink); border: none; border-radius: 10px; width: 44px; font-size: 1.05rem; cursor: pointer; font-weight: 700; }
+.chat-input button:hover { background: var(--accent-2); }
+.toast { position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%); background: var(--panel-2); border: 1px solid var(--line); color: var(--fg); padding: 0.6rem 1rem; border-radius: 10px; font-size: 0.86rem; opacity: 0; pointer-events: none; transition: opacity .25s ease; z-index: 70; }
+.toast.show { opacity: 1; }
+
+/* pricing table + add-ons */
+.price-table { width: 100%; border-collapse: collapse; }
+.table-wrap { overflow-x: auto; margin-top: 2.4rem; border: 1px solid var(--line); border-radius: 16px; }
+.table-wrap table { min-width: 560px; }
+.price-table th { text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; padding: 0.95rem 1.1rem; border-bottom: 1px solid var(--line); background: var(--panel); }
+.price-table td { padding: 0.95rem 1.1rem; border-bottom: 1px solid var(--line-soft); font-size: 0.95rem; color: var(--fg); font-variant-numeric: tabular-nums; }
+.price-table tbody tr:last-child td { border-bottom: none; }
+.price-table .tier { font-weight: 600; }
+.price-table .ret { color: var(--accent-2); font-weight: 700; }
+.incl-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); border-radius: 16px; overflow: hidden; }
+.incl-grid .cell { background: var(--bg-2); padding: 1.4rem 1.3rem; }
+.incl-grid .ico { font-size: 1.4rem; }
+.incl-grid h3 { margin: 0.75rem 0 0.4rem; font-size: 1.02rem; }
+.incl-grid p { color: var(--muted); font-size: 0.92rem; }
+.addon { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
+.addon .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 1.7rem 1.6rem; }
+.addon .card.gold { border-color: var(--accent); background: linear-gradient(180deg, rgba(201,169,107,0.08), var(--panel)); }
+.addon h3 { margin-bottom: 0.7rem; }
+.addon p { color: var(--muted); font-size: 0.95rem; }
+.addon .big { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--accent-2); margin: 0.4rem 0 0.2rem; }
+.ref-steps { list-style: none; padding: 0; margin: 0.7rem 0 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.ref-steps li { font-size: 0.93rem; color: var(--fg); }
+.ref-steps li b { color: var(--accent-2); }
+@media (max-width: 860px) { .incl-grid { grid-template-columns: 1fr 1fr; } .addon { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .incl-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="shell nav-inner">
+  <div class="brand"><span class="dot"></span>ELITE AI</div>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn btn-primary" href="https://wa.me/971582339884?text=Hi%20Elite%20AI%2C%20I%27d%20like%20to%20book%20a%20call." target="_blank" rel="noopener">Book a call</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="shell hero-grid">
+  <div>
+    <div class="eyebrow">AI for Dubai real estate</div>
+    <h1>Every lead answered in <span class="accent">five seconds.</span> Day and night.</h1>
+    <p class="lede">Elite AI puts an agent on duty 24/7. It replies to WhatsApp, Instagram, Bayut and PropertyFinder leads instantly, qualifies them, and hands your team only the buyers who are ready to book.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://wa.me/971582339884?text=Hi%20Elite%20AI%2C%20I%27d%20like%20to%20book%20a%20call." target="_blank" rel="noopener">Book a call</a>
+      <button class="btn btn-ghost" id="heroTry">Try the AI agent</button>
+    </div>
+    <div class="live-note"><span class="pulse"></span>AI on duty now · replies in under 10 seconds · 30+ languages</div>
+  </div>
+  <div class="hero-demo">
+    <div class="cap">Sample lead <span class="live">· answered at 3:47 AM</span></div>
+    <div class="chat-line buyer"><span class="who">Buyer · 3:47 AM</span>Is the 2-bed in Downtown still available? Cash buyer, 2.4M AED.</div>
+    <div class="chat-line ai"><span class="who">Elite AI · 3:47 AM</span>Yes, still available. Ready or off-plan? What's your timeline?</div>
+    <div class="chat-line buyer"><span class="who">Buyer</span>Ready. Moving next month.</div>
+    <div class="chat-line ai"><span class="who">Elite AI</span>Perfect. I'll book a viewing tomorrow at 11 with our agent. Your name?</div>
+    <div class="chat-line ai"><span class="who">Elite AI · qualified</span>Booked. Lead handed to your team before the office opened.</div>
+  </div>
+</div></header>
+
+<section class="section problem"><div class="shell">
+  <div class="split">
+    <div class="left">
+      <div class="eyebrow">The problem</div>
+      <h2>A lead that waits is a lead another agent wins.</h2>
+    </div>
+    <div class="lede">Buyers in Dubai message several agents at once and go with whoever replies first. When the enquiry lands while your team is in a viewing, asleep, or off on a Friday, it goes cold before anyone answers.</div>
+  </div>
+  <div class="stats" style="margin-top:2.6rem">
+    <div class="stat"><div class="big">After-hours</div><div class="lbl">Most enquiries arrive nights and weekends, when nobody is watching the phone.</div></div>
+    <div class="stat"><div class="big">5+ agents</div><div class="lbl">A buyer contacts several agencies for the same property. Speed decides.</div></div>
+    <div class="stat"><div class="big">Seconds</div><div class="lbl">The gap between a hot lead and a cold one is measured in minutes, not days.</div></div>
+  </div>
+</div></section>
+
+<section class="section" id="how"><div class="shell">
+  <div class="split">
+    <div class="left">
+      <div class="eyebrow">What Elite AI does</div>
+      <h2>Your best agent, on every channel, at 3 a.m.</h2>
+      <p class="lede">Elite AI is a trained AI agent that sits on WhatsApp, Instagram, Bayut and PropertyFinder. It answers in your brand voice, knows your listings, qualifies every lead, books the viewing, and drops a ready-to-close buyer into your team's chat.</p>
+    </div>
+    <div>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h3>Connect your channels</h3><p>WhatsApp, Instagram, Bayut and PropertyFinder. One afternoon to set up.</p></div>
+        <div class="step"><div class="num">02</div><h3>The AI answers instantly</h3><p>Every enquiry, 24/7, in English and Arabic, in your brand voice.</p></div>
+        <div class="step"><div class="num">03</div><h3>You get qualified leads</h3><p>Name, budget, area, timeline. Already vetted and booked. Nothing slips through.</p></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section problem"><div class="shell">
+  <div class="eyebrow">What it handles</div>
+  <h2 style="margin:1rem 0 1.4rem">Six jobs, one agent.</h2>
+  <div class="features">
+    <div class="feature"><div class="ico">⚡</div><h3>Replies in seconds</h3><p>Not hours. Speed is the whole game in Dubai real estate.</p></div>
+    <div class="feature"><div class="ico">🕐</div><h3>On duty 24/7</h3><p>Nights, weekends, Fridays, public holidays. It never misses a shift.</p></div>
+    <div class="feature"><div class="ico">🌐</div><h3>30+ languages</h3><p>Answer every buyer in their own language, Arabic included.</p></div>
+    <div class="feature"><div class="ico">🏢</div><h3>Bayut + PropertyFinder</h3><p>Replies on the portals where Dubai buyers actually search, plus WhatsApp and Instagram.</p></div>
+    <div class="feature"><div class="ico">🎯</div><h3>Qualifies before you reply</h3><p>Budget, area, timeline, cash or finance. It vets the lead first.</p></div>
+    <div class="feature"><div class="ico">🛡️</div><h3>Money-back guarantee</h3><p>14 days. If it does not hit the standard, full refund, setup included.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="shell">
+  <div class="split">
+    <div class="left">
+      <div class="eyebrow">What changes</div>
+      <h2>From chasing messages to closing deals.</h2>
+    </div>
+    <div class="lede">The agent does not replace your team. It clears the repetitive first reply, so your agents spend their time with serious buyers instead of typing "I'll check and get back to you."</div>
+  </div>
+  <div class="change">
+    <div class="cell"><div class="k">Response time</div><div class="v"><span class="from">hours</span><span class="to">under 10s</span></div></div>
+    <div class="cell"><div class="k">After-hours leads</div><div class="v"><span class="from">missed</span><span class="to">answered</span></div></div>
+    <div class="cell"><div class="k">Every conversation</div><div class="v"><span class="from">lost</span><span class="to">logged</span></div></div>
+    <div class="cell"><div class="k">Your agents' time</div><div class="v"><span class="from">typing</span><span class="to">closing</span></div></div>
+  </div>
+</div></section>
+
+<section class="section problem" id="pricing"><div class="shell">
+  <div class="eyebrow">Pricing</div>
+  <h2 style="margin:1rem 0 0.8rem">Priced to the size of your portfolio.</h2>
+  <p class="lede">Five tiers. A one-time setup plus a monthly retainer. Every plan carries a 14-day money-back guarantee.</p>
+
+  <div class="table-wrap">
+    <table class="price-table">
+      <thead>
+        <tr><th>Plan</th><th>Listings</th><th>Monthly leads</th><th>Setup · one-time</th><th>Monthly</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="tier">Small</td><td>10–100</td><td>~50–200</td><td>AED 1,000</td><td class="ret">AED 1,000</td></tr>
+        <tr><td class="tier">Medium</td><td>100–500</td><td>~200–800</td><td>AED 2,000</td><td class="ret">AED 2,000</td></tr>
+        <tr><td class="tier">Large</td><td>500–1,500</td><td>~800–2,500</td><td>AED 4,000</td><td class="ret">AED 4,000</td></tr>
+        <tr><td class="tier">Giant</td><td>1,500–3,000</td><td>~2,500–5,000</td><td>AED 6,000</td><td class="ret">AED 6,000</td></tr>
+        <tr><td class="tier">Enterprise</td><td>3,000+</td><td>5,000+</td><td>AED 8,000</td><td class="ret">AED 8,000+</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:2.6rem">
+    <h3 style="margin-bottom:1.1rem">Every plan includes</h3>
+    <div class="incl-grid">
+      <div class="cell"><div class="ico">🌐</div><h3>30+ languages</h3><p>Arabic, English, and more.</p></div>
+      <div class="cell"><div class="ico">🏢</div><h3>4 channels</h3><p>WhatsApp, Instagram, Bayut, PropertyFinder.</p></div>
+      <div class="cell"><div class="ico">📊</div><h3>Tracking panel</h3><p>Every lead logged and visible to you.</p></div>
+      <div class="cell"><div class="ico">🛡️</div><h3>14-day guarantee</h3><p>Full refund, setup included.</p></div>
+    </div>
+  </div>
+
+  <div class="addon">
+    <div class="card gold">
+      <h3>Referral program</h3>
+      <p>Send us a referral that becomes a client, and that month is free.</p>
+      <ul class="ref-steps">
+        <li><b>1</b> referral = 1 month free</li>
+        <li><b>2</b> referrals = 2 months free</li>
+        <li><b>6</b> referrals = 6 months free</li>
+        <li><b>12</b> referrals = 1 year free</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Add AI Marketing</h3>
+      <div class="big">10% of ad budget</div>
+      <p>We run your TikTok lead-generation ads. You pay 10% of the ad budget as our fee, plus the ad spend itself. The agent closes the leads the ads bring in.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section" id="faq"><div class="shell">
+  <div class="eyebrow">FAQ</div>
+  <h2 style="margin:1rem 0">Questions agencies ask us.</h2>
+  <div class="faq">
+    <details><summary>Does it really reply that fast?</summary><div class="a">Yes. The AI responds the moment a message arrives, in under ten seconds, every time. There is no queue and no waiting for a human to be free.</div></details>
+    <details><summary>Can it speak Arabic?</summary><div class="a">Yes. It works in 30+ languages, Arabic and English included, and you choose which language each channel uses.</div></details>
+    <details><summary>Do we need new software?</summary><div class="a">No. It works on the channels your team already uses. Your agents see the conversation in the same WhatsApp, Instagram, Bayut or PropertyFinder they use today.</div></details>
+    <details><summary>How does it know our listings and prices?</summary><div class="a">We train it on your listings, price sheet and FAQs during setup, and keep it updated as your inventory changes.</div></details>
+    <details><summary>What happens when a lead needs a human?</summary><div class="a">The AI passes the conversation to your agent with full context, so the buyer never repeats themselves.</div></details>
+    <details><summary>Can we try it first?</summary><div class="a">Yes. Book a call and we will show you the AI answering your own leads live, before you commit to anything.</div></details>
+  </div>
+</div></section>
+
+<section class="section"><div class="shell">
+  <div class="cta">
+    <div class="eyebrow">Ready when you are</div>
+    <h2>Never lose another Dubai lead.</h2>
+    <p class="lede">Book a 20-minute call. We will show you the AI answering your leads live, and what it costs to never miss one again.</p>
+    <div class="cta-actions">
+      <a class="btn btn-wa" href="https://wa.me/971582339884?text=Hi%20Elite%20AI%2C%20I%27d%20like%20to%20book%20a%20call." target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-primary" href="https://wa.me/971582339884?text=Hi%20Elite%20AI%2C%20I%27d%20like%20to%20book%20a%20call." target="_blank" rel="noopener">Book a call</a>
+    </div>
+    <div class="contact-line">
+      <span class="item">📱 <span id="phoneText">+971 58 233 9884</span> <button class="copy" data-copy="+971582339884">Copy</button></span>
+      <span class="item">✉️ <span id="emailText">founder@elite-ai.vip</span> <button class="copy" data-copy="founder@elite-ai.vip">Copy</button></span>
+    </div>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="shell">
+  <div class="brand"><span class="dot"></span>ELITE AI</div>
+  <div>Elite AI FZ-LLC · Dubai, United Arab Emirates</div>
+</div></footer>
+
+<button class="chat-open" id="chatOpen"><span class="dot"></span>Talk to the AI</button>
+
+<div class="chat-panel" id="chatPanel" hidden>
+  <div class="chat-head">
+    <div class="ava">AI</div>
+    <div><div class="t1">Elite AI assistant</div><div class="t2">Online · replies instantly</div></div>
+    <button class="chat-close" id="chatClose" aria-label="Close chat">×</button>
+  </div>
+  <div class="chat-log" id="chatLog"></div>
+  <div class="chat-input">
+    <input id="chatInput" type="text" placeholder="Type a message…" autocomplete="off">
+    <button id="chatSend" aria-label="Send">➤</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  var WA = "https://wa.me/971582339884";
+  var PHONE = "+971 58 233 9884";
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var panel = document.getElementById("chatPanel");
+  var log = document.getElementById("chatLog");
+  var input = document.getElementById("chatInput");
+  var send = document.getElementById("chatSend");
+  var openBtn = document.getElementById("chatOpen");
+  var closeBtn = document.getElementById("chatClose");
+  var toast = document.getElementById("toast");
+
+  var stage = null;      // "name" | "agency" | "phone"
+  var lead = {};
+  var started = false;
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;" }[c]; }); }
+
+  function addMsg(role, text, chips) {
+    var m = document.createElement("div");
+    m.className = "msg " + role;
+    m.innerHTML = esc(text);
+    if (chips && chips.length) {
+      var c = document.createElement("div");
+      c.className = "chips";
+      chips.forEach(function (chip) {
+        var b = document.createElement("button");
+        b.className = "chip"; b.textContent = chip;
+        b.addEventListener("click", function () { sendUser(chip); });
+        c.appendChild(b);
+      });
+      m.appendChild(c);
+    }
+    log.appendChild(m);
+    log.scrollTop = log.scrollHeight;
+    return m;
+  }
+
+  function say(text, chips) {
+    var t = document.createElement("div");
+    t.className = "typing";
+    t.innerHTML = "<span></span><span></span><span></span>";
+    log.appendChild(t);
+    log.scrollTop = log.scrollHeight;
+    var delay = reduced ? 30 : 420 + Math.random() * 320;
+    setTimeout(function () {
+      t.remove();
+      addMsg("bot", text, chips);
+    }, delay);
+  }
+
+  function sendUser(text) {
+    if (!text) return;
+    addMsg("user", text);
+    input.value = "";
+    handle(text);
+  }
+
+  function handle(raw) {
+    var t = raw.trim().toLowerCase();
+
+    if (stage) { collect(t); return; }
+
+    var intent = null;
+    if (/(price|cost|pricing|plan|fee|aed|per month|monthly|expensive)/.test(t)) intent = "price";
+    else if (/(how.{0,12}work|work.{0,12}how|how does|explain|what does)/.test(t)) intent = "how";
+    else if (/(whatsapp|instagram|channel|platform|voice|which app|telegram)/.test(t)) intent = "channels";
+    else if (/(arabic|language|english|urdu|hindi)/.test(t)) intent = "language";
+    else if (/(demo|try|see it|example|sample|show me|test)/.test(t)) intent = "demo";
+    else if (/(time|setup|how long|start|launch|onboard|install)/.test(t)) intent = "setup";
+    else if (/(lead|qualif|book|viewing|follow.?up|followup)/.test(t)) intent = "leads";
+    else if (/(book|call|talk|contact|reach|start|get started|interested|sign|join)/.test(t)) intent = "book";
+    else if (/(agency|agent|real estate|broker|property|dubai)/.test(t)) intent = "agency";
+    else if (/(hi|hello|hey|salam|merhaba|good)/.test(t)) intent = "hi";
+
+    switch (intent) {
+      case "price":
+        say("Plans start at AED 1,000/month for Small (10–100 listings), with a one-time setup of AED 1,000. It scales by portfolio size: Medium AED 2,000, Large AED 4,000, Giant AED 6,000, Enterprise AED 8,000+. Want me to walk you through them?", ["Book a call", "How does it work?"]);
+        break;
+      case "how":
+        say("It sits on your WhatsApp, Instagram or phone line. It replies instantly, qualifies each lead, books the viewing, and hands your team only the serious buyers.", ["What does it cost?", "Can it speak Arabic?"]);
+        break;
+      case "channels":
+        say("WhatsApp, Instagram, Bayut and PropertyFinder. You pick the channels your buyers already use.", ["Book a call", "How long to set up?"]);
+        break;
+      case "language":
+        say("It answers in 30+ languages, Arabic and English included. You choose which language each channel uses.", ["Book a call", "What does it cost?"]);
+        break;
+      case "demo":
+        say("I can show you a live demo on your own leads. Book a short call and the founder will run it in front of you.", ["Book a call"]);
+        break;
+      case "setup":
+        say("Most agencies are live in an afternoon. We train it on your listings, price sheet and FAQs, then it starts answering the same day.", ["Book a call", "What does it cost?"]);
+        break;
+      case "leads":
+        say("It qualifies every lead before your team sees it: budget, area, timeline, cash or finance. Then it books the viewing and passes the conversation with full context.", ["Book a call", "How does it work?"]);
+        break;
+      case "book":
+        say("Great. Let me take a couple of details so the team can reach you.", []);
+        stage = "name";
+        say("What's your name?", []);
+        break;
+      case "agency":
+        say("Perfect. Whether you run a large brokerage or work a few buildings yourself, the agent scales to your volume. What would you like to know?", ["Pricing", "How does it work?", "Book a call"]);
+        break;
+      case "hi":
+        say("Hi! I'm the Elite AI agent. I answer leads for Dubai real estate agencies 24/7. Are you with an agency?", ["I run an agency", "I'm an agent", "Just curious"]);
+        break;
+      default:
+        say("Good question. I'm a lead agent for Dubai real estate agencies. I can cover pricing, how it works, or set you up for a demo.", ["Pricing", "How does it work?", "Book a call"]);
+    }
+  }
+
+  function collect(t) {
+    if (stage === "name") { lead.name = t; stage = "agency"; say("Thanks " + esc(lead.name) + ". Which agency are you with?", []); }
+    else if (stage === "agency") { lead.agency = t; stage = "phone"; say("And the best WhatsApp number to reach you?", []); }
+    else if (stage === "phone") {
+      lead.phone = t; stage = null;
+      var pre = encodeURIComponent("Hi, I'm " + lead.name + " from " + lead.agency + ". I'd like to book a demo.");
+      var summary = "Name: " + lead.name + "\nAgency: " + lead.agency + "\nPhone: " + lead.phone;
+      var m = addMsg("bot", "Perfect, " + esc(lead.name) + ". Send us a WhatsApp and it goes straight to the founder. I've pre-filled it for you.");
+      var c = document.createElement("div");
+      c.className = "chips";
+      var wa = document.createElement("a");
+      wa.className = "chip"; wa.textContent = "Open WhatsApp"; wa.href = WA + "?text=" + pre; wa.target = "_blank"; wa.rel = "noopener";
+      wa.style.textDecoration = "none";
+      var cp = document.createElement("button");
+      cp.className = "chip"; cp.textContent = "Copy my details";
+      cp.addEventListener("click", function () { copyText(summary); });
+      c.appendChild(wa); c.appendChild(cp);
+      m.appendChild(c);
+      log.scrollTop = log.scrollHeight;
+    }
+  }
+
+  function copyText(txt) {
+    function done() { showToast("Copied"); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(done).catch(function () { done(); });
+    } else { done(); }
+  }
+
+  var toastTimer;
+  function showToast(msg) {
+    toast.textContent = msg; toast.classList.add("show");
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 1600);
+  }
+
+  function open() {
+    panel.hidden = false; openBtn.hidden = true;
+    if (!started) {
+      started = true;
+      addMsg("bot", "Hi, I'm the Elite AI agent. I answer leads for Dubai real estate agencies 24/7, so your team never misses another buyer.");
+      say("Are you with a real estate agency?", ["I run an agency", "I'm an agent", "Just curious"]);
+    }
+    input.focus();
+  }
+  function close() { panel.hidden = true; openBtn.hidden = false; }
+
+  openBtn.addEventListener("click", open);
+  closeBtn.addEventListener("click", close);
+  document.getElementById("heroTry").addEventListener("click", open);
+  send.addEventListener("click", function () { sendUser(input.value); });
+  input.addEventListener("keydown", function (e) { if (e.key === "Enter") sendUser(input.value); });
+
+  // Copy buttons across the page
+  Array.prototype.forEach.call(document.querySelectorAll(".copy"), function (b) {
+    b.addEventListener("click", function () { copyText(b.getAttribute("data-copy")); });
+  });
+})();
+</script>
+</body>
+</html>

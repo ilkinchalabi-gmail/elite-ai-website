@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elite AI Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0B1220;
+  --bg-2: #0E1626;
+  --panel: #111C30;
+  --panel-2: #182338;
+  --line: rgba(238,235,226,0.13);
+  --line-soft: rgba(238,235,226,0.08);
+  --fg: #F3EFE6;
+  --muted: #9FA9BC;
+  --accent: #C9A96B;
+  --accent-2: #E4C98F;
+  --live: #52E0C4;
+  --live-dim: rgba(82,224,196,0.14);
+  --ink: #0B1220;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+[hidden] { display: none !important; }
+.shell { max-width: 1080px; margin: 0 auto; }
+a { color: inherit; }
+img { max-width: 100%; }
+
+.eyebrow { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.2rem, 5.6vw, 3.7rem); line-height: 1.06; letter-spacing: -0.015em; }
+h2 { font-size: clamp(1.5rem, 3.4vw, 2.2rem); line-height: 1.16; letter-spacing: -0.01em; }
+h3 { font-size: 1.14rem; line-height: 1.32; }
+.lede { font-size: 1.12rem; line-height: 1.62; color: var(--muted); max-width: 64ch; }
+p { margin: 0; }
+.section { padding-block: clamp(3rem, 7vw, 5.2rem); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font-family: var(--font-body); font-weight: 600; font-size: 0.98rem;
+  padding: 0.82rem 1.35rem; border-radius: 12px; border: 1px solid transparent;
+  cursor: pointer; text-decoration: none; transition: transform .12s ease, background .15s ease, border-color .15s ease;
+}
+.btn:focus-visible { outline: 2px solid var(--live); outline-offset: 2px; }
+.btn-primary { background: var(--accent); color: var(--ink); }
+.btn-primary:hover { background: var(--accent-2); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--fg); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent-2); }
+.btn-wa { background: #1FBA6B; color: #07120C; }
+.btn-wa:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+.nav { position: sticky; top: 0; z-index: 40; background: rgba(11,18,32,0.82); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-soft); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 0.85rem; }
+.brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; letter-spacing: 0.02em; font-size: 1.05rem; text-decoration: none; }
+.brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 4px var(--live-dim); }
+.nav-links { display: flex; gap: 1.4rem; align-items: center; }
+.nav-links a { font-size: 0.92rem; color: var(--muted); text-decoration: none; }
+.nav-links a:hover { color: var(--fg); }
+
+.hero { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+@media (max-width: 840px) { .hero-grid { grid-template-columns: 1fr; } }
+.hero h1 { margin: 1rem 0 1.1rem; }
+.hero .lede { margin-bottom: 1.6rem; }
+.hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.hero .stat { font-size: 0.82rem; color: var(--muted); margin-top: 1.3rem; display: flex; align-items: center; gap: 0.5rem; }
+.pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 4px var(--live-dim); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.hero-card { background: linear-gradient(160deg, var(--panel), var(--bg-2)); border: 1px solid var(--line); border-radius: 18px; padding: 1.4rem; }
+.hc-head { display: flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.1rem; }
+.hc-row { display: flex; justify-content: space-between; align-items: baseline; padding-block: 0.7rem; border-top: 1px solid var(--line-soft); font-size: 0.95rem; }
+.hc-row b { font-family: var(--font-display); font-size: 1.06rem; font-weight: 600; }
+.hc-row .fee { color: var(--accent-2); }
+.hc-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; }
+
+.grid { display: grid; gap: 1rem; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 840px) { .grid-2, .grid-4 { grid-template-columns: 1fr; } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1.4rem; }
+.card .num { font-family: var(--font-display); font-size: 1.5rem; color: var(--accent); font-weight: 600; }
+.card h3 { margin: 0.7rem 0 0.45rem; }
+.card p { color: var(--muted); font-size: 0.96rem; }
+.card .ic { font-size: 1.4rem; }
+
+.steps { display: grid; gap: 0.9rem; counter-reset: step; }
+.step { display: flex; gap: 1rem; align-items: flex-start; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.15rem 1.25rem; }
+.step .n { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 10px; background: var(--live-dim); color: var(--live); font-weight: 700; display: grid; place-items: center; }
+.step h3 { font-size: 1.05rem; margin-bottom: 0.25rem; }
+.step p { color: var(--muted); font-size: 0.95rem; }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; }
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+th, td { padding: 0.85rem 1.1rem; text-align: left; font-size: 0.95rem; }
+thead th { background: var(--panel-2); color: var(--muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; }
+tbody tr { border-top: 1px solid var(--line-soft); }
+tbody td:last-child, tbody th:last-child { font-weight: 600; }
+td .fee { color: var(--accent-2); font-weight: 600; }
+
+.incl { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+@media (max-width: 720px) { .incl { grid-template-columns: 1fr; } }
+.incl .cell { display: flex; gap: 0.8rem; align-items: flex-start; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 0.95rem 1.05rem; }
+.incl .cell .ic { font-size: 1.2rem; }
+.incl .cell b { display: block; font-size: 0.98rem; }
+.incl .cell span { color: var(--muted); font-size: 0.88rem; }
+
+.faq { display: grid; gap: 0.7rem; }
+details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 0.9rem 1.1rem; }
+summary { cursor: pointer; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+summary::after { content: "+"; font-size: 1.3rem; color: var(--accent); }
+details[open] summary::after { content: "–"; }
+details .a { color: var(--muted); font-size: 0.94rem; margin-top: 0.6rem; }
+
+.cta { text-align: center; background: linear-gradient(180deg, var(--panel), var(--bg-2)); border: 1px solid var(--line); border-radius: 20px; padding: clamp(2.2rem, 5vw, 3.5rem); }
+.cta h2 { margin: 1rem 0 0.8rem; }
+.cta .lede { margin: 0 auto 1.6rem; }
+.cta-actions { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+.contact-line { margin-top: 1.5rem; display: flex; gap: 0.8rem 1.6rem; justify-content: center; flex-wrap: wrap; font-size: 0.94rem; color: var(--muted); }
+.contact-line button { background: none; border: 1px solid var(--line); color: var(--fg); padding: 0.15rem 0.6rem; border-radius: 8px; cursor: pointer; font-size: 0.78rem; }
+.contact-line button:hover { border-color: var(--accent); }
+
+.footer { border-top: 1px solid var(--line-soft); padding-block: 2rem; text-align: center; color: var(--muted); font-size: 0.85rem; }
+.footer .brand { justify-content: center; margin-bottom: 0.6rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="shell nav-inner">
+  <a class="brand" href="/"><span class="dot"></span>ELITE AI</a>
+  <div class="nav-links">
+    <a href="https://demo.elite-ai.vip/">Live demos</a>
+    <a href="/lead-agent/">Lead Agent</a>
+    <a class="btn btn-primary" href="https://wa.me/971582339884?text=Hi%20Elite%20AI%2C%20I%27d%20like%20to%20talk%20about%20AI%20Marketing." target="_blank" rel="noopener">WhatsApp us</a>
+  </div>
+</div></nav>
+
+<section class="section hero"><div class="shell hero-grid">
+  <div>
+    <div class="eyebrow">Elite AI · Marketing</div>
+    <h1>Turn ad spend into booked viewings.</h1>
+    <p class="lede">We run your TikTok lead-generation ads end to end — creative, targeting, budget and daily optimization. You pay one flat fee, the ads bring the leads, and the AI agent closes them while they are still warm.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#pricing">See the pricing</a>
+      <a class="btn btn-ghost" href="#how">How it works</a>
+    </div>
+    <div class="stat"><span class="pulse"></span>Ads live on TikTok · leads routed to your AI agent 24/7</div>
+  </div>
+  <div class="hero-card">
+    <div class="hc-head">One flat fee</div>
+    <div class="hc-row"><span>Service fee</span><b class="fee">10% of ad budget</b></div>
+    <div class="hc-row"><span>Ad spend</span><b>paid by you, directly</b></div>
+    <div class="hc-row"><span>Lock-in</span><b>none — pause anytime</b></div>
+    <p class="hc-note">Example: on an AED 10,000 monthly ad budget, our fee is AED 1,000. The ad spend itself goes straight to TikTok.</p>
+  </div>
+</div></section>
+
+<section class="section" id="how"><div class="shell">
+  <div class="eyebrow">How it works</div>
+  <h2 style="margin:1rem 0 1.4rem">One funnel, from ad to booked call.</h2>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div><h3>We build and launch your TikTok ads</h3><p>Creative, hooks, targeting to Dubai buyers, and the budget — set up and running in days, not weeks.</p></div></div>
+    <div class="step"><div class="n">2</div><div><h3>The ads push prospects into your channels</h3><p>Every click lands in your Instagram or WhatsApp, not on a cold form.</p></div></div>
+    <div class="step"><div class="n">3</div><div><h3>The AI agent replies in seconds</h3><p>It answers, qualifies and books the viewing before the buyer scrolls away — 30+ languages, day and night.</p></div></div>
+    <div class="step"><div class="n">4</div><div><h3>You watch it in your tracking panel</h3><p>Every lead, every reply and every booking, visible in one dashboard.</p></div></div>
+  </div>
+</div></section>
+
+<section class="section" id="pricing"><div class="shell">
+  <div class="eyebrow">Pricing</div>
+  <h2 style="margin:1rem 0 1rem">10% of your ad budget. That is the whole fee.</h2>
+  <p class="lede" style="margin-bottom:1.6rem">You control how much you spend on ads. Our fee scales with it — no setup fee, no hidden charges, no long contract.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Monthly ad budget</th><th>Your ad spend</th><th>Our fee (10%)</th><th>Total per month</th></tr></thead>
+      <tbody>
+        <tr><td>AED 5,000</td><td>AED 5,000</td><td><span class="fee">AED 500</span></td><td>AED 5,500</td></tr>
+        <tr><td>AED 10,000</td><td>AED 10,000</td><td><span class="fee">AED 1,000</span></td><td>AED 11,000</td></tr>
+        <tr><td>AED 25,000</td><td>AED 25,000</td><td><span class="fee">AED 2,500</span></td><td>AED 27,500</td></tr>
+        <tr><td>AED 50,000</td><td>AED 50,000</td><td><span class="fee">AED 5,000</span></td><td>AED 55,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<section class="section"><div class="shell">
+  <div class="eyebrow">What the 10% includes</div>
+  <h2 style="margin:1rem 0 1.4rem">Everything, handled for you.</h2>
+  <div class="incl">
+    <div class="cell"><div class="ic">🎯</div><div><b>Campaign strategy + setup</b><span>Audience, offer and funnel planned and launched.</span></div></div>
+    <div class="cell"><div class="ic">🎬</div><div><b>Ad creative</b><span>Video and copy built for your listings and brand.</span></div></div>
+    <div class="cell"><div class="ic">📈</div><div><b>Daily optimization</b><span>Budgets and targeting tuned every day for cost per lead.</span></div></div>
+    <div class="cell"><div class="ic">🤖</div><div><b>Hand-off to the AI agent</b><span>Every lead lands with the agent, qualified and booked.</span></div></div>
+    <div class="cell"><div class="ic">📊</div><div><b>Reporting dashboard</b><span>Spend, leads and bookings in one clear panel.</span></div></div>
+    <div class="cell"><div class="ic">🔁</div><div><b>No lock-in</b><span>Monthly, pause anytime. Your ad account stays yours.</span></div></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="shell">
+  <div class="eyebrow">Why it works</div>
+  <h2 style="margin:1rem 0 1.4rem">Marketing brings the traffic. The agent closes it.</h2>
+  <div class="grid grid-2">
+    <div class="card"><div class="num">Without it</div><h3>An agent waiting on organic leads</h3><p>Your AI agent is only as busy as the traffic you already get. Organic reach moves slowly and is hard to predict.</p></div>
+    <div class="card"><div class="num">With it</div><h3>A predictable flow of ready buyers</h3><p>You buy the traffic, the agent answers instantly, and every dirham of ad spend has a reply waiting for it.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="shell">
+  <div class="eyebrow">FAQ</div>
+  <h2 style="margin:1rem 0 1.4rem">Questions agencies ask us.</h2>
+  <div class="faq">
+    <details><summary>Who pays for the ad spend?</summary><div class="a">You do, directly to TikTok. Our 10% fee is on top of the ad budget and only covers our work: strategy, creative, optimization and reporting.</div></details>
+    <details><summary>Is there a minimum budget?</summary><div class="a">We recommend starting around AED 5,000 a month so the ads gather enough data to optimize. We can discuss your specific situation on a call.</div></details>
+    <details><summary>Do I need the AI Lead Agent too?</summary><div class="a">You do not have to, but the two are built to work together. Marketing drives the traffic, the agent answers and books it. Without the agent, the leads go to your team.</div></details>
+    <details><summary>Can we pause or stop?</summary><div class="a">Yes. It is month to month with no lock-in. You can pause the service or lower the ad budget whenever you want.</div></details>
+    <details><summary>How fast do we see results?</summary><div class="a">The ads start delivering traffic within the first week. The first meaningful cost-per-lead numbers usually show after one to two weeks of optimization.</div></details>
+  </div>
+</div></section>
+
+<section class="section"><div class="shell">
+  <div class="cta">
+    <div class="eyebrow">Ready when you are</div>
+    <h2>Let us bring the leads, you book the deals.</h2>
+    <p class="lede">Book a 20-minute call and we will show you exactly what a TikTok lead campaign looks like for your listings — and what it costs.</p>
+    <div class="cta-actions">
+      <a class="btn btn-wa" href="https://wa.me/971582339884?text=Hi%20Elite%20AI%2C%20I%27d%20like%20to%20talk%20about%20AI%20Marketing." target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-primary" href="https://wa.me/971582339884?text=Hi%20Elite%20AI%2C%20I%27d%20like%20to%20book%20a%20call%20about%20AI%20Marketing." target="_blank" rel="noopener">Book a call</a>
+    </div>
+    <div class="contact-line">
+      <span>📱 +971 58 233 9884 <button data-copy="+971582339884">Copy</button></span>
+      <span>✉️ founder@elite-ai.vip <button data-copy="founder@elite-ai.vip">Copy</button></span>
+    </div>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="shell">
+  <div class="brand"><span class="dot"></span>ELITE AI</div>
+  <div>Elite AI FZ-LLC · Dubai, United Arab Emirates</div>
+  <div style="margin-top:0.4rem"><a href="https://demo.elite-ai.vip/" style="color:var(--muted)">← Back to live demos</a></div>
+</div></footer>
+
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var text = btn.getAttribute('data-copy');
+    function done() { var o = btn.textContent; btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = o; }, 1400); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () { done(); });
+    } else { done(); }
+  });
+});
+</script>
+</body>
+</html>
